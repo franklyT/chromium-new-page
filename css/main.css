@@ -12,6 +12,11 @@
 }
 .search {
   }
+
 .submit {
     margin-top: 2em;
+}
+
+button, input {
+  font-size:2em;
 }

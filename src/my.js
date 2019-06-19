@@ -6,3 +6,9 @@ document.querySelector(".submit").addEventListener("click", function(){
     gSearch();
 });
   
+document.querySelector(".search").addEventListener("keydown", event => {
+    if (event.isComposing || event.keyCode === 13) {
+        gSearch();
+    }
+  });
+  
