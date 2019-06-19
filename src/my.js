@@ -1,5 +1,5 @@
 function gSearch() {
-    window.open(`http://www.google.com/search?q=${document.querySelector('.search').value}`, '_blank');
+    window.location.href =`http://www.google.com/search?q=${document.querySelector('.search').value}`   ;
 }
 
 document.querySelector(".submit").addEventListener("click", function(){
@@ -12,3 +12,8 @@ document.querySelector(".search").addEventListener("keydown", event => {
     }
   });
   
+  window.onload = ready;
+
+  function ready() {
+  document.querySelector(".search").focus();
+};
