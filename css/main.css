@@ -68,3 +68,5 @@ body {
 button, input {
   font-size:2em;
 }
+
+.icon-favicon,.links .link-icon-placeholder,.links img,.links svg{height:16px;width:16px;margin:0 4px 0 -1px;vertical-align:top;display:inline-block}

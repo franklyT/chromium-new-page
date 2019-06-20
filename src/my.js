@@ -83,7 +83,7 @@ function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
   if (imageBay.bgLength.length - 1 === imageBay.catchDeadLinks.length - 1) {
     console.log(
-      `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
+      `Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
     );
     document.querySelector(".bg").style.backgroundImage =
       "url('../images/bgfallback.jpg')";
@@ -92,18 +92,18 @@ function imageNotFound() {
   }
   if ((imageBay.catchDeadLinks.length-1) === 0) {
     console.log(
-      `newTabPro: ERROR: The background image requested at ${
+      `Tabby Tab: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
   }
   if ((imageBay.catchDeadLinks.length-1) === 1) {
     console.log(
-      `newTabPro: WARNING: The background image requested at ${
+      `Tabby Tab: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
-    console.log("Suppressing further warnings from this chain.");
+    console.log("Tabby Tab: Suppressing further warnings from this chain.");
   }
 
   while (imageBay.catchDeadLinks.indexOf(imageBay.myBg) !== -1) {
@@ -115,3 +115,35 @@ function imageNotFound() {
 }
 
 catchFourZeroFour(imageBay.bg);
+
+
+        /**
+         * Remove existing favicon(s) and create a new one
+         * @param new_icon
+         * @returns {boolean}
+         */
+        processIcon = function (new_icon) {
+            var el, icon, link;
+            
+            el = document.querySelectorAll('head link[rel*="icon"]');
+            
+            // Remove existing favicons
+            Array.prototype.forEach.call(el, function (node) {
+                node.parentNode.removeChild(node);
+            });
+            
+            // Set preconfigured or custom (http|https|data) icon
+            icon = (/^(https?|data):/.test(new_icon) === true) ? new_icon : chrome.extension.getURL(new_icon);
+            
+            // Create new favicon
+            link      = document.createElement('link');
+            link.type = 'image/x-icon';
+            link.rel  = 'icon';
+            link.href = icon;
+            
+            document.getElementsByTagName('head')[0].appendChild(link);
+            
+            return true;
+        };
+
+        processIcon('favicon128.png');
