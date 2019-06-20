@@ -16,7 +16,7 @@ const imageBay = {
 
   bg: "",
   
-  deadBg: []
+  catchDeadLinks: []
 };
 
 imageBay.myBg;
@@ -73,7 +73,7 @@ function catchFourZeroFour(url) {
 function imageFound() {}
 
 function imageNotFound() {
-    imageBay.deadBg.push(imageBay.bg)
+    imageBay.catchDeadLinks.push(imageBay.bg)
   if (counter > 20) {
     console.log(
       `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
@@ -85,20 +85,20 @@ function imageNotFound() {
   if (counter === 0) {
     console.log(
       `newTabPro: ERROR: The background image requested at ${
-        imageBay.deadBg[imageBay.deadBg.length-1]
+        imageBay.catchDeadLinks[imageBay.catchDeadLinks.length-1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
   }
   if (counter === 1) {
     console.log(
       `newTabPro: WARNING: The background image requested at ${
-        imageBay.deadBg[imageBay.deadBg.length-1]
+        imageBay.catchDeadLinks[imageBay.catchDeadLinks.length-1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
     console.log("Suppressing further warnings from this chain.");
   }
 
-  while (imageBay.deadBg.indexOf(imageBay.myBg) !== -1) {
+  while (imageBay.catchDeadLinks.indexOf(imageBay.myBg) !== -1) {
     imageBay.myBg;
   }
   document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
