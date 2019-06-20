@@ -1,24 +1,22 @@
 // All images are royalty free via Pexels and other sources
 const imageBay = {
   bg1:
-    "url('https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg')",
-  bg2:
     "url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg')",
-  bg3:
+  bg2:
     "url('https://images.pexels.com/photos/457447/pexels-photo-457447.jpeg')",
-  bg4:
+  bg3:
     "url('https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg')",
-  bg5:
+  bg4:
     "url('https://images.pexels.com/photos/877988/pexels-photo-877988.jpeg')",
-  bg6:
+  bg5:
     "url('https://images.pexels.com/photos/463732/pexels-photo-463732.jpeg')",
-  bg7:
+  bg6:
     "url('https://images.pexels.com/photos/1618676/pexels-photo-1618676.jpeg')",
-  bg8:
+  bg7:
     "url('https://images.pexels.com/photos/45876/beef-scotland-highland-beef-cow-45876.jpeg')",
-  bg9:
+  bg8:
     "url('https://images.pexels.com/photos/1332026/pexels-photo-1332026.jpeg')",
-  bg10:
+  bg9:
     "url('https://images.pexels.com/photos/1131856/pexels-photo-1131856.jpeg')"
 };
 
@@ -46,7 +44,7 @@ document.querySelector(".search").addEventListener("keydown", event => {
 function callBackground() {
   // document.querySelector('.bg').style.backgroundImage = `url('https://traina.me/images/bg${Math.floor(Math.random()*37)+1}.jpg')`;
   document.querySelector(".bg").style.backgroundImage =
-    imageBay[`bg${Math.floor(Math.random() * 10) + 1}`];
+    imageBay[`bg${Math.floor(Math.random() * 9) + 1}`];
 }
 
 callBackground();
