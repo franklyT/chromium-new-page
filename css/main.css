@@ -49,10 +49,17 @@ body {
 }
 .search {
   border-radius: .5em;
+  padding-left: .4em;
+  padding-right: 1.2em;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   }
 
+.search:focus{
+    outline: none;
+}
+
 .submit {
-    margin-left: 10.5em;
+    margin-left: 12em;
     height: 2em;
     width: 2em;
     z-index: 1;
