@@ -71,6 +71,7 @@ function catchFourZeroFour(url) {
 function imageFound() {}
 
 function imageNotFound() {
+    const catchCurrentBg = imageBay.bg;
   if (counter > 20) {
     console.log(
       `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
@@ -82,20 +83,23 @@ function imageNotFound() {
   if (counter === 0) {
     console.log(
       `newTabPro: ERROR: The background image requested at ${
-        imageBay.bg
+        catchCurrentBg
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
   }
   if (counter === 1) {
     console.log(
       `newTabPro: WARNING: The background image requested at ${
-        imageBay.bg
+        catchCurrentBg
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
     console.log("Suppressing further warnings from this chain.");
   }
 
-  imageBay.myBg;
+  while (catchCurrentBg === imageBay.bg) {
+    imageBay.myBg;
+  }
+  
   document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
   catchFourZeroFour(imageBay.bg, counter++);
