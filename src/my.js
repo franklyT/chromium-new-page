@@ -13,9 +13,11 @@ const imageBay = {
   get myBg() {
     imageBay.bg = imageBay[`bg${Math.floor(Math.random() * 9) + 1}`];
   },
-  
+
   get bgLength() {
-    return Object.keys(imageBay).filter((elm)=> {return /[bg][0-9]/g.test(elm)})
+    return Object.keys(imageBay).filter(elm => {
+      return /[bg][0-9]/g.test(elm);
+    });
   },
 
   bg: "",
@@ -78,7 +80,7 @@ function imageFound() {}
 
 function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
-  if ((imageBay.bgLength.length-1) === (imageBay.catchDeadLinks.length-1)) {
+  if (imageBay.bgLength.length - 1 === imageBay.catchDeadLinks.length - 1) {
     console.log(
       `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
     );
