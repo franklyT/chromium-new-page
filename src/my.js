@@ -13,6 +13,10 @@ const imageBay = {
   get myBg() {
     imageBay.bg = imageBay[`bg${Math.floor(Math.random() * 9) + 1}`];
   },
+  
+  get bgLength() {
+    return Object.keys(imageBay).filter((elm)=> {return /[bg][0-9]/g.test(elm)})
+  },
 
   bg: "",
 
@@ -74,7 +78,7 @@ function imageFound() {}
 
 function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
-  if (counter > 20) {
+  if ((imageBay.bgLength.length-1) === (imageBay.catchDeadLinks.length-1)) {
     console.log(
       `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
     );
@@ -82,14 +86,14 @@ function imageNotFound() {
       "url('../images/bgfallback.jpg')";
     return;
   }
-  if (counter === 0) {
+  if (imageBay.catchDeadLinks.length === 0) {
     console.log(
       `newTabPro: ERROR: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
   }
-  if (counter === 1) {
+  if (imageBay.catchDeadLinks.length === 1) {
     console.log(
       `newTabPro: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
@@ -103,7 +107,7 @@ function imageNotFound() {
   }
   document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
-  catchFourZeroFour(imageBay.bg, counter++);
+  catchFourZeroFour(imageBay.bg);
 }
 
-catchFourZeroFour(imageBay.bg, (counter = 0));
+catchFourZeroFour(imageBay.bg);
