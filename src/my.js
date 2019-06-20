@@ -12,8 +12,26 @@ document.querySelector(".search").addEventListener("keydown", event => {
     }
   });
   
-  window.onload = ready;
-
-  function ready() {
+ /* function ready() {
   document.querySelector(".search").focus();
+};
+*/
+
+function callBackground() {
+    document.querySelector('.bg').style.backgroundImage = `url('https://traina.me/images/bg${Math.floor(Math.random()*37)+1}.jpg')`;
+}
+
+callBackground();
+
+function getBgUrl(el) {
+    var bg = "";
+    bg = el.style.backgroundImage
+    console.log(bg)
+    return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+}
+
+var image = document.createElement('img');
+image.src = getBgUrl(document.querySelector('.bg'));
+image.onload = function () {
+    document.querySelector('.bg').style.display = 'inline-flex';
 };
