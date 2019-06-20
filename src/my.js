@@ -6,20 +6,22 @@ const imageBay = {
     "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg",
   bg3:
     "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg",
-  bg4:
+  bg4: 
     "https://images.pexels.com/photos/877988/pexels-photo-877988.jpeg",
-  bg5:
+  bg5: 
     "https://images.pexels.com/photos/463732/pexels-photo-463732.jpeg",
-  bg6:
+  bg6: 
     "https://images.pexels.com/photos/1618676/pexels-photo-1618676.jpeg",
   bg7:
     "https://images.pexels.com/photos/45876/beef-scotland-highland-beef-cow-45876.jpeg",
-  bg8:
+  bg8: 
     "https://images.pexels.com/photos/1332026/pexels-photo-1332026.jpeg",
-  bg9:
+  bg9: 
     "https://images.pexels.com/photos/1131856/pexels-photo-1131856.jpeg",
 
-  get myBg() {imageBay.bg = imageBay[`bg${Math.floor(Math.random() * 9) + 1}`]},
+  get myBg() {
+    imageBay.bg = imageBay[`bg${Math.floor(Math.random() * 9) + 1}`];
+  },
 
   bg: ""
 };
@@ -49,12 +51,12 @@ document.querySelector(".search").addEventListener("keydown", event => {
 
 function callBackground() {
   // document.querySelector('.bg').style.backgroundImage = `url('https://traina.me/images/bg${Math.floor(Math.random()*37)+1}.jpg')`;
-  document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg; + "')"
+  document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
+  +"')";
 }
 
 callBackground();
 document.querySelector(".bg").style.display = "inline-flex";
-
 
 function getBgUrl(el) {
   var bg = "";
@@ -69,20 +71,29 @@ image.onload = function() {
 };
 
 function catchFourZeroFour(url) {
-    let tester = new Image();
-    tester.addEventListener('load', imageFound);
-    tester.addEventListener('error', imageNotFound);
-    tester.src = url;
+  let tester = new Image();
+  tester.addEventListener("load", imageFound);
+  tester.addEventListener("error", imageNotFound);
+  tester.src = url;
 }
 
-function imageFound() {
-}
+function imageFound() {}
 
 function imageNotFound() {
-    console.log(`Error: The background image requested at ${imageBay.bg} is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`);
-    imageBay.myBg;
-    document.querySelector(".bg").style.backgroundImage =  "url('" + imageBay.bg; + "')";
-    catchFourZeroFour(imageBay.bg)
+  if (counter > 20) {
+    console.log(`Recovery failed. No valid background image can be found.`);
+    return;
+  }
+  console.log(
+    `Error: The background image requested at ${
+      imageBay.bg
+    } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
+  );
+  imageBay.myBg;
+  document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
+  +"')";
+  console.log(counter);
+  catchFourZeroFour(imageBay.bg, counter++);
 }
 
-catchFourZeroFour(imageBay.bg);
+catchFourZeroFour(imageBay.bg, (counter = 0));
