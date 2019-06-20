@@ -73,7 +73,7 @@ function catchFourZeroFour(url) {
 function imageFound() {}
 
 function imageNotFound() {
-    imageBay.catchDeadLinks.push(imageBay.bg)
+    imageBay.catchDeadLinks.push(imageBay.bg);
   if (counter > 20) {
     console.log(
       `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
