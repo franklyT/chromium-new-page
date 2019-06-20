@@ -13,7 +13,7 @@
         "newtab": "index.html"
       },
     
-    "description": "A plain text description",
+    "description": "Lightweight tab modifier.",
 
     "icons": {
       "16": "favicon16.png",
