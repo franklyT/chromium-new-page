@@ -55,7 +55,6 @@ function callBackground() {
 }
 
 callBackground();
-document.querySelector(".bg").style.display = "inline-flex";
 
 function getBgUrl(el) {
   var bg = "";
@@ -76,7 +75,9 @@ function catchFourZeroFour(url) {
   tester.src = url;
 }
 
-function imageFound() {}
+function imageFound() {
+    document.querySelector(".bg").style.display = "inline-flex";
+}
 
 function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
@@ -86,6 +87,7 @@ function imageNotFound() {
     );
     document.querySelector(".bg").style.backgroundImage =
       "url('../images/bgfallback.jpg')";
+      document.querySelector(".bg").style.display = "inline-flex";
     return;
   }
   if (imageBay.catchDeadLinks.length === 0) {
