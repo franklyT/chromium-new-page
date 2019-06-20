@@ -1,23 +1,14 @@
 // All images are royalty free via Pexels and other sources
 const imageBay = {
-  bg1:
-    "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg",
-  bg2:
-    "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg",
-  bg3:
-    "https://images.pexels.com/photos/36347/cow-pasture-animal-almabtrieb.jpg",
-  bg4: 
-    "https://images.pexels.com/photos/877988/pexels-photo-877988.jpeg",
-  bg5: 
-    "https://images.pexels.com/photos/463732/pexels-photo-463732.jpeg",
-  bg6: 
-    "https://images.pexels.com/photos/1618676/pexels-photo-1618676.jpeg",
-  bg7:
-    "https://images.pexels.com/photos/45876/beef-scotland-highland-beef-cow-45876.jpeg",
-  bg8: 
-    "https://images.pexels.com/photos/1332026/pexels-photo-1332026.jpeg",
-  bg9: 
-    "https://images.pexels.com/photos/1131856/pexels-photo-1131856.jpeg",
+  bg1: "sddsdsasdasda",
+  bg2: "sdsddsdas",
+  bg3: "ddsadsadasdsa",
+  bg4: "dssdadasdas",
+  bg5: "dsasaddasdas",
+  bg6: "dssdadsadsadsa",
+  bg7: "dsasdadasdasdsa",
+  bg8: "dsdsaddasdsa",
+  bg9: "dssaddasdsa",
 
   get myBg() {
     imageBay.bg = imageBay[`bg${Math.floor(Math.random() * 9) + 1}`];
@@ -81,18 +72,32 @@ function imageFound() {}
 
 function imageNotFound() {
   if (counter > 20) {
-    console.log(`Recovery failed. No valid background image can be found.`);
+    console.log(
+      `newTabPro: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
+    );
+    document.querySelector(".bg").style.backgroundImage =
+      "url('../images/bgfallback.jpg')";
     return;
   }
-  console.log(
-    `Error: The background image requested at ${
-      imageBay.bg
-    } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
-  );
+  if (counter === 0) {
+    console.log(
+      `newTabPro: ERROR: The background image requested at ${
+        imageBay.bg
+      } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
+    );
+  }
+  if (counter === 1) {
+    console.log(
+      `newTabPro: WARNING: The background image requested at ${
+        imageBay.bg
+      } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
+    );
+    console.log("Suppressing further warnings from this chain.");
+  }
+
   imageBay.myBg;
   document.querySelector(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
-  console.log(counter);
   catchFourZeroFour(imageBay.bg, counter++);
 }
 
