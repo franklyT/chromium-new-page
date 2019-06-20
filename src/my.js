@@ -90,14 +90,14 @@ function imageNotFound() {
       document.querySelector(".bg").style.display = "inline-flex";
     return;
   }
-  if (imageBay.catchDeadLinks.length === 1) {
+  if ((imageBay.catchDeadLinks.length-1) === 0) {
     console.log(
       `newTabPro: ERROR: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
   }
-  if (imageBay.catchDeadLinks.length === 2) {
+  if ((imageBay.catchDeadLinks.length-1) === 1) {
     console.log(
       `newTabPro: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
