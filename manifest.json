@@ -22,5 +22,6 @@
       "16": "favicon16.png",
       "128": "favicon128.png"
     },
-    "permissions":  ["identity","identity.email", "tabs", "bookmarks", "topSites", "chrome://favicon/", "tabs"]
+
+    "permissions":  ["storage", "tabs", "bookmarks", "topSites", "chrome://favicon/", "tabs"]
   }

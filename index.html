@@ -19,7 +19,8 @@
 <div class='container'>
 
   <!--<div id="MyClockDisplay" class="clock"></div> -->
-
+<image class='bg-picker cow' src='icons/cow.png' id='cow'></image>
+<image class='bg-picker tabby' src='icons/favicon128.png' id='tabby'></image>
 	<time id="date" class="clocktext"></time>
 	<time id="time" class="clocktext"></time>
 	<div id="weather" class="clocktext infotext"></div>
@@ -32,9 +33,10 @@
 
     </div>
         <!-- Scripts-->
-        <script async src="src/my.js"></script>
-        <script async src="src/clock.js"></script>
-        <script  src="src/weather.js"></script>
-
+        <script src="src/custom-background-data.js"></script>
+        <script defer src="src/custom-background-engine.js"></script>
+        <script src="src/my.js"></script>
+        <script src="src/weather.js"></script>
+        <script src="src/icons.js"></script>
           </body>
 </html>

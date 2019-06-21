@@ -426,3 +426,33 @@ input {
 
 .clock-container {
 }
+
+
+.bg-picker {
+position: absolute;
+width: 4em;
+height: 4em;
+top: auto;
+left: .5em;
+-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+
+}
+
+.bg-picker:hover:not(.active) {
+  opacity: 0.7;
+}
+
+.bg-picker.cow {
+  left: 5em;
+}
+
+.bg-picker.tabby {
+width: 3.5em;
+height: 3.5em;
+top: .2em;
+}
+
+.bg-picker.active {
+  transition: .2s;
+  -webkit-filter: grayscale(0);
+}

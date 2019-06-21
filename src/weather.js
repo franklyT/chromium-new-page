@@ -1,13 +1,4 @@
-var YOUR_API_KEY_HERE = obfuscate([284361,8786750,15031356,2899696,3852145,187]);
-
-function obfuscate(arr){
-    var k = "0";
-    for (var i=0;i<arr.length;i++){
-        var s = arr[i].toString(16);
-        k += s;
-    }
-    return k;
-}
+var YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 
 //NOTE: ES5 chosen instead of ES6 for compatibility with older mobile devices
 var now, dd, td;
@@ -45,7 +36,6 @@ function updateTime(){
   var sec = now.getSeconds();
   var minutes = now.getMinutes();
   if (locationRequested && sec === 0){
-    checkForSunset(); //checks for sunset once each minute
      if (minutes % 15 === weatherminute){
       getWeather(); //get weather every 15 minutes
       //weatherminute is a random number between
@@ -178,7 +168,6 @@ function processWeather(data){
   wd.innerHTML =  localtemperature + "°";
   sunsettime = Number(data["sys"].sunset);
   sunrisetime = Number(data["sys"].sunrise);
-  checkForSunset();
 }
 
 //random number utility function
