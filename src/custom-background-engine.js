@@ -67,7 +67,6 @@ function imageNotFound() {
 
 chrome.storage.sync.get("allData", function(items) {
   imageBay = items.allData;
-  console.log(imageBay);
 
   var image = document.createElement("img");
   image.src = getBgUrl(document.querySelector(".bg"));
