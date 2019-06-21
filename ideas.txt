@@ -1,0 +1,2 @@
+AM + PM lower half of clock aftertext
+:seconds upper half of clock aftertext

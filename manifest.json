@@ -3,6 +3,7 @@
     "matches": ["http://*/*", "https://*/*"],
     "js": ["src/my.js"]
   }],
+ 
 
     "manifest_version": 2,
     "name": "Tabby Tab",
@@ -12,13 +13,14 @@
     "chrome_url_overrides" : {
         "newtab": "index.html"
       },
-    
+      "background": {
+        "scripts": ["src/background.js"]
+      },
     "description": "Lightweight tab modifier.",
 
     "icons": {
       "16": "favicon16.png",
       "128": "favicon128.png"
     },
-    "optional_permissions": ["bookmarks", "topSites", "chrome://favicon/", "tabs"]
-
+    "permissions":  ["identity","identity.email", "tabs", "bookmarks", "topSites", "chrome://favicon/", "tabs"]
   }
