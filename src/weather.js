@@ -38,7 +38,7 @@ function init(){
 }
 function updateTime(){
   var clockdata = getClockStrings();
-  dd.innerHTML = clockdata.datehtml;
+  // dd.innerHTML = clockdata.datehtml;
   td.innerHTML = clockdata.timehtml;
   dd.dateTime = now.toISOString();
   td.dateTime = now.toISOString();
@@ -63,13 +63,13 @@ function getClockStrings(){
   var hour = now.getHours();
   var minutes = now.getMinutes();
   var seconds = now.getSeconds();
-  var meridian = hour < 12 ? "AM" : "PM";
+  var meridian = hour < 12 ? " AM" : " PM";
   var clockhour = hour > 12 ? hour - 12 : hour;
   if (hour === 0) {clockhour = 12;}
   var clockminutes = minutes < 10 ? "0" + minutes : minutes;
   var clockseconds = seconds < 10 ? "0" + seconds : seconds;
   var datehtml = day + ", " + month + " " + date + ", " + year;
-  var timehtml = clockhour + ":" + clockminutes + "<span>:" + clockseconds + " " + meridian + "</span>";
+  var timehtml = clockhour + ":" + clockminutes + "<span>:" + clockseconds + " " + meridian + "</span>" + "</span>";
   return {"datehtml":datehtml,"timehtml":timehtml};
 }
 function getLocation() {
@@ -91,7 +91,6 @@ function getLocation() {
 
 function showPosition(position) {
   if (!position){
-    gd.innerHTML = "IP address location service is unavailable.";
     return;
   }
   lat = Number(position.lat);
@@ -99,7 +98,7 @@ function showPosition(position) {
   city = position.city;
   region = position.region;
   //gd.innerHTML = "GPS: " + lat.toFixed(2) + " | " + lon.toFixed(2);
-  gd.innerHTML = city + ", " + region;
+  // gd.innerHTML = city + ", " + region;
   if (usephp){
     weatherurl = "clock.php?lat=" + lat + "&lon=" + lon;
     //weatherurl = "clock.php?lat=200&lon=200"; // for testing error response
@@ -149,7 +148,7 @@ function showPosition(position) {
   }
 }
 function getWeather(){
-  wd.innerHTML = "getting weather";
+  wd.innerHTML = " ... ";
   // I opted to use the older XMLHttpRequest because fetch is not supported on old devices like the iPhone 4s
   // I developed this page so I could use my old iPhone 4s as a wall clock.
   var xhttp = new XMLHttpRequest();
@@ -176,25 +175,12 @@ function processWeather(data){
   icon.className = "i" + weather.icon;
   icon.style.opacity = 1;
   var localtemperature = convertTemperature(data["main"].temp).toFixed(0);
-  wd.innerHTML =  localtemperature + "°" + temperaturescale + "&nbsp;&nbsp;" + weather.description;
+  wd.innerHTML =  localtemperature + "°";
   sunsettime = Number(data["sys"].sunset);
   sunrisetime = Number(data["sys"].sunrise);
   checkForSunset();
 }
 
-function checkForSunset(){
-  var nowtime = now.getTime()/1000;
-  //changes the presentation style if the time of day is after sunset
-  //or before the next day's sunrise
-  var isDark = nowtime > sunsettime || nowtime < sunrisetime;
-  document.getElementById("container").className = isDark ? "nightmode" : "daymode";
-  var weather = weatherdata["weather"][0];
-  icon.className = "i" + weather.icon;
-  //uncomment the following if you want santa mode
-  // if (now.getMonth() === 11 && now.getDate() < 26){
-  //   document.getElementById("container").className = "santamode";
-  // }
-}
 //random number utility function
 function randRange(min, max) {
   return Math.floor(Math.random()*(max-min+1))+min;
