@@ -1,5 +1,7 @@
 document.querySelectorAll(".bg-picker").forEach(elm => {
   elm.addEventListener("click", function() {
+    document.querySelector('.bg').display = 'none';
+
     document.querySelectorAll(".bg-picker").forEach(nestedElm => {
       nestedElm.classList.remove("active");
     });
