@@ -236,3 +236,147 @@ vertical-align:middle;
   height: auto;
   width: auto;
 }
+
+
+
+#container {
+  margin:0 auto;
+  padding:0;
+  width:100vw;
+  height:100vh;
+  text-align:center;
+  overflow:hidden;
+}
+.nightmode {
+  background:#121212;
+  background: linear-gradient(to bottom left, #121212 10%,#333955 100%);
+  color:#fff;
+  text-shadow:1px 1px 1px black;
+}
+.daymode {
+  background: #87ceeb;
+  background-image: linear-gradient(to bottom left, #87ceeb 0%,#fff 100%);
+  color:#333;
+  text-shadow:1px 1px 10px white;
+}
+.santamode {
+  background: #0f3;
+  background-image: linear-gradient(to bottom left, #0f3 0%,#fff 100%);
+  color:#c00;
+  text-shadow:1px 1px 10px white;
+}
+.clocktext {
+  display:block;
+  margin:0;
+  padding:1px 0 0 0;
+  width:100%;
+  text-align:center;
+  line-height:1.0;
+  white-space:nowrap;
+}
+#date {
+  font-size:1.3rem;
+  padding-top:15px;
+}
+#time {
+  font-size:5rem;
+  margin:1px 0 0 0;
+}
+#time span {
+  display:inline-block;
+  padding:0;
+  vertical-align: baseline;
+  text-align:left;
+  width: 2em;
+  margin:0 0 0 0.5em;
+  font-size:1.5rem;
+  line-height:1.5;
+  white-space:normal;
+}
+.infotext {
+  margin:0;
+  padding:0 5px 0 5px;
+  font-size:1.3rem;
+  line-height:1.4;
+  width:auto;
+
+}
+#weather {display:block;width:auto;}
+@media (min-width: 480px){
+  #date {font-size:2rem;}
+  #time {font-size:8rem;}
+  #time span {
+      font-size:2rem;
+      line-height: 2;
+  }
+  .infotext {
+      font-size:1.8rem;
+  }
+  #weather {display:inline-block;}
+}
+@media (min-width: 1000px){
+  #date {font-size:4rem;}
+  #time {font-size:16rem;}
+  #time span {
+      font-size:4rem;
+      line-height: 2;
+  }
+  .infotext {
+      font-size:3.6rem;
+  }
+  #weather {display:inline-block;}
+}
+/* Custom icons made with Unicode symbols and CSS */
+#icon {opacity:0;}
+.weathericons {font-family: sans-serif;font-size: 50px;display:inline-block;}
+.weathericons >div {
+display: inline-block;
+height: 50px;
+width: 50px;
+line-height: 1.0;
+margin-left: 1vw;
+padding:0;
+position: relative;
+white-space:nowrap;
+text-align:center;
+vertical-align:middle;
+}
+@media (min-width: 1000px){
+.weathericons {font-size: 100px;}
+.weathericons >div {height: 100px;width: 100px;}
+}
+
+.i01d {background: radial-gradient(ellipse at center, #f1e767 0%,#feb645 100%);border-radius:100%;}
+.i01n {background: radial-gradient(ellipse at center, #99b 0%,#335 100%);border-radius:100%;}
+
+.i02d:before {font-size:70%;content:'\2600';color:#ff0;position:absolute;left:-20%;top:-30%;}
+.i02d:after {content:"\2601";color:#ffe;position:relative;top:1%;left:-10%;}
+.i02n:before {font-size:150%;content:'•';color:#335;position:absolute;left:-15%;top:-30%;}
+.i02n:after {content:"\2601";color:#ccc;position:relative;top:1px;left:-10px;}
+
+.i03d:before {content:"\2601";color:#ffe;}
+.i03n:before {content:"\2601";color:#ccc;}
+
+.i04d:before {content:"\2601";color:#333;position:absolute;left:4%;top:-4%;}
+.i04d:after {content:"\2601";color:#ffe;position:absolute;left:0%;top:10%;}
+
+.i04n:before {content:"\2601";color:#666;position:absolute;left:4%;top:-4%;}
+.i04n:after {content:"\2601";color:#ccd;position:absolute;left:0%;top:10%;}
+
+.i09d:before, .i09n:before  {content:"\1F327";color:#ffe;}
+
+.i10d:before  {content:"\1F326";color:#ffe;}
+
+.i10n:before {font-size:150%;content:'•';color:#533;position:absolute;left:-15%;top:-30%;}
+.i10n:after {content:"\1F327";color:#ccc;position:relative;top:1%;left:-10%;opacity:0.9;}
+
+.i11d:before, .i11n:before  {content:"\26c8";color:#333;}
+.i11n {opacity:0.8;}
+
+.i13d:before, .i13n:before  {content:"\1F328";color:#ffe;}
+.i13d:after, .i13n:after  {content:"\26C4";position:relative;left:-50%;top:-30%;font-size:60%;}
+.i13n {opacity:0.8;}
+
+.i50d:before, .i50n:before  {content:"\FE4C";color:#678;position:relative;left:0%;top:-5%;}
+.i50d:after, .i50n:after  {content:"\FE4C";color:#456;position:relative;left:-100%;top:20%;}
+
