@@ -187,8 +187,8 @@ input {
 #icon {
   opacity: 0;
   right: 0em;
-
-
+  height: .7em;
+  width: .7em;
 }
 .weathericons {
   font-family: sans-serif;
@@ -207,6 +207,9 @@ input {
   top: 0.11em;
   right: 0;
   font-size: 1.5em;
+  width: auto;
+  height: auto;
+
 }
 
 .i01d {
@@ -217,7 +220,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i01n {
@@ -228,7 +230,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -244,7 +245,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i02d:after {
@@ -258,7 +258,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i02n:before {
@@ -273,7 +272,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i02n:after {
@@ -287,7 +285,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -299,7 +296,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i03n:before {
@@ -310,7 +306,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -325,7 +320,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i04d:after {
@@ -339,7 +333,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -354,7 +347,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i04n:after {
@@ -368,7 +360,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -381,7 +372,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -393,7 +383,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -409,7 +398,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i10n:after {
@@ -424,7 +412,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 
@@ -437,7 +424,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-  display: inline-flex;
 
 }
 .i11n {
