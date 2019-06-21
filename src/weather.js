@@ -32,8 +32,6 @@ var days = [
   "Friday",
   "Saturday"
 ];
-var sunsettime = 0;
-var sunrisetime = 0;
 var iconurl = "https://openweathermap.org/img/w/";
 
 document.addEventListener("DOMContentLoaded", init, false);
@@ -130,40 +128,6 @@ function showPosition(position) {
     weatherurl += YOUR_API_KEY_HERE;
     //for the APPID, please substitute your own API Key you can get for free from openweathermap.org
   }
-  /*
-        an alternative to exposing your API Key is to call a php script that
-        calls the weatherurl and returns a json string as part of a document that
-        can be parsed. Codepen doesn't allow php access so I established a throw-away
-        account on openweathermap.org for this demonstration which has the apikey referenced here.
-
-        for a working example that uses php to hide the api key see https://shearspiremedia.com/demos/clock/
-
-        HERE IS A BASIC PHP SCRIPT THAT YOU COULD PLACE IN YOUR OWN clock.php file on your server
-        <!DOCTYPE html>
-        <html lang="en">
-        <head><meta charset="UTF-8"><title>clock data</title></head>
-        <body>
-        <?php
-        error_reporting(0);
-        $latitude = "80";
-        $longitude = "-85";
-        if (isset($_GET["lat"]) && isset($_GET["lon"])) {
-              $latitude = $_GET["lat"];
-              $longitude = $_GET["lon"];
-        }
-        $endpoint = "http://api.openweathermap.org/data/2.5/weather?";
-        $apikey = "YOUR_API_KEY_HERE";
-        $weatherurl = $endpoint . "lat=" . $latitude . "&lon=" . $longitude . "&appid=" . $apikey;
-        $jsonfile = file_get_contents($weatherurl);
-        if ($jsonfile !== false){
-            echo "$jsonfile";
-        }else{
-            echo '{"weather":[{"description":"Weather Unavailable","icon":"01n"}],"main":{"temp":255.372278}}';
-        }
-        ?>
-        </body>
-        </html>
-        */
   if (!locationRequested) {
     getWeather();
     locationRequested = true;
