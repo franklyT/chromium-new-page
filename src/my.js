@@ -103,7 +103,7 @@ function imageNotFound() {
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
       } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
     );
-    console.log("Tabby Tab: Suppressing further warnings from this chain.");
+    console.log("Tabby Tab: NOTIFICATION: Suppressing further warnings from this chain.");
   }
 
   while (imageBay.catchDeadLinks.indexOf(imageBay.myBg) !== -1) {
