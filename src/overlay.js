@@ -1,7 +1,7 @@
 chrome.storage.sync.get("name", function(items) {
-  if (items.name === undefined) {
-    var overlay = document.createElement("div"); 
-    var overlayInput = document.createElement("input"); 
+  if (items.name === undefined || items.name === null) {
+    var overlay = document.createElement("div");
+    var overlayInput = document.createElement("input");
     overlay.innerHTML = "";
     overlayInput.innerHtml = "dsasddasdsa";
     overlayInput.id = "overlayInput";
