@@ -43,14 +43,14 @@ function imageNotFound() {
     console.log(
       `Tabby Tab: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
-      } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
+      } is no longer available. The program is attempting automatic recovery with another image.`
     );
   }
   if (imageBay.catchDeadLinks.length - 1 === 1) {
     console.log(
       `Tabby Tab: WARNING: The background image requested at ${
         imageBay.catchDeadLinks[imageBay.catchDeadLinks.length - 1]
-      } is no longer available. The program is attempting automatic recovery with another image, but this should be noted to the developer.`
+      } is no longer available. The program is attempting automatic recovery with another image.`
     );
     console.log(
       "Tabby Tab: NOTIFICATION: Suppressing further warnings from this chain."

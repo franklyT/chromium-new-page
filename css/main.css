@@ -77,10 +77,17 @@ body {
   width: 100%;
   display: inline-flex;
 }
+
+.search-container {
+  height: auto;
+  width: auto;
+  display: inline-flex;
+}
+
 .absolute-center {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
@@ -101,10 +108,12 @@ body {
 }
 
 .submit {
-  margin-left: 12em;
+  position: absolute;
   height: 2em;
   width: 2em;
   z-index: 1;
+  right: .5em;
+  top: .7em;
 }
 
 .clock {
