@@ -91,6 +91,20 @@ input {
 }
 
 
+.weather-setting-icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: 0.2em;
+  top: 3em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+}
+
+.weather-setting-icon.active {
+  transition: 0.2s;
+  -webkit-filter: grayscale(0);
+}
+
 .bg-picker {
   position: absolute;
   width: 2em;
@@ -114,10 +128,6 @@ input {
   top: 0.2em;
 }
 
-.bg-picker.weather-setting {
-  top: 3em;
-  left: .2em;
-}
 
 .bg-picker.active {
   transition: 0.2s;
@@ -174,6 +184,9 @@ input {
 #masterContainer {
 }
 
+.hidden {
+  display: none !important;
+}
 
 .container {
   height: 100%;

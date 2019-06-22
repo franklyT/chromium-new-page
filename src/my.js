@@ -1,6 +1,44 @@
 // init UI
 //document.querySelector('#masterContainer').style.display = "";
 
+chrome.storage.sync.get("weather", function(items) {
+  if (items.weather === undefined || items.weather === null) {
+  } else {
+    if (items.weather === 'show') {
+      document.querySelector('#weatherCheckbox').checked = true;
+      document.querySelector('.weather-setting-icon').classList.add('active');
+      document.querySelector('#weatherIcons').classList.remove('hidden');
+      document.querySelector('#weather').classList.remove('hidden');  
+  
+
+    } else {
+      document.querySelector('#weatherCheckbox').checked = false;
+      document.querySelector('.weather-setting-icon').classList.remove('active');
+      document.querySelector('#weatherIcons').classList.add('hidden');
+      document.querySelector('#weather').classList.add('hidden');  
+    }
+  }
+});
+
+
+document.querySelector('.slider').addEventListener("click", function() {
+  if (document.querySelector('#weatherCheckbox').checked) {
+    chrome.storage.sync.set({ weather: 'hide' }, function() 
+    {
+    });
+  
+  } else {
+    chrome.storage.sync.set({ weather: 'show' }, function() {
+
+    });
+  
+  }
+    document.querySelector('.weather-setting-icon').classList.toggle('active');
+    document.querySelector('#weatherIcons').classList.toggle('hidden');
+    document.querySelector('#weather').classList.toggle('hidden');  
+});
+
+
 function gSearch() {
   window.location.href = `http://www.google.com/search?q=${
     document.querySelector(".search").value

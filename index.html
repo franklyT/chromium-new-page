@@ -21,11 +21,9 @@
     <div id="masterContainer" class="container">
       <div class="bg"></div>
  
-      <time id="date" class="clocktext"></time>
       <time id="time" class="clocktext"></time>
       <div id="weather" class="clocktext infotext"></div>
-      <div class="weathericons"><div id="icon" class="i01d"></div></div>
-      <div id="gps" class="clocktext infotext"></div>
+      <div id="weatherIcons" class="weathericons"><div id="icon" class="i01d"></div></div>
       <div class='search-container absolute-center'>
       <input class="search" placeholder="Search with Google" />
       <image
@@ -51,13 +49,13 @@
       draggable="false"
     ></image>
     <image
-    class="bg-picker weather-setting"
+    class="weather-setting-icon weather-setting"
     src="icons/weather.png"
     draggable="false"
   ></image>
 
     <label class="weather switch">
-        <input type="checkbox">
+        <input id="weatherCheckbox" type="checkbox">
         <span class="slider round"></span>
       </label>
   </div>
