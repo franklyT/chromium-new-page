@@ -184,7 +184,7 @@ input {
 #masterContainer {
 }
 
-.hidden {
+.display-none {
   display: none !important;
 }
 

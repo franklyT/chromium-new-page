@@ -1,3 +1,12 @@
+document.body.addEventListener("click", function() {
+  if (event.target !== document.querySelector('#settingsIcon')) {
+    console.log(event.target)
+  if ( !(document.querySelector('#settings').classList.contains('hidden')) ) {
+    document.querySelector('#settings').classList.add('hidden');
+  }
+}
+});
+
 document.querySelectorAll(".bg-picker").forEach(elm => {
   elm.addEventListener("click", function() {
     document.querySelector('.bg').display = 'none';
