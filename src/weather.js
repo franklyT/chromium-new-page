@@ -36,7 +36,6 @@ var iconurl = "https://openweathermap.org/img/w/";
 
 document.addEventListener("DOMContentLoaded", init, false);
 function init() {
-  dd = document.getElementById("date");
   td = document.getElementById("time");
   wd = document.getElementById("weather");
   gd = document.getElementById("gps");
@@ -48,9 +47,7 @@ function init() {
 }
 function updateTime() {
   var clockdata = getClockStrings();
-  // dd.innerHTML = clockdata.datehtml;
   td.innerHTML = clockdata.timehtml;
-  dd.dateTime = now.toISOString();
   td.dateTime = now.toISOString();
   var sec = now.getSeconds();
   var minutes = now.getMinutes();
