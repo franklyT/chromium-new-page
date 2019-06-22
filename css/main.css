@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
 }
 
 .bg {
@@ -27,7 +28,7 @@ body {
 #overlay {
 }
 .name-overlay {
-  background: rgb(210, 210, 210, .9);
+  background: rgb(210, 210, 210, 0.9);
   filter: blur(10px);
   -webkit-filter: blur(2px);
   top: 0;
@@ -43,14 +44,14 @@ body {
 }
 
 #overlay > input {
-    z-index: 10;
-    position: absolute;
-    top: 45vh;
-    right: 43vw;
-    height: 2em;
-    width: 8em;
-    border-radius: 1em;
-    padding-left: 1em;
+  z-index: 10;
+  position: absolute;
+  top: 45vh;
+  right: 43vw;
+  height: 2em;
+  width: 8em;
+  border-radius: 1em;
+  padding-left: 1em;
 }
 
 #overlay > input:focus {
@@ -68,11 +69,10 @@ body {
 }
 
 .container {
-  height:auto;
+  height: 100%;
   width: 100%;
   display: flex;
   overflow: hidden;
-
 }
 
 .search-container {
@@ -109,8 +109,8 @@ body {
   height: 2em;
   width: 2em;
   z-index: 1;
-  right: .5em;
-  top: .7em;
+  right: 0.5em;
+  top: 0.7em;
 }
 
 .clock {
@@ -174,31 +174,29 @@ input {
   display: block;
   letter-spacing: 0.02em;
   position: relative;
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 .infotext {
   display: flex;
   font-size: 1.3rem;
   line-height: 1.4;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 #weather {
   position: absolute;
   font-size: 2em;
   right: 2.2em;
-  top: .2em;
+  top: 0.2em;
 }
 /* Custom icons made with Unicode symbols and CSS */
 #icon {
   opacity: 0;
-  display: inline-flex;
+  display: flex;
 }
 .weathericons {
   font-family: sans-serif;
   font-size: 2.8em;
-  display: inline-flex;
-  
-  
+  display: flex;
 }
 .weathericons > div {
   display: inline-flex;
@@ -212,26 +210,21 @@ input {
   top: 0.11em;
   right: 0;
   font-size: 1.5em;
+  height: .7em;
+  width: .7em;
 }
 
 .i01d {
   background: radial-gradient(ellipse at center, #f1e767 0%, #feb645 100%);
   border-radius: 100%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i01n {
   background: radial-gradient(ellipse at center, #99b 0%, #335 100%);
   border-radius: 100%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i02d:before {
@@ -241,12 +234,8 @@ input {
   position: absolute;
   left: -20%;
   top: -30%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i02d:after {
   content: "\2601";
@@ -254,12 +243,8 @@ input {
   position: relative;
   top: 1%;
   left: -10%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i02n:before {
   font-size: 150%;
@@ -268,12 +253,8 @@ input {
   position: absolute;
   left: -15%;
   top: -30%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i02n:after {
   content: "\2601";
@@ -281,33 +262,21 @@ input {
   position: relative;
   top: 1px;
   left: -10px;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i03d:before {
   content: "\2601";
   color: #ffe;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i03n:before {
   content: "\2601";
   color: #ccc;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i04d:before {
@@ -316,12 +285,8 @@ input {
   position: absolute;
   left: 4%;
   top: -4%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i04d:after {
   content: "\2601";
@@ -329,12 +294,8 @@ input {
   position: absolute;
   left: 0%;
   top: 10%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i04n:before {
@@ -343,12 +304,8 @@ input {
   position: absolute;
   left: 4%;
   top: -4%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i04n:after {
   content: "\2601";
@@ -356,34 +313,23 @@ input {
   position: absolute;
   left: 0%;
   top: 10%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i09d:before,
 .i09n:before {
   content: "\1F327";
   color: #ffe;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i10d:before {
   content: "\1F326";
   color: #ffe;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   display: inline-flex;
 }
 
@@ -394,12 +340,8 @@ input {
   position: absolute;
   left: -15%;
   top: -30%;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i10n:after {
   content: "\1F327";
@@ -408,24 +350,16 @@ input {
   top: 1%;
   left: -10%;
   opacity: 0.9;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .i11d:before,
 .i11n:before {
   content: "\26c8";
   color: #333;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .i11n {
   opacity: 0.8;
@@ -468,15 +402,13 @@ input {
 .clock-container {
 }
 
-
 .bg-picker {
-position: absolute;
-width: 4em;
-height: 4em;
-top: auto;
-left: .5em;
--webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: auto;
+  left: 0.5em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 }
 
 .bg-picker:hover:not(.active) {
@@ -484,17 +416,17 @@ left: .5em;
 }
 
 .bg-picker.cow {
-  left: 5em;
+  width: 2.6em;
+  height: 2.6em;
+  left: 3em;
 }
 
 .bg-picker.tabby {
-width: 3.5em;
-height: 3.5em;
-top: .2em;
+  top: 0.2em;
 }
 
 .bg-picker.active {
-  transition: .2s;
+  transition: 0.2s;
   -webkit-filter: grayscale(0);
 }
 
@@ -509,4 +441,70 @@ top: .2em;
   font-weight: 900;
   color: white;
   position: absolute;
+}
+
+.settings {
+  position: absolute;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  bottom: 0;
+  right: 0;
+  margin-right: .5em;
+  margin-bottom: 0.5em;
+  z-index: 10;
+}
+
+.settings.active {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.settings-menu {
+  background-color: #FF8A65;
+  position: absolute;
+  display: flex;
+  width: 6em;
+  height: 10em;
+  bottom: 3em;
+  right: 0;
+  margin-right: -.5em;
+  border-radius: .5em;
+  border: 2px solid black;
+  transition: width 1s;
+
+  -webkit-transform: translatez(0);
+}
+
+.settings-menu.hidden {
+  width: 0em;
+  transition: width .5s;
+
+  -webkit-transform: translatez(0);
 }

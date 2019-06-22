@@ -14,6 +14,18 @@ document.querySelector(".search").addEventListener("keydown", event => {
   }
 });
 
+document.querySelector(".settings").addEventListener("click", function() {
+  event.target.style.pointerEvents  = "none";
+  event.target.classList.toggle('active');
+  document.querySelector('.settings-menu').classList.toggle('hidden');
+  setTimeout(
+    function() {
+      document.querySelector('.settings').classList.toggle('active');
+      document.querySelector('.settings').style.pointerEvents  = "";
+
+    }, 1000);
+});
+
 /* function ready() {
   document.querySelector(".search").focus();
 };
