@@ -1,4 +1,3 @@
-let imageBay = {};
 function gSearch() {
   window.location.href = `http://www.google.com/search?q=${
     document.querySelector(".search").value

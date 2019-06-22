@@ -172,28 +172,30 @@ input {
 }
 .infotext {
   display: flex;
-  padding: 0 5px 0 5px;
   font-size: 1.3rem;
   line-height: 1.4;
+  letter-spacing: .05em;
 }
 #weather {
   position: absolute;
-  font-size: 3em;
-  top: 0;
-  right: 1.5em;
+  font-size: 2em;
+  right: 1.4em;
   
 }
 /* Custom icons made with Unicode symbols and CSS */
 #icon {
   opacity: 0;
   right: 0em;
-  height: .7em;
-  width: .7em;
+  height: .4em;
+  width: .4em;
+  margin-right: .2em;
+
 }
 .weathericons {
   font-family: sans-serif;
   font-size: 50px;
   display: inline-flex;
+  
 }
 .weathericons > div {
   display: inline-flex;
@@ -207,8 +209,6 @@ input {
   top: 0.11em;
   right: 0;
   font-size: 1.5em;
-  width: auto;
-  height: auto;
 
 }
 
@@ -220,7 +220,6 @@ input {
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
-
 }
 .i01n {
   background: radial-gradient(ellipse at center, #99b 0%, #335 100%);

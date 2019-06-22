@@ -66,16 +66,25 @@ function imageNotFound() {
 }
 
 chrome.storage.sync.get("allData", function(items) {
-  imageBay = items.allData;
+  // Sets a default BG status
+  if (items.allData === null || items.allData === undefined || !items.allData) {
+    chrome.storage.sync.set({ allData: tabbyBg, bgID: "tabby" }, function() {
+      imageBay = tabbyBg;
+      imageBay.bg = myBg();
+      callBackground();
+      catchFourZeroFour(imageBay.bg);
+    });
+  } else {
+    imageBay = items.allData;
+    var image = document.createElement("img");
+    image.src = getBgUrl(document.querySelector(".bg"));
+    image.onload = function() {
+      document.querySelector(".bg").style.display = "inline-flex";
+    };
 
-  var image = document.createElement("img");
-  image.src = getBgUrl(document.querySelector(".bg"));
-  image.onload = function() {
-    document.querySelector(".bg").style.display = "inline-flex";
-  };
+    imageBay.bg = myBg();
 
-  imageBay.bg = myBg();
-
-  callBackground();
-  catchFourZeroFour(imageBay.bg);
+    callBackground();
+    catchFourZeroFour(imageBay.bg);
+  }
 });
