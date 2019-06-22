@@ -25,39 +25,6 @@ body {
   animation: fadein 2s;
 }
 
-#overlay {
-}
-.name-overlay {
-  background: rgb(210, 210, 210, 0.9);
-  filter: blur(10px);
-  -webkit-filter: blur(2px);
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  max-width: 100%;
-  max-height: 100%;
-  display: inline-flex;
-}
-
-#overlay > input {
-  z-index: 10;
-  position: absolute;
-  top: 45vh;
-  right: 43vw;
-  height: 2em;
-  width: 8em;
-  border-radius: 1em;
-  padding-left: 1em;
-}
-
-#overlay > input:focus {
-  outline: none;
-}
-
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
   from {
@@ -66,19 +33,6 @@ body {
   to {
     opacity: 1;
   }
-}
-
-.container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-}
-
-.search-container {
-  height: auto;
-  width: auto;
-  display: inline-flex;
 }
 
 .absolute-center {
@@ -134,6 +88,99 @@ body {
 button,
 input {
   font-size: 2em;
+}
+
+
+.bg-picker {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: auto;
+  left: 0.5em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+}
+
+.bg-picker:hover:not(.active) {
+  opacity: 0.7;
+}
+
+.bg-picker.cow {
+  width: 2.6em;
+  height: 2.6em;
+  left: 3em;
+}
+
+.bg-picker.tabby {
+  top: 0.2em;
+}
+
+.bg-picker.active {
+  transition: 0.2s;
+  -webkit-filter: grayscale(0);
+}
+
+.settings {
+  position: absolute;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  bottom: 0;
+  right: 0;
+  margin-right: .5em;
+  margin-bottom: 0.5em;
+  z-index: 10;
+}
+
+.settings.active {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+#overlay {
+}
+
+#masterContainer {
+}
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.search-container {
+  height: auto;
+  width: auto;
+  display: inline-flex;
 }
 
 .clocktext {
@@ -399,92 +446,20 @@ input {
   top: 20%;
 }
 
-.clock-container {
-}
-
-.bg-picker {
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  top: auto;
-  left: 0.5em;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-}
-
-.bg-picker:hover:not(.active) {
-  opacity: 0.7;
-}
-
-.bg-picker.cow {
-  width: 2.6em;
-  height: 2.6em;
-  left: 3em;
-}
-
-.bg-picker.tabby {
-  top: 0.2em;
-}
-
-.bg-picker.active {
-  transition: 0.2s;
-  -webkit-filter: grayscale(0);
-}
 
 .greeting {
-  top: 55%;
-  bottom: 50%;
-  left: 30vw;
+  display: inline-block;
   width: auto;
   height: auto;
-  display: inline-flex;
-  font-size: 500%;
+  font-size: 4rem;
   font-weight: 900;
   color: white;
-  position: absolute;
+  margin-top: 1.5em;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+  2px 2px 0 #000;
+
 }
 
-.settings {
-  position: absolute;
-  display: flex;
-  width: 2em;
-  height: 2em;
-  bottom: 0;
-  right: 0;
-  margin-right: .5em;
-  margin-bottom: 0.5em;
-  z-index: 10;
-}
-
-.settings.active {
-  -webkit-animation-name: spin;
-  -webkit-animation-duration: 1000ms;
-  -webkit-animation-fill-mode: forwards;
-}
-
-@-moz-keyframes spin {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .settings-menu {
   background-color: #FF8A65;
@@ -507,4 +482,63 @@ input {
   transition: width .5s;
 
   -webkit-transform: translatez(0);
+}
+
+
+.typewriter {
+  color: black;
+  font-family: serif;
+  font-size: 3em;
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  -webkit-transform: translatez(0);
+  width: 500px;
+  height: 500px;
+}
+
+.typedText {
+  display: inline;
+  white-space: no-wrap;
+  overflow: auto;
+}
+
+.blink {
+  font-weight: bold;
+  animation: 
+  blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { color: transparent }
+  25% { color: black; }
+}
+
+.name-overlay {
+  background: rgb(255, 255, 255, 1);
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-flex;
+}
+
+#overlay > input {
+  z-index: 10;
+  position: absolute;
+  top: 45vh;
+  right: 43vw;
+  height: 2em;
+  width: 8em;
+  border-radius: 1em;
+  padding-left: 1em;
+}
+
+#overlay > input:focus {
+  outline: none;
 }

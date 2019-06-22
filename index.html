@@ -18,10 +18,8 @@
     />
   </head>
   <body>
-    <div class="container">
-        <div class="bg"></div>
-
-      <!--<div id="MyClockDisplay" class="clock"></div> -->
+    <div id="masterContainer" class="container">
+      <div class="bg"></div>
  
       <time id="date" class="clocktext"></time>
       <time id="time" class="clocktext"></time>
@@ -54,17 +52,15 @@
     ></image>
 
   </div>
-      <!--<div id='greeting' class='greeting'></div>
-<div id='overlay'></div>-->
-      <div id="greeting" class="greeting"></div>
+      <div id="greeting" class="greeting absolute-center"></div>
       <div id="overlay"></div>
     </div>
     <!-- Scripts-->
+    <script src="src/overlay.js"></script>
+    <script src="src/my.js"></script>
     <script src="src/custom-background-data.js"></script>
     <script src="src/custom-background-engine.js"></script>
-    <script src="src/my.js"></script>
     <script src="src/weather.js"></script>
     <script src="src/icons.js"></script>
-    <!--   <script src="src/overlay.js"></script>-->
   </body>
 </html>
