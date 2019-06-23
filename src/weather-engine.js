@@ -114,17 +114,11 @@ function showPosition(position) {
   lon = Number(position.lon);
   city = position.city;
   region = position.region;
-  //gd.innerHTML = "GPS: " + lat.toFixed(2) + " | " + lon.toFixed(2);
-  // gd.innerHTML = city + ", " + region;
-  if (usephp) {
-    weatherurl = "clock.php?lat=" + lat + "&lon=" + lon;
-    //weatherurl = "clock.php?lat=200&lon=200"; // for testing error response
-  } else {
     weatherurl = "https://api.openweathermap.org/data/2.5/weather?";
     weatherurl += "lat=" + lat + "&lon=" + lon + "&APPID=";
     weatherurl += YOUR_API_KEY_HERE;
     //for the APPID, please substitute your own API Key you can get for free from openweathermap.org
-  }
+
   if (!locationRequested) {
     getWeather();
     locationRequested = true;
@@ -135,11 +129,11 @@ function getWeather() {
   // I opted to use the older XMLHttpRequest because fetch is not supported on old devices like the iPhone 4s
   // I developed this page so I could use my old iPhone 4s as a wall clock.
   var xhttp = new XMLHttpRequest();
-  xhttp.responseType = usephp ? "document" : "text"; //the php file returns a document rather than plain text
+  xhttp.responseType = "text";
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       //when using php as a data source we need the textContent of the body of the returned document
-      var data = usephp ? xhttp.response.body.textContent : xhttp.responseText;
+      var data = xhttp.responseText;
       processWeather(JSON.parse(data));
     }
   };
