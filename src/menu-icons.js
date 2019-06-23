@@ -1,8 +1,8 @@
-document.querySelectorAll(".bg-picker").forEach(elm => {
+selectAll(".bg-picker").forEach(elm => {
   elm.addEventListener("click", function() {
-    document.querySelector(".bg").display = "none";
+    select(".bg").display = "none";
 
-    document.querySelectorAll(".bg-picker").forEach(nestedElm => {
+    selectAll(".bg-picker").forEach(nestedElm => {
       nestedElm.classList.remove("active");
     });
     event.target.classList.add("active");
@@ -26,5 +26,5 @@ document.querySelectorAll(".bg-picker").forEach(elm => {
 });
 
 chrome.storage.sync.get("bgID", function(items) {
-  document.querySelector("#" + items.bgID).classList.add("active");
+  select("#" + items.bgID).classList.add("active");
 });

@@ -3,7 +3,7 @@ chrome.storage.sync.get("name", function(items) {
     
     var overlay = document.createElement("div");
     overlay.classList.add("name-overlay");
-    document.querySelector("#overlay").appendChild(overlay);
+    select("#overlay").appendChild(overlay);
 
     setTimeout(function(){
           
@@ -37,16 +37,16 @@ chrome.storage.sync.get("name", function(items) {
           var overlayInput = document.createElement("input");
           overlayInput.innerHtml = "";
           overlayInput.id = "overlayInput";
-          document.querySelector("#overlay").appendChild(overlayInput);
-          document.querySelector("#overlayInput").addEventListener("keydown", event => {
+          select("#overlay").appendChild(overlayInput);
+          select("#overlayInput").addEventListener("keydown", event => {
             if (event.isComposing || event.keyCode === 13) {
     
               chrome.storage.sync.set(
-                { name: document.querySelector("#overlayInput").value },
+                { name: select("#overlayInput").value },
                 function() {}
               );
-              document.querySelector('#greeting').innerHTML = `Hi, ${document.querySelector("#overlayInput").value}.`;
-              document.querySelector("#overlay").parentNode.removeChild(document.querySelector("#overlay"));
+              select('#greeting').innerHTML = `Hi, ${select("#overlayInput").value}.`;
+              select("#overlay").parentNode.removeChild(select("#overlay"));
             }
           });
   
@@ -59,8 +59,7 @@ chrome.storage.sync.get("name", function(items) {
     }, 1500);
 
   } else {
-      console.log(items.name)
-      document.querySelector('#greeting').innerHTML = `Hi, ${items.name}.`;
+      select('#greeting').innerHTML = `Hi, ${items.name}.`;
   }
 });
 
@@ -69,7 +68,7 @@ function typeWrite(text, n) {
   
   if (n < (text.length)) {
    
- let paragraph = document.querySelector('.typedText');
+ let paragraph = select('.typedText');
     paragraph.textContent = text.substring(0, n+1);
     n++;
     setTimeout(function() {

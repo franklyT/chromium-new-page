@@ -14,21 +14,21 @@ function selectAll(sel) {
 
 // init UI
 //document.querySelector('#masterContainer').style.display = "";
-function gSearch() {
-  window.location.href = `http://www.google.com/search?q=${
-    document.querySelector(".search").value
-  }`;
-}
+//function gSearch() {
+//  window.location.href = `http://www.google.com/search?q=${
+//    select(".search").value
+//  }`;
+//}
 
-document.querySelector(".submit").addEventListener("click", function() {
-  gSearch();
-});
+// select(".submit").addEventListener("click", function() {
+ // gSearch();
+//});
 
-document.querySelector(".search").addEventListener("keydown", event => {
-  if (event.isComposing || event.keyCode === 13) {
-    gSearch();
-  }
-});
+//select(".search").addEventListener("keydown", event => {
+ // if (event.isComposing || event.keyCode === 13) {
+  //  gSearch();
+ // }
+//});
 
 //random number utility function
 function randRange(min, max) {
@@ -36,6 +36,6 @@ function randRange(min, max) {
 }
 
 /* function ready() {
-  document.querySelector(".search").focus();
+  select(".search").focus();
 };
 */
