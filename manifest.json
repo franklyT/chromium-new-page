@@ -14,7 +14,7 @@
         "newtab": "index.html"
       },
       "background": {
-        "scripts": ["src/background.js"]
+        "scripts": [""]
       },
     "description": "Lightweight tab modifier.",
 
