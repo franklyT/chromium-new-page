@@ -1,15 +1,6 @@
-document.body.addEventListener("click", function() {
-  if (event.target !== document.querySelector('#settingsIcon') && !(document.querySelector('#settingsParentNode').contains(event.target))) {
-
-  if ( !(document.querySelector('#settings').classList.contains('hidden')) ) {
-    document.querySelector('#settings').classList.add('hidden');
-  }
-}
-});
-
 document.querySelectorAll(".bg-picker").forEach(elm => {
   elm.addEventListener("click", function() {
-    document.querySelector('.bg').display = 'none';
+    document.querySelector(".bg").display = "none";
 
     document.querySelectorAll(".bg-picker").forEach(nestedElm => {
       nestedElm.classList.remove("active");
