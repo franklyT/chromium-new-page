@@ -1,8 +1,3 @@
-// Safety check utility function
-function isNative(fn) {
-	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
-}
-
 // querySelector utility functions
 function select(sel) {
   return typeof sel == "string" ? document.querySelector(sel) : sel;
@@ -10,6 +5,16 @@ function select(sel) {
 
 function selectAll(sel) {
   return typeof sel == "string" ? document.querySelectorAll(sel) : sel;
+}
+
+// Safety check utility function
+function isNative(fn) {
+	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
+}
+
+//random number utility function
+function randRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // init UI
@@ -29,11 +34,6 @@ function selectAll(sel) {
   //  gSearch();
  // }
 //});
-
-//random number utility function
-function randRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 /* function ready() {
   select(".search").focus();
