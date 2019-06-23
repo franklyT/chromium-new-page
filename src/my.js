@@ -1,3 +1,17 @@
+// We define a few things, so we'll implement a safety check
+function isNative(fn) {
+	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
+}
+
+// querySelector helper
+function select(sel) {
+  return typeof sel == "string" ? document.querySelector(sel) : sel;
+}
+
+function selectAll(sel) {
+  return typeof sel == "string" ? document.querySelectorAll(sel) : sel;
+}
+
 // init UI
 //document.querySelector('#masterContainer').style.display = "";
 function gSearch() {
