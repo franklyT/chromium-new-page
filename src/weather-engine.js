@@ -131,7 +131,6 @@ function getWeather() {
   xhttp.responseType = "text";
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-      //when using php as a data source we need the textContent of the body of the returned document
       var data = xhttp.responseText;
       processWeather(JSON.parse(data));
     }
@@ -154,9 +153,4 @@ function processWeather(data) {
   wd.innerHTML = localtemperature + "°";
   sunsettime = Number(data["sys"].sunset);
   sunrisetime = Number(data["sys"].sunrise);
-}
-
-//random number utility function
-function randRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

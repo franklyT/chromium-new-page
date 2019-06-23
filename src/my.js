@@ -16,6 +16,11 @@ document.querySelector(".search").addEventListener("keydown", event => {
   }
 });
 
+//random number utility function
+function randRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 /* function ready() {
   document.querySelector(".search").focus();
 };
