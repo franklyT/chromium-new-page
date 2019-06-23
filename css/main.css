@@ -210,7 +210,7 @@ input {
   line-height: 1;
   white-space: nowrap;
   color: white;
-  font-size: 800%;
+  font-size: 9rem;
   font-family: "Roboto Mono", monospace;
   font-weight: 900;
   letter-spacing: -5px;
@@ -466,7 +466,7 @@ input {
   font-size: 4rem;
   font-weight: 900;
   color: white;
-  margin-top: 1em;
+  margin-top: .5em;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
   2px 2px 0 #000;
 }
