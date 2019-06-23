@@ -4,6 +4,7 @@ document.body.addEventListener("click", function() {
     !select("#settingsParentNode").contains(event.target) &&
     !select('#settings').classList.contains('hidden')
   ) {
+    
     toggleSpin();
     select(".settings").style.pointerEvents = "none";
     setTimeout(function() {
