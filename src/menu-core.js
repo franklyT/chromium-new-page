@@ -27,6 +27,7 @@ select(".settings-menu").classList.toggle("hidden");
 
 
 function toggleSpin() {
+
     if (select('#settings').classList.contains('hidden')) {
     select(".settings").classList.remove("fSpin");
     select(".settings").classList.add("rSpin");
