@@ -146,34 +146,33 @@ input {
   z-index: 10;
 }
 
-.settings.active {
-  -webkit-animation-name: spin;
+.settings.fSpin {
+  -webkit-animation-name: fSpin;
   -webkit-animation-duration: 1000ms;
   -webkit-animation-fill-mode: forwards;
 }
 
-@-moz-keyframes spin {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
+.settings.rSpin {
+  -webkit-animation-name: rSpin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-fill-mode: forwards;
 }
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
+
+@keyframes fSpin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes rSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
 
