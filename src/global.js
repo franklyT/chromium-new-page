@@ -1,4 +1,4 @@
-// querySelector shorthand functions
+// querySelector helper rewriters
 function select(sel) {
   return typeof sel == "string" ? document.querySelector(sel) : sel;
 }
