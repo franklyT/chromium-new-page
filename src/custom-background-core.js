@@ -7,6 +7,7 @@ function bgLength() {
     return /[bg][0-9]/g.test(elm);
   });
 }
+
 function callBackground() {
   select(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
