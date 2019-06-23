@@ -33,3 +33,8 @@ function toggleSpin() {
     select(".settings").classList.remove("rSpin");
   }
 }
+
+
+select('.settings-menu-name-reset').addEventListener('click', function() {
+  callGreetings(true);
+});

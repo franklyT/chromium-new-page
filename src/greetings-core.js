@@ -1,5 +1,9 @@
+let name = '';
+
+function callGreetings(reset=false) {
+
 chrome.storage.sync.get("name", function(items) {
-  if (items.name === undefined || items.name === null) {
+  if (items.name === undefined || items.name === null || reset === true) {
     
     var overlay = document.createElement("div");
     overlay.classList.add("name-overlay");
@@ -45,6 +49,8 @@ chrome.storage.sync.get("name", function(items) {
                 { name: select("#overlayInput").value },
                 function() {}
               );
+              name = select("#overlayInput").value;
+              select('.settings-menu-name').innerHTML = name;
               select('#greeting').innerHTML = `Hi, ${select("#overlayInput").value}.`;
               select("#overlay").parentNode.removeChild(select("#overlay"));
             }
@@ -59,9 +65,13 @@ chrome.storage.sync.get("name", function(items) {
     }, 1500);
 
   } else {
+      name = items.name;
+      select('.settings-menu-name').innerHTML = name;
       select('#greeting').innerHTML = `Hi, ${items.name}.`;
   }
 });
+
+}
 
 // Typewriter
 function typeWrite(text, n) {
@@ -76,3 +86,5 @@ function typeWrite(text, n) {
     }, 100);
   }
 }
+
+callGreetings();
