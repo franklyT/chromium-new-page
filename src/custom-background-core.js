@@ -13,11 +13,12 @@ function callBackground() {
   +"')";
 }
 
-function getBgUrl(el) {
+function getBgUrl(elm) {
   var bg = "";
-  bg = el.style.backgroundImage;
+  bg = elm.style.backgroundImage;
   return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
+
 function catchFourZeroFour(url) {
   let tester = new Image();
   tester.addEventListener("load", imageFound);
