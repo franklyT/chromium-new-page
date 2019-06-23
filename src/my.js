@@ -1,9 +1,9 @@
-// We define a few things, so we'll implement a safety check
+// Safety check utility function
 function isNative(fn) {
 	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
 }
 
-// querySelector helper
+// querySelector utility functions
 function select(sel) {
   return typeof sel == "string" ? document.querySelector(sel) : sel;
 }
