@@ -40,6 +40,6 @@ chrome.storage.sync.get("bgID", function(items) {
 // Freeze BG sound effect
 // https://freesound.org/people/JustInvoke/sounds/446112/
 select('.freeze').addEventListener("click", () => {
-  var audio = new Audio('sounds/freeze-sound.wav');
+  var audio = new Audio('audio/freeze-sound.wav');
   audio.play();
 });
