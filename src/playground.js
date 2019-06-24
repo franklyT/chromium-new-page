@@ -33,7 +33,14 @@ chrome.topSites.get(function(items) {
         let domImg = document.createElement('img');
          domImg.src = `https://api.faviconkit.com/${urlReplace}144`;
          domImg.onload = function() {
+             if (domImg.width && domImg.height > 50) {
                 newBox.appendChild(domImg)
+             } else {
+                domImg.src = '/icons/domain.png';
+                newBox.appendChild(domImg)
+                console.log(`Favicon resolution too small.`)
+    
+             }
                // domImg.src = '/icons/domain.png'
                // newBox.appendChild(domImg)
                // console.log('Favicon too small.')}
