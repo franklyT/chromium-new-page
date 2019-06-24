@@ -1,5 +1,6 @@
 /* Disclaimer: In addition to project licensing, it should be noted that images used are royalty-free
    via several sources: Pexels, Unsplash, premium licensing from icon providers, custom work, etc.
+   Other attribution is noted where applicable.
 */
 
 
