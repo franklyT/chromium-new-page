@@ -30,21 +30,20 @@ chrome.topSites.get(function(items) {
         urlReplace = elm.url.replace(/(^\w+:|^)\/\//, '');
 
 
-         domImg = document.createElement('img');
+        let domImg = document.createElement('img');
          domImg.src = `https://api.faviconkit.com/${urlReplace}144`;
-         
          domImg.onload = function() {
                 newBox.appendChild(domImg)
                // domImg.src = '/icons/domain.png'
                // newBox.appendChild(domImg)
                // console.log('Favicon too small.')}
-        }
+        
+    }
         domImg.onerror = function() {
             domImg.src = '/icons/domain.png';
             newBox.appendChild(domImg)
-            console.log('Error.')
-        } 
-
+            console.log(`Can't load favicon.`)
+    }
 
         // newBox.style.backgroundImage = `url(${String(img)})`;
 
