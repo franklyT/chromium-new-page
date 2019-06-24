@@ -36,6 +36,51 @@ let cowBg = {
 
   bg21: "https://images.pexels.com/photos/735976/pexels-photo-735976.jpeg",
 
+  bg22: "https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5",
+  bg23: "https://images.unsplash.com/photo-1500595046743-cd271d694d30",
+  bg24: "https://images.unsplash.com/photo-1532445697400-f5c10fb93a11",
+  bg25: "https://images.unsplash.com/photo-1531299192269-7e6cfc8553bb",
+  bg26: "https://images.unsplash.com/photo-1486235460219-00a0f2afc438",
+  bg27: "https://images.unsplash.com/photo-1549488235-42996ae3b650",
+  bg28: "https://images.unsplash.com/photo-1465379944081-7f47de8d74ac",
+  bg29: "https://images.unsplash.com/photo-1518738727790-122bb19785e2",
+  bg30: "https://images.unsplash.com/photo-1451372116829-ba19e28465fc",
+  bg31: "https://images.unsplash.com/photo-1496178149619-50f91d4669fc",
+  bg32: "https://images.unsplash.com/photo-1504495395630-bc2ab1e5662c",
+  bg33: "https://images.unsplash.com/photo-1505218826806-f8c3daade016",
+  bg34: "https://images.unsplash.com/uploads/1411451353252e1ebf14d/f65e226b",
+  bg35: "https://images.unsplash.com/photo-1500139223203-01825c8badf2",
+  bg36: "https://images.unsplash.com/photo-1501327264802-546b9fb0f1f1",
+  bg37: "https://images.unsplash.com/photo-1467281302880-90c886183974",
+
+  bg38: "https://images.unsplash.com/photo-1559492302-0669e721a0f9",
+
+  bg39: "https://images.unsplash.com/photo-1554747706-2e474e1ae0c6",
+
+  bg40: "https://images.unsplash.com/photo-1542105884-13316ea17ecf",
+
+  bg41: "https://images.unsplash.com/photo-1541870799710-f21a63a397a6",
+
+  bg42: "https://images.unsplash.com/photo-1529243941618-44abb0a77c3d",
+
+  bg43: "https://images.unsplash.com/photo-1530268782463-418534b0affa",
+
+  bg44: "https://images.unsplash.com/photo-1526665124088-4e57744b58b2",
+
+  bg45: "https://images.unsplash.com/photo-1505301413894-df1192c247d7",
+  bg46: "https://images.unsplash.com/photo-1548878944-e4c175ae854d",
+
+  bg47: "https://images.unsplash.com/photo-1525986023807-78b03ace23b4",
+
+  bg48: "https://images.unsplash.com/photo-1548976218-4d90773b9778",
+  bg49: "https://images.unsplash.com/photo-1507103011901-e954d6ec0988",
+  bg50: "https://images.unsplash.com/photo-1541149852199-2b6053d83518",
+  bg51: "https://images.unsplash.com/photo-1455348734739-11d7726c3c80",
+
+  bg52: "https://images.unsplash.com/photo-1559208944-7e1f70a53912",
+  bg53: "https://images.unsplash.com/photo-1541097421374-b1f2fc132e06",
+  bg54: "https://images.unsplash.com/photo-1552819686-c27dc0f71dd6",
+
   bg: "",
 
   catchDeadLinks: []
