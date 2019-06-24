@@ -1,4 +1,3 @@
-name = "x";
 const greetingsList = {
     morning: [`Good morning, ${name}!`, `Morning, ${name}!`, `Rise and shine, ${name}.`, `How did you sleep, ${name}?`,
               `Top o' the mornin' to ya, ${name}.`, `Buenos dias, ${name}.`, `Ciao, ${name}.`, `Konichiwa, ${name}.`],
@@ -10,3 +9,9 @@ const greetingsList = {
                 `Hiya, ${name}.`, `How's everything, ${name}?`, `Long time no see, ${name}.`],
     holiday: []
 }
+
+
+// Playing around with this for now
+setTimeout(function() {
+    console.log(greetingsList.morning[randRange(0, greetingsList.morning.length-1)]);
+}, 1000);

@@ -68,6 +68,7 @@ chrome.storage.sync.get("name", function(items) {
       name = items.name;
       select('.settings-menu-name').innerHTML = name;
       select('#greeting').innerHTML = `Hi, ${items.name}.`;
+      console.log(name)
   }
 });
 
