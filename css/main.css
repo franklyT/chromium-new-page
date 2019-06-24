@@ -138,12 +138,14 @@ input {
 }
 
 .topsites-box {
-  background: white;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   background-repeat: no-repeat, repeat;
   background-size: cover;
+}
 
+.topsites-box:hover {
+  opacity: 0.8;
 }
 
 .bg-picker:hover:not(.active) {

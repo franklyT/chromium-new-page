@@ -21,7 +21,12 @@ chrome.topSites.get(function(items) {
 // I'd like to generate my own favicon getter, though
   console.log(topSites[0].url)
     select('.topsites-box').style.backgroundImage = `url(https://api.faviconkit.com/${topSites[0].url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}/144)`;
+    select('.topsites-box').addEventListener("click", () => {
+        window.location.href = topSites[0].url;
+    })
 });
+
+
 
 // Testing grab favicon for topsites
 console.log(`https://plus.google.com/_/favicon?domain_url=http://www.stackoverflow.com`)
