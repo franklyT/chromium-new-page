@@ -25,8 +25,19 @@ chrome.topSites.get(function(items) {
         newBox.addEventListener("click", ()=> {
         window.location.href = topSites[topSites.indexOf(elm)].url
         })
+
         select('#topSites').appendChild(newBox);
-        faviconParser(topSites[topSites.indexOf(elm)].url, newBox)
+        urlReplace = elm.url.replace(/(^\w+:|^)\/\//, '');
+
+        try {
+         img = `https://api.faviconkit.com/${urlReplace}144`;
+         newBox.style.backgroundImage = `url(${String(img)})`;
+    }
+    catch(error) {
+        newBox.style.backgroundImage = 'icons/domain.png'
+    }
+
+      //  faviconParser(topSites[topSites.indexOf(elm)].url, newBox)
     })
 });
 
@@ -47,7 +58,7 @@ chrome.topSites.get(function(items) {
 
 // Favicon parser
 let indexedQ = '';
-
+/*
 function faviconParser(link, elm='') {
 let indexed;
 let xhr = new XMLHttpRequest();
@@ -99,7 +110,7 @@ xhr.onload = function () {
 };
 xhr.send(null);
 }
-
+*/
 //async function returnFavicon(link) {
     //    await faviconParser(link);
     //    console.log(indexedQ);
