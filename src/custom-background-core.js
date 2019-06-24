@@ -70,7 +70,7 @@ function imageNotFound() {
 chrome.storage.sync.get("allData", function(items) {
   // Sets a default BG status
   if (items.allData === null || items.allData === undefined || !items.allData) {
-    chrome.storage.sync.set({ allData: tabbyBg, bgID: "tabby" }, function() {
+    chrome.storage.sync.set({ allData: vanillaBg, bgID: "vanilla" }, function() {
       imageBay = tabbyBg;
       imageBay.bg = myBg();
       callBackground();
