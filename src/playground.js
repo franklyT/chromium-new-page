@@ -18,9 +18,9 @@ chrome.topSites.get(function(items) {
         topSites.push(elm)
     })
     topSites.forEach((elm)=> {
-        console.log(elm.url)
         let newBox = document.createElement('div');
         newBox.classList.add('topsites-box');
+        newBox.title = elm.title
         newBox.addEventListener("click", ()=> {
         window.location.href = topSites[topSites.indexOf(elm)].url
         })
@@ -69,6 +69,7 @@ xhr.onload = function () {
                 return a.match(/[^a-zA-Z]{3}.png/gm) > b.match(/[^a-zA-Z]{3}.png/gm) ? a : b;
             })
             indexedQ = indexed;
+            console.log(indexed)
             elm.style.backgroundImage = `url(${indexedQ})`
         }
         catch(err) {
@@ -76,10 +77,15 @@ xhr.onload = function () {
             let img = document.createElement("img");
                 img.src = `${link}apple-touch-icon.png`;
             img.onload = function() {
+                if (img.width > 50 && img.height > 50) {
                 indexedQ = `${link}apple-touch-icon.png`;
                 elm.style.backgroundImage = `url(${indexedQ})`
+                } else {
+                    elm.style.backgroundImage = `url(/icons/domain.png)`    
+                    console.log('Favicon too small.')}
             }
             img.onerror = function() {
+                elm.style.backgroundImage = `url(/icons/domain.png)`    
                 console.log(`No favicon gathered.`)
             } 
         }
