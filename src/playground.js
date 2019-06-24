@@ -17,6 +17,7 @@ chrome.topSites.get(function(items) {
     items.forEach( (elm)=> {
         topSites.push(elm)
     })
+
     topSites.forEach((elm)=> {
         let newBox = document.createElement('div');
         newBox.classList.add('topsites-box');
@@ -25,7 +26,7 @@ chrome.topSites.get(function(items) {
         window.location.href = topSites[topSites.indexOf(elm)].url
         })
         select('#topSites').appendChild(newBox);
-        faviconParser(elm.url, newBox)
+        faviconParser(topSites[topSites.indexOf(elm)].url, newBox)
     })
 });
 
@@ -49,7 +50,7 @@ let indexedQ = '';
 
 function faviconParser(link, elm='') {
 let indexed;
-var xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 xhr.open('GET', link, true);
 
 // If specified, responseType must be empty string or "text"
@@ -59,20 +60,26 @@ xhr.onload = function () {
         if (xhr.status === 200) {
             indexed = xhr.responseText;
             try {
-            indexed = indexed.match(/http(.*?).png/g).join(' ').split(' ')
+            indexed = indexed.match(/http.*.png/gm).join(' ').split(' ')
                                     .filter( (elm)=> {
-                                            return (elm.indexOf('favicon') !== -1)
-                                        }).join(' ').match(/http.*[^a-zA-Z]{3}.png /gm).join(' ').split(' ')
-            indexed = indexed.filter((elm)=> {
-                 return (elm.match(/[^a-zA-Z]{3}.png/gm))
-            }).reduce((a,b)=> {
-                return a.match(/[^a-zA-Z]{3}.png/gm) > b.match(/[^a-zA-Z]{3}.png/gm) ? a : b;
+                                            return (elm.match(/^.*icon.*/gm))
+                                        }).join(' ').match(/.*png/gm).join(' ').split(' ')
+            
+                                        console.log(indexed)
+
+                                        indexed = indexed.filter((elm)=> {
+                 return (elm.match(/.png/gm))
             })
+            if (indexed.length-1 > 0) {
+                indexed =   indexed.reduce((a,b)=> {
+                    return a.match(/[^a-zA-Z]{3}.png/gm) > b.match(/[^a-zA-Z]{3}.png/gm) ? a : b;
+                })
+            }
             indexedQ = indexed;
-            console.log(indexed)
             elm.style.backgroundImage = `url(${indexedQ})`
         }
         catch(err) {
+
             indexedQ = 'Error: Favicon cannot be gathered via default script method. Trying method 2.';
             let img = document.createElement("img");
                 img.src = `${link}apple-touch-icon.png`;
@@ -101,13 +108,13 @@ xhr.send(null);
   //  }
  // async function Q()  {
   //  indexedQ = null;
-   faviconParser(`https://stackoverflow.com`);
+  // faviconParser(`https://stackoverflow.com`);
    // let result = await indexedQ;
    // return result;
  // }
 
 
-    document.body.addEventListener("click", ()=> console.log(indexedQ));
+  //  document.body.addEventListener("click", ()=> console.log(indexedQ));
 
 
 
