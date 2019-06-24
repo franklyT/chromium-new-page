@@ -135,7 +135,7 @@ input {
   display: inline-flex;
   margin-top: 9em;
   grid-row: 1;
-  width: 24rem;
+  width: 28rem;
   overflow: hidden;
   flex-wrap: wrap;
   margin-left: .2em;
@@ -148,11 +148,16 @@ input {
   border-radius: 3em;
   display: inline-flex;
   position: relative;
-  min-width: 4rem;
-  min-height: 4rem;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-  background-position: center;
+  height: 72px;
+  width: 72px;  
+  overflow: hidden;
+}
+
+.topsites-box > img {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+
 }
 
 .topsites-box:hover {

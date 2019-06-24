@@ -29,13 +29,26 @@ chrome.topSites.get(function(items) {
         select('#topSites').appendChild(newBox);
         urlReplace = elm.url.replace(/(^\w+:|^)\/\//, '');
 
-        try {
-         img = `https://api.faviconkit.com/${urlReplace}144`;
-         newBox.style.backgroundImage = `url(${String(img)})`;
-    }
-    catch(error) {
-        newBox.style.backgroundImage = 'icons/domain.png'
-    }
+
+         domImg = document.createElement('img');
+         domImg.src = `https://api.faviconkit.com/${urlReplace}144`;
+         
+         domImg.onload = function() {
+                newBox.appendChild(domImg)
+               // domImg.src = '/icons/domain.png'
+               // newBox.appendChild(domImg)
+               // console.log('Favicon too small.')}
+        }
+        domImg.onerror = function() {
+            domImg.src = '/icons/domain.png';
+            newBox.appendChild(domImg)
+            console.log('Error.')
+        } 
+
+
+        // newBox.style.backgroundImage = `url(${String(img)})`;
+
+        //newBox.style.backgroundImage = 'icons/domain.png'
 
       //  faviconParser(topSites[topSites.indexOf(elm)].url, newBox)
     })
@@ -57,7 +70,7 @@ chrome.topSites.get(function(items) {
 //console.log(`https://plus.google.com/_/favicon?domain_url=http://www.stackoverflow.com`)
 
 // Favicon parser
-let indexedQ = '';
+//let indexedQ = '';
 /*
 function faviconParser(link, elm='') {
 let indexed;
