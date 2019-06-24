@@ -152,6 +152,7 @@ input {
   min-height: 4rem;
   background-repeat: no-repeat, repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .topsites-box:hover {
