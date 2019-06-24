@@ -35,3 +35,10 @@ selectAll(".bg-picker").forEach(elm => {
 chrome.storage.sync.get("bgID", function(items) {
   select("#" + items.bgID).classList.add("active");
 });
+
+
+// Freeze BG sound effect
+select('.freeze').addEventListener("click", () => {
+  var audio = new Audio('sounds/freeze-sound.wav');
+  audio.play();
+});

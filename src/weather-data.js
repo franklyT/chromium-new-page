@@ -9,4 +9,3 @@ var temperaturescale = "F"; //set to F or C (fahrenheit or celsius)
 var locationRequested = false;
 var weatherdata, weatherminute;
 var iconurl = "https://openweathermap.org/img/w/";
-
