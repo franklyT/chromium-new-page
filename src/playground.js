@@ -60,15 +60,13 @@ xhr.onload = function () {
         if (xhr.status === 200) {
             indexed = xhr.responseText;
             try {
-            indexed = indexed.match(/http.*.png/gm).join(' ').split(' ')
+            indexed = indexed.match(/http.*(png)/gm).join(' ').split(' ')
                                     .filter( (elm)=> {
-                                            return (elm.match(/^.*icon.*/gm))
-                                        }).join(' ').match(/.*png/gm).join(' ').split(' ')
+                                            return (elm.match(/^.*icon.*$/gm))
+                                        }).join(' ').match(/.*htt.*png$/gm).join(' ').split(' ')
             
-                                        console.log(indexed)
-
                                         indexed = indexed.filter((elm)=> {
-                 return (elm.match(/.png/gm))
+                 return (elm.match(/png/g))
             })
             if (indexed.length-1 > 0) {
                 indexed =   indexed.reduce((a,b)=> {
