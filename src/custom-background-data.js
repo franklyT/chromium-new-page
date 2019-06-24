@@ -86,8 +86,7 @@ let cowBg = {
   catchDeadLinks: []
 };
 
-let tabbyBg = {
-  bg: " ",
+let vanillaBg = {
   bg1: "https://images.pexels.com/photos/853199/pexels-photo-853199.jpeg",
   bg2: "https://images.pexels.com/photos/1429567/pexels-photo-1429567.jpeg",
   bg3: "https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg",
@@ -115,3 +114,9 @@ let tabbyBg = {
   bg: "",
   catchDeadLinks: []
 };
+
+let tabbyBg = {
+  bg: "",
+  bg1: "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3",
+  catchDeadLinks: []
+}

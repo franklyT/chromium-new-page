@@ -35,18 +35,21 @@
       ></image>
         --> 
     </div>
-    <image id="settingsIcon" src="icons/settings.png" class="settings"></image>
+    <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
   <div id="settingsParentNode">
   <div id="settings" class="settings-menu hidden">
-    <div class="settings-menu-name">Frank</div> 
-    <image class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
-      <image class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
-    <image class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
-    <image class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
+    <div class="settings-menu-name"></div> 
+    <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
+      <image title="Cow BG Set" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
+    <image title="Tabby BG Set" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
+    <image title="Vanilla BG Set" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
+<div class="settings-divider"></div>
 
-    <label class="weather switch">
+    <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
+
+    <label title="Weather Toggle" class="weather switch">
         <input id="weatherCheckbox" type="checkbox">
-        <span class="slider round"></span>
+        <span title="Weather Toggle" class="slider round"></span>
       </label>
   </div>
 </div>

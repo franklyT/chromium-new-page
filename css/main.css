@@ -96,7 +96,7 @@ input {
   width: 2em;
   height: 2em;
   left: 0.2em;
-  top: 5em;
+  top: 7em;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 }
 
@@ -121,13 +121,30 @@ input {
 .bg-picker.cow {
   width: 2.6em;
   height: 2.6em;
-  left: 3em;
+  top: 4.2em;
 }
 
 .bg-picker.tabby {
-  top: 2.2em;
+  left: 3em;
 }
 
+.bg-picker.vanilla {
+  top: 1.8em;
+  width: 2.5em;
+  height: 2.5em;
+  left: .3em;
+}
+
+.settings-divider {
+  content: "";
+  top: 7em;
+  width: 10em;
+  height: 5em;
+  display: inline-flex;
+  margin-right: -20em;
+  position: absolute;
+  background: grey;
+}
 
 .settings-menu-name {
   position: absolute;
@@ -140,7 +157,7 @@ input {
   padding-left: 1.2em;
   font-weight: 900;
   font-family: 'Courier New', Courier, monospace;
-  letter-spacing: -.1em
+  letter-spacing: -.1em;
 }
 
 .settings-menu-name-reset {
@@ -510,13 +527,14 @@ input {
     position: absolute;
   display: flex;
   width: 6em;
-  height: 10em;
+  height: 9em;
   bottom: 3em;
   right: 0;
   margin-right: -.5em;
   border-radius: .5em;
   border: 2px solid black;
   transition: width 1s;
+  overflow: hidden;
 
 
   -webkit-transform: translatez(0);
@@ -598,7 +616,7 @@ input {
 }
 
 .switch.weather {
-  top: 5.3em;
+  top: 7.3em;
   left: 2.5em;
 }
 

@@ -21,6 +21,13 @@ selectAll(".bg-picker").forEach(elm => {
         callBackground();
         catchFourZeroFour(imageBay.bg);
       });
+    } else if (event.target.id === "vanilla") {
+      chrome.storage.sync.set({ allData: vanillaBg, bgID: "vanilla" }, function() {
+        imageBay = vanillaBg;
+        imageBay.bg = myBg();
+        callBackground();
+        catchFourZeroFour(imageBay.bg);
+      });
     }
   });
 });
