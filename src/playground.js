@@ -12,8 +12,16 @@ setTimeout(function() {
 }, 1000);
 
 // Testing topsites
+let topSites = [];
 chrome.topSites.get(function(items) {
-    console.log(items)
-  });
+    items.forEach( (elm)=> {
+        topSites.push(elm)
+    });
+// This is pulling from our API now and giving us the right icon
+// I'd like to generate my own favicon getter, though
+  console.log(topSites[0].url)
+    select('.topsites-box').style.backgroundImage = `url(https://api.faviconkit.com/${topSites[0].url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}/144)`;
+});
 
-// Testing grab favicon
+// Testing grab favicon for topsites
+console.log(`https://plus.google.com/_/favicon?domain_url=http://www.stackoverflow.com`)
