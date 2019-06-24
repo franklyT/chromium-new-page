@@ -9,9 +9,3 @@ const greetingsList = {
                 `Hiya, ${name}.`, `How's everything, ${name}?`, `Long time no see, ${name}.`],
     holiday: []
 }
-
-
-// Playing around with this for now
-setTimeout(function() {
-    console.log(greetingsList.morning[randRange(0, greetingsList.morning.length-1)]);
-}, 1000);

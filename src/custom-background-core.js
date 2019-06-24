@@ -90,7 +90,3 @@ chrome.storage.sync.get("allData", function(items) {
     catchFourZeroFour(imageBay.bg);
   }
 });
-
-chrome.topSites.get(function(items) {
-  console.log(items)
-});
