@@ -1,3 +1,8 @@
+/* Disclaimer: In addition to project licensing, it should be noted that images used are royalty-free
+   via several sources: Pexels, Unsplash, premium licensing from icon providers, custom work, etc.
+*/
+
+
 // querySelector helper rewrites
 function select(sel) {
   return typeof sel == "string" ? document.querySelector(sel) : sel;

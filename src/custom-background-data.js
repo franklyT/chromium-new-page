@@ -1,5 +1,3 @@
-// All images are royalty free via Pexels + Unsplash
-
 let cowBg = {
   bg1: "https://images.pexels.com/photos/422202/pexels-photo-422202.jpeg",
   bg2: "https://images.pexels.com/photos/66400/pexels-photo-66400.jpeg",
