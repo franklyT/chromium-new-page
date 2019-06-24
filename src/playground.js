@@ -16,23 +16,38 @@ let topSites = [];
 chrome.topSites.get(function(items) {
     items.forEach( (elm)=> {
         topSites.push(elm)
-    });
+    })
+    topSites.forEach((elm)=> {
+        console.log(elm.url)
+        let newBox = document.createElement('div');
+        newBox.classList.add('topsites-box');
+        newBox.addEventListener("click", ()=> {
+        window.location.href = topSites[topSites.indexOf(elm)].url
+        })
+        select('#topSites').appendChild(newBox);
+        faviconParser(elm.url, newBox)
+    })
+});
+
 // This is pulling from our API now and giving us the right icon
 // I'd like to generate my own favicon getter, though
 // console.log(topSites[0].url)
-    select('.topsites-box').style.backgroundImage = `url(https://api.faviconkit.com/${topSites[0].url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}/144)`;
-    select('.topsites-box').addEventListener("click", () => {
-        window.location.href = topSites[0].url;
-    })
-});
+
+
+ //   select('.topsites-box').style.backgroundImage = `url(https://api.faviconkit.com/${topSites[0].url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}/144)`;
+   // select('.topsites-box').addEventListener("click", () => {
+    //    window.location.href = topSites[0].url;
+   // })
 
 
 
 // Testing grab favicon for topsites
 //console.log(`https://plus.google.com/_/favicon?domain_url=http://www.stackoverflow.com`)
 
-// Favicon parser?
-function faviconParser(link) {
+// Favicon parser
+let indexedQ = '';
+
+function faviconParser(link, elm='') {
 let indexed;
 var xhr = new XMLHttpRequest();
 xhr.open('GET', link, true);
@@ -43,36 +58,57 @@ xhr.onload = function () {
     if (xhr.readyState === xhr.DONE) {
         if (xhr.status === 200) {
             indexed = xhr.responseText;
+            try {
             indexed = indexed.match(/http(.*?).png/g).join(' ').split(' ')
                                     .filter( (elm)=> {
                                             return (elm.indexOf('favicon') !== -1)
                                         }).join(' ').match(/http.*[^a-zA-Z]{3}.png /gm).join(' ').split(' ')
-  
-  
-  
             indexed = indexed.filter((elm)=> {
                  return (elm.match(/[^a-zA-Z]{3}.png/gm))
             }).reduce((a,b)=> {
                 return a.match(/[^a-zA-Z]{3}.png/gm) > b.match(/[^a-zA-Z]{3}.png/gm) ? a : b;
             })
+            indexedQ = indexed;
+            elm.style.backgroundImage = `url(${indexedQ})`
+        }
+        catch(err) {
+            indexedQ = 'Error: Favicon cannot be gathered via default script method. Trying method 2.';
+            let img = document.createElement("img");
+                img.src = `${link}apple-touch-icon.png`;
+            img.onload = function() {
+                indexedQ = `${link}apple-touch-icon.png`;
+                elm.style.backgroundImage = `url(${indexedQ})`
+            }
+            img.onerror = function() {
+                console.log(`No favicon gathered.`)
+            } 
+        }
         }
     }
-    console.log()
-    return indexed;
 };
 xhr.send(null);
 }
 
-async function returnFavicon(link) {
-        const x = await faviconParser(link);
-        console.log(x)
-        return x;
-    }
+//async function returnFavicon(link) {
+    //    await faviconParser(link);
+    //    console.log(indexedQ);
+  //  }
+ // async function Q()  {
+  //  indexedQ = null;
+   faviconParser(`https://stackoverflow.com`);
+   // let result = await indexedQ;
+   // return result;
+ // }
 
-    function caller() {
-        let x= returnFavicon(`https://www.reddit.com`)
-    setTimeout(()=> {
-        console.log(x)
-    }, 2000);
-    }
-    caller()
+
+    document.body.addEventListener("click", ()=> console.log(indexedQ));
+
+
+
+  //  function caller() {
+    //    let x= returnFavicon(`https://www.reddit.com`)
+   // setTimeout(()=> {
+     //   console.log(x)
+   // }, 2000);
+    //}
+    //caller()

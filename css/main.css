@@ -131,15 +131,25 @@ input {
 }
 
 .topsites-container {
+
   display: inline-flex;
-  height: auto;
-  width: auto;
-  margin-top: 7em;
+  margin-top: 9em;
+  grid-row: 1;
+  width: 24rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-left: .2em;
 }
 
 .topsites-box {
-  width: 4rem;
-  height: 4rem;
+  background: rgb(255, 255, 255, .85);
+  margin-right: .5em;
+  margin-top: .5em;
+  border-radius: 3em;
+  display: inline-flex;
+  position: relative;
+  min-width: 4rem;
+  min-height: 4rem;
   background-repeat: no-repeat, repeat;
   background-size: cover;
 }
