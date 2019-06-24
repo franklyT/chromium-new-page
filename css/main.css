@@ -532,13 +532,7 @@ input {
 
 
 .settings-menu {
-  background: repeating-linear-gradient(
-    -55deg,
-    #222,
-    #222 20px,
-    #333 20px,
-    #333 40px
-  );
+  background: #696969	;
     position: absolute;
   display: flex;
   width: 6em;
