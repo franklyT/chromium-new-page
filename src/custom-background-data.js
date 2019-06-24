@@ -1,4 +1,4 @@
-// All images are royalty free via Pexels and other sources
+// All images are royalty free via Pexels + Unsplash
 
 let cowBg = {
   bg1: "https://images.pexels.com/photos/422202/pexels-photo-422202.jpeg",
