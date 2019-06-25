@@ -19,6 +19,7 @@ chrome.topSites.get(function(items) {
       });
     } catch {
       let div = document.createElement("div")
+      div.title = title;
       div.classList.add('topsites-box')
       let img = document.createElement("img");
       img.src = "icons/domain.png";

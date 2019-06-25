@@ -152,6 +152,11 @@ input {
   position: relative;
   height: 72px;
   width: 72px;  
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
 }
 
 .topsites-box:before {
@@ -179,7 +184,20 @@ input {
   width: 72px;
   height: 72px;
   border-radius: 3em;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .topsites-box:hover {
