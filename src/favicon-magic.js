@@ -16,7 +16,7 @@ chrome.topSites.get(function(items) {
     }
     
     img.onerror = function() {
-      reject(false);
+      reject('Trying another method...');
     }
   });
 
@@ -34,7 +34,7 @@ chrome.topSites.get(function(items) {
       return;
     })
     .catch( reject => {
-      console.log('Trying another method...')
+      console.log(reject)
       bruteForce(link, title);
      } );
   }
