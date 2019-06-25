@@ -4,10 +4,10 @@
 //Favicon parser
 chrome.topSites.get(function(items) {
     items.forEach( (elm) => {
-        bruteForce(elm.url)
+        bruteForce(elm.url, elm.title)
     })
 
-  async function bruteForce(link) {
+  async function bruteForce(link, title=null) {
     let reply = await makeRequest("GET", link);
     let result = reply;
     try {
@@ -30,6 +30,7 @@ chrome.topSites.get(function(items) {
     }
     
     let div = document.createElement("div")
+    div.title = title;
 
     div.classList.add('topsites-box')
     select('#topSites').appendChild(div)
