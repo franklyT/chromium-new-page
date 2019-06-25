@@ -9,7 +9,11 @@ chrome.topSites.get(function(items) {
       let img = document.createElement("img");
       img.src = `${link}apple-touch-icon.png`;
       img.onload = function() {
-        resolve(img.src);
+        if (img.width && img.height > 50) {
+          resolve(img.src);
+        } else {
+          reject(`${img.src} too small. Trying another method...`);
+        }
       };
 
       img.onerror = function() {
