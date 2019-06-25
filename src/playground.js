@@ -12,6 +12,7 @@ setTimeout(function() {
 }, 1000);
 
 // Testing topsites
+/*
 let topSites = [];
 chrome.topSites.get(function(items) {
     items.forEach( (elm)=> {
