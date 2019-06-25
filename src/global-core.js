@@ -33,8 +33,7 @@ function cClear(timeoutinms) {
   
 // Capitalization utility function
 function capitalizeMe(text) {
-let capitalText = '';
-capitalText = text.toLowerCase()
+let capitalText = text.toLowerCase()
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
     .join(' ');
