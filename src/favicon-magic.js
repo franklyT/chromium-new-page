@@ -1,9 +1,15 @@
 //Favicon parser
 function pullRecentSites() {
-chrome.history.search({text: '', maxResults: 10}, function(data) {
+  let i = 0;
+
+chrome.history.search({text: '', maxResults: 100}, function(data) {
   data.forEach(function(page) {
     if (!page.url.includes("google")) {
+      i++
       giveUsApples(page.url, page.title)
+      if (i === 10) {
+        throw 'Max 10 sites pulled. This error is expected.';
+      }
     }
   });
 });
