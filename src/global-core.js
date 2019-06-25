@@ -3,7 +3,6 @@
    Other attribution is noted where applicable.
 */
 
-
 // querySelector helper rewrites
 function select(sel) {
   return typeof sel == "string" ? document.querySelector(sel) : sel;
@@ -15,7 +14,7 @@ function selectAll(sel) {
 
 // Safety check utility function
 function isNative(fn) {
-	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
+  console.log(/\{\s*\[native code\]\s*\}/.test("" + fn));
 }
 
 // random number utility function
@@ -26,18 +25,19 @@ function randRange(min, max) {
 // Console clear utility function
 function cClear(timeoutinms) {
   setTimeout(function() {
-      console.clear();
-      console.log('Tabby Tab: Console was cleaned by extension.')
-  }, timeoutinms)
-  }
-  
+    console.clear();
+    console.log("Tabby Tab: Console was cleaned by extension.");
+  }, timeoutinms);
+}
+
 // Capitalization utility function
 function capitalizeMe(text) {
-let capitalText = text.toLowerCase()
-    .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(' ');
-return capitalText;
+  const capitalText = text
+    .toLowerCase()
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(" ");
+  return capitalText;
 }
 
 // init UI
@@ -49,13 +49,13 @@ return capitalText;
 //}
 
 // select(".submit").addEventListener("click", function() {
- // gSearch();
+// gSearch();
 //});
 
 //select(".search").addEventListener("keydown", event => {
- // if (event.isComposing || event.keyCode === 13) {
-  //  gSearch();
- // }
+// if (event.isComposing || event.keyCode === 13) {
+//  gSearch();
+// }
 //});
 
 /* function ready() {
