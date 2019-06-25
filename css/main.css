@@ -288,16 +288,15 @@ input {
   margin-right: .5em;
   margin-bottom: 0.5em;
   z-index: 10;
-  
 }
 
-.settings.fSpin {
+.fSpin {
   -webkit-animation-name: fSpin;
   -webkit-animation-duration: 1000ms;
   -webkit-animation-fill-mode: forwards;
 }
 
-.settings.rSpin {
+.rSpin {
   -webkit-animation-name: rSpin;
   -webkit-animation-duration: 1000ms;
   -webkit-animation-fill-mode: forwards;

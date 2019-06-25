@@ -8,6 +8,10 @@ select("#historyEraser").addEventListener("click", () => {
         "Tabby Tab: WARNING: Your web history has been erased. If this is not expected behavior, discontinue Tabby Tab extension use."
       );
     });
+    select('#historyEraser').classList.add('rSpin')
+    setTimeout(()=> {
+        select('#historyEraser').classList.remove('rSpin')
+    }, 1000)
     selectAll(".topsites-box").forEach(elm => {
       elm.parentNode.removeChild(elm);
     });
