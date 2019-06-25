@@ -39,12 +39,11 @@ chrome.topSites.get(function(items) {
 
   async function bruteForce(link, title=null) {
     let reply = await makeRequest("GET", link);
-    let result = reply;
     try {
-      result = result.match(/<link(.*?)png/gm);
-      result = result.join("").match(/(?<=href=")(.*?)png/gm);
+      reply = reply.match(/<link(.*?)png/gm);
+      reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
   
-      result = result.filter(elm => {
+      reply = reply.filter(elm => {
         return elm.split("").length < 150;
       });
     } catch {
@@ -68,14 +67,14 @@ chrome.topSites.get(function(items) {
     let img = document.createElement("img");
     
   
-    if (/^https?:\/\//i.test(result)) {
+    if (/^https?:\/\//i.test(reply)) {
         
-      img.src = result[result.length - 1];
+      img.src = reply[reply.length - 1];
       div.addEventListener("click", ()=> {
         window.location.href = link});
 
     } else {
-      img.src = link + "/" + result[result.length - 1];
+      img.src = link + "/" + reply[reply.length - 1];
       div.addEventListener("click", ()=> {
         window.location.href = link});
     }
