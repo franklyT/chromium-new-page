@@ -35,11 +35,12 @@ pullRecentSites();
           resolve(img.src);
         } else {
           reject(`${img.src} too small. Trying another method...`);
+          // Image was too small
         }
       };
 
       img.onerror = function() {
-        reject("Trying another method...");
+        reject("Load failed. Trying another method...");
       };
     });
   }
