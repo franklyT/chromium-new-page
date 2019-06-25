@@ -24,7 +24,7 @@ chrome.topSites.get(function(items) {
       img.src = "icons/domain.png";
       div.appendChild(img);
       div.addEventListener("click", ()=> {
-        window.location.href = img.src});
+        window.location.href = link});
       select('#topSites').appendChild(div)
       return;
     }
@@ -40,12 +40,12 @@ chrome.topSites.get(function(items) {
         
       img.src = result[result.length - 1];
       div.addEventListener("click", ()=> {
-        window.location.href = img.src});
+        window.location.href = link});
 
     } else {
       img.src = link + "/" + result[result.length - 1];
       div.addEventListener("click", ()=> {
-        window.location.href = img.src});
+        window.location.href = link});
     }
   
     img.onload = function() {
@@ -55,7 +55,7 @@ chrome.topSites.get(function(items) {
     } else {
         img.src = "icons/domain.png";
         div.addEventListener("click", ()=> {
-            window.location.href = img.src});
+            window.location.href = link});
         div.appendChild(img);
     }
     };
