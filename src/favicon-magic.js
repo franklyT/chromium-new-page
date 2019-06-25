@@ -4,8 +4,38 @@
 //Favicon parser
 chrome.topSites.get(function(items) {
     items.forEach( (elm) => {
-        bruteForce(elm.url, elm.title)
+      giveUsApples(elm.url, elm.title)
     })
+
+  function appleADay(link) {
+    return new Promise(function(resolve, reject) {
+    let img = document.createElement("img");
+    img.src = `${link}apple-touch-icon.png`
+
+    img.onload = function() {
+      resolve(img.src);
+    }
+    
+    img.onerror = function() {
+      reject(false);
+    }
+  });
+
+  }
+
+  async function giveUsApples(link, title=null) {
+    let doWeHaveApples = await appleADay(link).then( result => {
+      let div = document.createElement("div")
+      div.title = title;
+      div.classList.add('topsites-box')
+      let img = document.createElement("img");
+      img.src = result;
+      div.appendChild(img);
+      select('#topSites').appendChild(div)
+      return;
+    })
+    .catch( error => bruteForce(link, title) );
+  }
 
   async function bruteForce(link, title=null) {
     let reply = await makeRequest("GET", link);
@@ -67,7 +97,7 @@ chrome.topSites.get(function(items) {
       div.appendChild(img);
     };
   }
-  
+
   function makeRequest(method, url) {
     return new Promise(function(resolve, reject) {
       let xhr = new XMLHttpRequest();
