@@ -18,7 +18,9 @@
       />
   </head>
 <body>
-<div id="overlay"></div>
+<!--* Introduction Overlay *-->
+  <div id="overlay"></div>
+  <!--* Master Container *-->
     <div id="masterContainer" class="container">
       <div class="bg"></div>
       <time id="time" class="clocktext"></time>
@@ -46,20 +48,26 @@
         <image title="Cow Backgrounds" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
         <image title="Tabby Backgrounds" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
         <image title="Vanilla Backgrounds" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
-      <div class="settings-divider"></div>
+    <div class="settings-divider"></div>
+      <!--* Weather Toggler *-->
         <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
         <label title="Weather Toggle" class="switch weather">
           <input id="weatherCheckbox" type="checkbox">
           <span title="Weather Toggle" class="slider round"></span>
+      <!--* Weather Toggler End *-->
         </label>
+       <!--* Freezer Toggler *-->
         <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
         <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
           <input id="freezeCheckbox" type="checkbox">
           <span title="Freeze Toggle" class="slider round"></span>
+       <!--* Freezer Toggler End *-->
         </label>
         <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
-  </div>
-</div>
+  <!--* Settings Menu End *-->
+    </div>
+    </div>
+  <!--* Master Container End *-->
     </div>
     <!--* Scripts *-->
     <script src="src/global-data.js"></script>
