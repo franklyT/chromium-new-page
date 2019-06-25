@@ -113,8 +113,7 @@ function processWeather(data) {
   var weather = weatherdata["weather"][0];
   icon.className = "i" + weather.icon;
   icon.style.opacity = 1;
+  icon.title = capitalizeMe(weatherdata.weather[0].description);
   var localtemperature = convertTemperature(data["main"].temp).toFixed(0);
   wd.innerHTML = localtemperature + "°";
-  sunsettime = Number(data["sys"].sunset);
-  sunrisetime = Number(data["sys"].sunrise);
 }
