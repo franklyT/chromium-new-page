@@ -7,7 +7,7 @@ chrome.history.search({text: '', maxResults: 100}, function(data) {
     if (!page.url.includes("google")) {
       i++
       giveUsApples(page.url, page.title)
-      if (i === 10) {
+      if (i === 5) {
         throw 'Max 10 sites pulled. This error is expected.';
       }
     }
