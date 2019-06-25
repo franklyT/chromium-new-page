@@ -23,7 +23,7 @@ chrome.topSites.get(function(items) {
   }
 
   async function giveUsApples(link, title=null) {
-    let doWeHaveApples = await appleADay(link).then( result => {
+     await appleADay(link).then( result => {
       let div = document.createElement("div")
       div.title = title;
       div.classList.add('topsites-box')
