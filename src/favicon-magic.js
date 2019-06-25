@@ -33,7 +33,7 @@ chrome.topSites.get(function(items) {
       select('#topSites').appendChild(div)
       return;
     })
-    .catch( error => {
+    .catch( reject => {
       console.log('Trying another method...')
       bruteForce(link, title);
      } );
