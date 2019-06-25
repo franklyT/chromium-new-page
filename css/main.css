@@ -165,7 +165,9 @@ input {
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  animation-duration: 1s;
+
+  transform: translateZ(0);
 }
 
 .topsites-box::before {
@@ -177,6 +179,8 @@ input {
   height: 28px;
   width: 28px;
   z-index: 10;
+
+  transform: translateZ(0);
 }
 
 
@@ -193,6 +197,7 @@ input {
   box-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
     3px 3px 0 #000;
 
+    transform: translateZ(0);
 }
 
 @keyframes fadeInOpacity {
@@ -206,6 +211,7 @@ input {
 
 .topsites-box > img:hover {
   opacity: 0.8;
+  transform: translateZ(0);
 }
 
 .bg-picker:hover:not(.active) {
