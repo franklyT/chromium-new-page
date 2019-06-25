@@ -24,6 +24,10 @@ pullRecentSites();
 
   function appleADay(link) {
     return new Promise(function(resolve, reject) {
+      let div = document.createElement("div");
+      div.title = title;
+      div.classList.add("topsites-box");
+
       let img = document.createElement("img");
       img.src = `${link}apple-touch-icon.png`;
       img.onload = function() {
@@ -43,9 +47,6 @@ pullRecentSites();
   async function giveUsApples(link, title = null) {
     await appleADay(link)
       .then(result => {
-        let div = document.createElement("div");
-        div.title = title;
-        div.classList.add("topsites-box");
         let img = document.createElement("img");
         img.src = result;
         div.appendChild(img);

@@ -18,10 +18,19 @@ function isNative(fn) {
 	console.log((/\{\s*\[native code\]\s*\}/).test('' + fn));
 }
 
-//random number utility function
+// random number utility function
 function randRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+// Console clear utility function
+function cClear(timeoutinms) {
+  setTimeout(function() {
+      console.clear();
+      console.log('Tabby Tab: Console was cleaned by extension.')
+  }, timeoutinms)
+  }
+  
 
 // init UI
 //document.querySelector('#masterContainer').style.display = "";
