@@ -34,7 +34,7 @@ chrome.topSites.get(function(items) {
       return;
     })
     .catch( reject => {
-      console.log(reject)
+      console.log(reject);
       bruteForce(link, title);
      } );
   }
