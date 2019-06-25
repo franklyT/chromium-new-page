@@ -1,6 +1,3 @@
-//This is pulling from our API now and giving us the right icon
-//I'd like to generate my own favicon getter, though
-
 //Favicon parser
 chrome.topSites.get(function(items) {
   items.forEach(elm => {
