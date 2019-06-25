@@ -1,8 +1,20 @@
 //Favicon parser
-chrome.topSites.get(function(items) {
-  items.forEach(elm => {
-    giveUsApples(elm.url, elm.title);
+function pullRecentSites() {
+chrome.history.search({text: '', maxResults: 10}, function(data) {
+  data.forEach(function(page) {
+    if (!page.url.includes("google")) {
+      giveUsApples(page.url, page.title)
+    }
   });
+});
+}
+
+pullRecentSites();
+
+//chrome.topSites.get(function(items) {
+//  items.forEach(elm => {
+ //   giveUsApples(elm.url, elm.title);
+ // });
 
   function appleADay(link) {
     return new Promise(function(resolve, reject) {
@@ -53,6 +65,7 @@ chrome.topSites.get(function(items) {
       let div = document.createElement("div");
       div.title = title;
       div.classList.add("topsites-box");
+      
       let img = document.createElement("img");
       img.src = "icons/domain.png";
       div.appendChild(img);
@@ -123,4 +136,3 @@ chrome.topSites.get(function(items) {
       xhr.send();
     });
   }
-});
