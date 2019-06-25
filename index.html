@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Meta-->
-    <meta charset="utf-8" />
-    <meta name="description" content="Page description" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="application-name" content="Application Name" />
+    <!--* Meta *-->
+      <meta charset="utf-8" />
+      <meta name="description" content="Page description" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="application-name" content="Application Name" />
 
-    <title>Tabby Tab</title>
+      <title>Tabby Tab</title>
 
-    <!-- Styles-->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link
+    <!--* Styles *-->
+      <link rel="stylesheet" type="text/css" href="css/reset.css" />
+      <link rel="stylesheet" type="text/css" href="css/main.css" />
+      <link
       href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
       rel="stylesheet"
-    />
+      />
   </head>
-  <body>
+<body>
+<div id="overlay"></div>
     <div id="masterContainer" class="container">
       <div class="bg"></div>
       <time id="time" class="clocktext"></time>
       <div id="greeting" class="greeting absolute-center"></div>
 
-      <div id="topSites" class="topsites-container absolute-center">
-      </div>
+      <div id="topSites" class="topsites-container absolute-center"></div>
       <div class="weather-icons-container">
       <div id="weather" class="clocktext infotext"></div>
       <div id="weatherIcons" class="weathericons"><div id="icon" class="i01d"></div></div>
@@ -37,34 +37,31 @@
         class="submit"
       ></image>
         --> 
-    </div>
     <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
-  <div id="settingsParentNode">
-  <div id="settings" class="settings-menu hidden">
-    <div class="settings-menu-name"></div> 
-    <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
-      <image title="Cow BG Set" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
-    <image title="Tabby BG Set" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
-    <image title="Vanilla BG Set" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
-<div class="settings-divider"></div>
-
-    <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
-    <label title="Weather Toggle" class="switch weather">
-        <input id="weatherCheckbox" type="checkbox">
-        <span title="Weather Toggle" class="slider round"></span>
-      </label>
-
-      <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
-    <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
-        <input id="freezeCheckbox" type="checkbox">
-        <span title="Freeze Toggle" class="slider round"></span>
-      </label>
-      <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
+    <!--* Settings Menu *-->
+      <div id="settingsParentNode">
+        <div id="settings" class="settings-menu hidden">
+        <div class="settings-menu-name"></div> 
+        <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
+        <image title="Cow Backgrounds" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
+        <image title="Tabby Backgrounds" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
+        <image title="Vanilla Backgrounds" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
+      <div class="settings-divider"></div>
+        <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
+        <label title="Weather Toggle" class="switch weather">
+          <input id="weatherCheckbox" type="checkbox">
+          <span title="Weather Toggle" class="slider round"></span>
+        </label>
+        <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
+        <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
+          <input id="freezeCheckbox" type="checkbox">
+          <span title="Freeze Toggle" class="slider round"></span>
+        </label>
+        <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
   </div>
 </div>
-      <div id="overlay"></div>
     </div>
-    <!-- Scripts-->
+    <!--* Scripts *-->
     <script src="src/global-data.js"></script>
     <script src="src/global-core.js"></script>
     <script src="src/greetings-data.js"></script>
