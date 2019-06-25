@@ -121,6 +121,4 @@ chrome.topSites.get(function(items) {
       xhr.send();
     });
   }
-  
-  // if href !== https, parse entire string, else parse string as domain + string
-});
+  });
