@@ -1,3 +1,7 @@
 AM + PM lower half of clock aftertext
 :seconds upper half of clock aftertext
 ability to set own background set
+
+add thumbnail to history preview
+
+https://www.reddit.com/r/javascript/comments/64y67n/generate_website_thumbnail_image_based_on_a/
