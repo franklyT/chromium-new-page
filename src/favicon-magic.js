@@ -11,7 +11,6 @@ chrome.topSites.get(function(items) {
     return new Promise(function(resolve, reject) {
     let img = document.createElement("img");
     img.src = `${link}apple-touch-icon.png`
-
     img.onload = function() {
       resolve(img.src);
     }
@@ -34,7 +33,10 @@ chrome.topSites.get(function(items) {
       select('#topSites').appendChild(div)
       return;
     })
-    .catch( error => bruteForce(link, title) );
+    .catch( error => {
+      console.log('Trying another method...')
+      bruteForce(link, title);
+     } );
   }
 
   async function bruteForce(link, title=null) {
