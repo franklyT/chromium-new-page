@@ -21,3 +21,41 @@ setTimeout(function() {
 //});
 
 // ICON FOR NOT FOUND SHOULD BE FIRST LETTER OF URL
+
+
+chrome.identity.getAuthToken({ 'interactive': false }, function(token) {
+  var init = { 
+    'method' : 'GET',
+    'async'  : true,
+    'headers': {
+      'Authorization' : 'Bearer ' + token,
+      'Content-Type': 'application/json'
+    },
+    'contentType': 'json'
+  };
+
+  const headers = new Headers({
+      'Authorization' : 'Bearer ' + token,
+      'Content-Type': 'application/json'
+  })
+
+  const queryParams = { headers };
+
+  fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
+  .then((response) => response.json()) // Transform the data into json
+  .then(function(data) {
+      // console.log(data.items[data.items.length-1]);
+      let calDiv = document.createElement('div');
+      calDiv.innerHTML = `Upcoming Event: ${data.items[data.items.length-1].start.dateTime.substring(0, 10)} ${data.items[data.items.length-1].start.dateTime.substring(11, 25)}, ${data.items[data.items.length-1].summary}`
+      calDiv.classList.add('calendar-event');
+      calDiv.classList.add('absolute-center');
+      select('#greeting').appendChild(calDiv);
+      console.log(data.items[data.items.length-1]);
+      //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
+    })
+  })
+
+
+  chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
+      console.log(token)  
+ });

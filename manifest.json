@@ -1,34 +1,50 @@
 {
-  "content_scripts": [{
-    "matches": ["http://*/*", "https://*/*"],
-    "js": ["src/global-core.js"]
-  }],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/global-core.js"]
+    }
+  ],
   "background": {
     "scripts": ["src/background.js"],
     "persistent": false
   },
 
+  "manifest_version": 2,
+  "name": "Tabby Tab",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn4jhLWK/eh54shzRLCShc+gnqi+jfXW2X0MjP/ImPk40Vq1xzZnU+dhKgnvxe90gwh0Gs4/RATqqJhE9SLWEWB6q6sydAtMgKqlB0ISRedDSIHBe8SRS+8CE46dv7zBb/eMLBKmgqrrfp/Ntv9CbLYP/mUhAxB8ulIFidGLg+X/gERYrhZBGCNrCZcoZxBI5Q6dtJc/2qtPs+XoV8Lsicw3zHievIEKoHjsQOyIDiD3R2lAHYvCJWFWst0grGC4l1p/5w5mnPu8zoH+SrAxgowNkvbt2C26CbyMfbRAanmI7cRPqukF3OqKThxnUpwLR6NP0g1l4aEPfjgLvFQlgyQIDAQAB",
+  "version": "0.0.1",
+  "browser_action": { "default_icon": "favicon16.png" },
+  "content_security_policy": "script-src 'self' https://*.google.com; object-src 'self'",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
 
-    "manifest_version": 2,
-    "name": "Tabby Tab",
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn4jhLWK/eh54shzRLCShc+gnqi+jfXW2X0MjP/ImPk40Vq1xzZnU+dhKgnvxe90gwh0Gs4/RATqqJhE9SLWEWB6q6sydAtMgKqlB0ISRedDSIHBe8SRS+8CE46dv7zBb/eMLBKmgqrrfp/Ntv9CbLYP/mUhAxB8ulIFidGLg+X/gERYrhZBGCNrCZcoZxBI5Q6dtJc/2qtPs+XoV8Lsicw3zHievIEKoHjsQOyIDiD3R2lAHYvCJWFWst0grGC4l1p/5w5mnPu8zoH+SrAxgowNkvbt2C26CbyMfbRAanmI7cRPqukF3OqKThxnUpwLR6NP0g1l4aEPfjgLvFQlgyQIDAQAB",
-    "version": "0.0.1",
-    "browser_action": {"default_icon": "favicon16.png"},
-    "content_security_policy": "script-src 'self' https://*.google.com; object-src 'self'",
-    "chrome_url_overrides" : {
-        "newtab": "index.html"
-      },
-   
-    "description": "Lightweight tab modifier.",
-    "oauth2": {
-      "client_id": "261472421153-2h3t1tjg1sr8dkic0o71h03e1ktolqq8.apps.googleusercontent.com",
-      "scopes":["https://www.googleapis.com/auth/calendar","https://www.googleapis.com/auth/calendar.events"]
-    },
-  
-    "icons": {
-      "16": "favicon16.png",
-      "128": "favicon128.png"
-    },
+  "description": "Lightweight tab modifier.",
+  "oauth2": {
+    "client_id": "261472421153-kupgm10l9p78lc51nceliq9iftql3t21.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/calendar.events"
+    ]
+  },
 
-    "permissions":  ["identity","history","storage", "activeTab", "bookmarks", "topSites", "chrome://favicon/"]
-  }
+  "icons": {
+    "16": "favicon16.png",
+    "128": "favicon128.png"
+  },
+
+  "permissions": [
+    "openid",
+    "email",
+    "profile",
+    "calendar",
+    "identity",
+    "history",
+    "storage",
+    "activeTab",
+    "bookmarks",
+    "topSites",
+    "chrome://favicon/"
+  ]
+}

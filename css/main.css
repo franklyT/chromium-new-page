@@ -785,3 +785,7 @@ input:checked + .slider:before {
   top: .5em;
   right: .7em;
 }
+
+.calendar-event {
+  font-size: .5em;
+}
