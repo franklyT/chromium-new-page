@@ -9,3 +9,5 @@ https://www.reddit.com/r/javascript/comments/64y67n/generate_website_thumbnail_i
 white fade on bottom of bg image?
 
 should history sites be sites, not pages
+
+hover on history icons, large text box pops up showing url
