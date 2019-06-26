@@ -1,3 +1,5 @@
+onDOMLoad(getBg());
+
 function myBg() {
   return imageBay[`bg${Math.floor(Math.random() * bgLength().length) + 1}`];
 }
@@ -67,6 +69,7 @@ function imageNotFound() {
   catchFourZeroFour(imageBay.bg);
 }
 
+function getBg() {
 chrome.storage.sync.get("allData", function(items) {
   // Sets a default BG status
   if (items.allData === null || items.allData === undefined || !items.allData) {
@@ -90,3 +93,4 @@ chrome.storage.sync.get("allData", function(items) {
     catchFourZeroFour(imageBay.bg);
   }
 });
+}

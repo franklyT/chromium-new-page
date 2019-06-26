@@ -1,4 +1,7 @@
 //Favicon parser
+onDOMLoad(pullRecentSites());
+
+
 function pullRecentSites() {
   chrome.history.search({ text: "", maxResults: 100 }, function(data) {
     for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt++) {
@@ -9,8 +12,6 @@ function pullRecentSites() {
     }
   });
 }
-
-pullRecentSites();
 
 function appleADay(link, title) {
   return new Promise(function(resolve, reject) {

@@ -17,6 +17,12 @@ function isNative(fn) {
   console.log(/\{\s*\[native code\]\s*\}/.test("" + fn));
 }
 
+// DOM load wrapper
+function onDOMLoad(method) {
+return window.addEventListener("DOMContentLoaded", function() {
+method;
+}, false);
+}
 // random number utility function
 function randRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

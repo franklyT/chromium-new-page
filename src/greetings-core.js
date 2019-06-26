@@ -1,3 +1,5 @@
+onDOMload(callGreetings());
+
 let name = '';
 
 function callGreetings(reset=false) {
@@ -86,5 +88,3 @@ function typeWrite(text, n) {
     }, 100);
   }
 }
-
-callGreetings();
