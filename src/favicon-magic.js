@@ -8,7 +8,7 @@ chrome.history.search({text: '', maxResults: 100}, function(data) {
       i++
       giveUsApples(page.url, page.title)
       if (i === 5) {
-        throw 'Max 10 sites pulled. This error is expected.';
+        throw 'Max 5 sites pulled. This error is expected.';
       }
     }
   });
