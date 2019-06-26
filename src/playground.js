@@ -7,9 +7,8 @@ select('.freeze').addEventListener("click", () => {
 
   
 // Playing around with this for now
-setTimeout(function() {
-    console.log(greetingsList.morning[randRange(0, greetingsList.morning.length-1)]);
-}, 1000);
+// setTimeout(function() {
+  //  console.log(greetingsList.morning[randRange(0, greetingsList.morning.length-1)]); }, 1000);
 
 
 // History - do i need to build this to replace chrome.topSites?
