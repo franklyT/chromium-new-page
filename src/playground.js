@@ -46,8 +46,7 @@ chrome.identity.getAuthToken({ 'interactive': false }, function(token) {
       let calDiv = document.createElement('div');
       calDiv.innerHTML = `Upcoming Event: ${data.items[data.items.length-1].start.dateTime.substring(0, 10)} ${data.items[data.items.length-1].start.dateTime.substring(11, 25)}, ${data.items[data.items.length-1].summary}`
       calDiv.classList.add('calendar-event');
-      calDiv.classList.add('absolute-center');
-      select('#greeting').appendChild(calDiv);
+      select('#calendar').appendChild(calDiv);
       console.log(data.items[data.items.length-1]);
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
     })

@@ -11,3 +11,7 @@ white fade on bottom of bg image?
 should history sites be sites, not pages
 
 hover on history icons, large text box pops up showing url
+
+allow caching for domain icons
+
+ability to "clip website" to add to bookmark bar, "fast clip" and some kind of forcing or reminder to check it out

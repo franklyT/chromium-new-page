@@ -797,5 +797,13 @@ input:checked + .slider:before {
 }
 
 .calendar-event {
-  font-size: .5em;
+  font-size: 2em;
+  width: auto;
+  height: auto;
+  white-space: none;
+  word-wrap: none;
+  display: inline-flex;
+  margin-top: 15em;
+  color: white;
+  font-weight: 900;
 }
