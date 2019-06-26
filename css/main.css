@@ -26,7 +26,7 @@ body {
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@keyframes fadein {
   from {
     opacity: 0;
   }
@@ -98,11 +98,13 @@ input {
   left: 0.2em;
   top: 7em;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .weather-setting-icon.active {
   transition: 0.2s;
   -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .freeze-setting-icon {
@@ -112,11 +114,13 @@ input {
   left: 0.2em;
   top: 9.2em;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .freeze-setting-icon.active {
   transition: 0.2s;
   -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .menu-nuke-history {
@@ -135,7 +139,7 @@ input {
   top: 2em;
   left: 0.5em;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-
+  filter: grayscale(100%);
 }
 
 .topsites-container {
@@ -276,6 +280,7 @@ input {
 .bg-picker.active {
   transition: 0.2s;
   -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .settings {
@@ -294,12 +299,20 @@ input {
   -webkit-animation-name: fSpin;
   -webkit-animation-duration: 1000ms;
   -webkit-animation-fill-mode: forwards;
+  
+  animation-name: fSpin;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
 }
 
 .rSpin {
   -webkit-animation-name: rSpin;
   -webkit-animation-duration: 1000ms;
   -webkit-animation-fill-mode: forwards;
+
+  animation-name: rSpin;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fSpin {
@@ -318,13 +331,6 @@ input {
   to {
     transform: rotate(-360deg);
   }
-}
-
-
-#overlay {
-}
-
-#masterContainer {
 }
 
 .display-none {
@@ -636,6 +642,7 @@ input {
 
 
   -webkit-transform: translatez(0);
+  transform: translatez(0);
 }
 
 .settings-menu.hidden {
@@ -643,6 +650,7 @@ input {
   transition: width .5s;
 
   -webkit-transform: translatez(0);
+  transform: translatez(0);
 }
 
 
@@ -653,9 +661,11 @@ input {
   position: absolute;
   top: 40vh;
   left: 40vw;
-  -webkit-transform: translatez(0);
   width: 500px;
   height: 500px;
+
+  -webkit-transform: translatez(0);
+  transform: translatez(0);
 }
 
 .typedText {
