@@ -1,26 +1,19 @@
 //Favicon parser
 function pullRecentSites() {
   let i = 0;
-
 chrome.history.search({text: '', maxResults: 100}, function(data) {
-  data.forEach(function(page) {
+  data.every(function(page) {
     if (!page.url.includes("google")) {
       i++
       giveUsApples(page.url, page.title)
-      if (i === 5) {
-        throw 'Max 5 sites pulled. This error is expected.';
-      }
+      if (i === 5) return false
+      else return true
     }
   });
 });
 }
 
 pullRecentSites();
-
-//chrome.topSites.get(function(items) {
-//  items.forEach(elm => {
- //   giveUsApples(elm.url, elm.title);
- // });
 
   function appleADay(link, title) {
     return new Promise(function(resolve, reject) {

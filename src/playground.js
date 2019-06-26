@@ -21,7 +21,7 @@ select('.freeze').addEventListener("click", () => {
 // ICON FOR NOT FOUND SHOULD BE FIRST LETTER OF URL
 
 
-chrome.identity.getAuthToken({ 'interactive': false }, function(token) {
+chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
   var init = { 
     'method' : 'GET',
     'async'  : true,
@@ -52,8 +52,3 @@ chrome.identity.getAuthToken({ 'interactive': false }, function(token) {
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
     })
   })
-
-
-  chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-      console.log(token)  
- });
