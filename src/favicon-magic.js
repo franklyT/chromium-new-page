@@ -22,7 +22,7 @@ pullRecentSites();
  //   giveUsApples(elm.url, elm.title);
  // });
 
-  function appleADay(link) {
+  function appleADay(link, title) {
     return new Promise(function(resolve, reject) {
       let div = document.createElement("div");
       div.title = title;
@@ -46,8 +46,12 @@ pullRecentSites();
   }
 
   async function giveUsApples(link, title = null) {
-    await appleADay(link)
+    await appleADay(link, title)
       .then(result => {
+        let div = document.createElement("div");
+        div.title = title;
+        div.classList.add("topsites-box");
+  
         let img = document.createElement("img");
         img.src = result;
         div.appendChild(img);

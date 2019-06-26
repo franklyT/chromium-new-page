@@ -3,7 +3,11 @@
     "matches": ["http://*/*", "https://*/*"],
     "js": ["src/global-core.js"]
   }],
- 
+  "background": {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
+
 
     "manifest_version": 2,
     "name": "Tabby Tab",
