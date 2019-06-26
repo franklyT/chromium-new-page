@@ -16,11 +16,15 @@
       },
    
     "description": "Lightweight tab modifier.",
-
+    "oauth2": {
+      "client_id": "261472421153-2h3t1tjg1sr8dkic0o71h03e1ktolqq8.apps.googleusercontent.com",
+      "scopes":["https://www.googleapis.com/auth/calendar","https://www.googleapis.com/auth/calendar.events"]
+    },
+  
     "icons": {
       "16": "favicon16.png",
       "128": "favicon128.png"
     },
 
-    "permissions":  ["history","storage", "activeTab", "bookmarks", "topSites", "chrome://favicon/"]
+    "permissions":  ["identity","history","storage", "activeTab", "bookmarks", "topSites", "chrome://favicon/"]
   }
