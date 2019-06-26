@@ -1,10 +1,10 @@
 //Favicon parser
 function pullRecentSites() {
   chrome.history.search({ text: "", maxResults: 100 }, function(data) {
-    for (let n = 0, i = 0; n < 100 && i < 5; n++) {
-      if (!data[n].url.includes("google")) {
-        i++;
-        giveUsApples(data[n].url, data[n].title);
+    for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt++) {
+      if (!data[attempt].url.includes("google")) {
+        returnCount++;
+        giveUsApples(data[attempt].url, data[attempt].title);
       }
     }
   });
