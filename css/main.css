@@ -806,4 +806,7 @@ input:checked + .slider:before {
   margin-top: 15em;
   color: white;
   font-weight: 900;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+  2px 2px 0 #000;
+
 }
