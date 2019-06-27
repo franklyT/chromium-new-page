@@ -157,18 +157,19 @@ input {
 
 .topsites-box:hover:before {
 content: attr(data-title) '\A\A' attr(data-link);
+  white-space: pre-line;
 
-position: relative;
-display: flex;
+flex-grow: 1;
+
 flex-wrap: wrap;
 padding: .7em .7em .7em .7em;
-white-space: pre;
 
 margin-left: -2em;
 font-size: 1.3em;
-width: max-content;
+width: 100vw;
 margin-top: 4.2em;
 height: max-content;
+
 
 background: black;
 color: white;
@@ -187,7 +188,7 @@ z-index: -1;
 
 .topsites-box:hover::after {
 	content: '';
-	position: absolute;
+  position: absolute;
 	top: 0;
 	left: 50%;
 	width: 0;
@@ -212,8 +213,10 @@ animation-duration: .5s;
   margin-right: 1.3em;
   margin-top: 1.3em;
   border-radius: 3em;
-  display: inline-flex;
-  position: relative;
+  
+  flex-direction: row;
+  display: flex;
+
   height: 72px;
   width: 72px;  
 	opacity: 1;
