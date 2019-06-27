@@ -1,6 +1,14 @@
 //Favicon parser
 onDOMLoad(pullRecentSites());
 
+function linkLink(div, link) {
+  console.log(div)
+  console.log(link)
+
+  div.addEventListener("click", () => {
+    window.location.href = link;
+  })
+}
 
 function pullRecentSites() {
   chrome.history.search({ text: "", maxResults: 100 }, function(data) {
@@ -26,7 +34,6 @@ function appleADay(link, title) {
         resolve(img.src);
       } else {
         reject(`${img.src} too small. Trying another method...`);
-        // Image was too small
       }
     };
     img.onerror = function() {
@@ -38,32 +45,34 @@ function appleADay(link, title) {
 async function giveUsApples(link, title = null) {
   await appleADay(link, title)
     .then(result => {
+      console.log(result)
       let div = document.createElement("div");
       div.title = title;
       div.classList.add("topsites-box");
 
       let img = document.createElement("img");
       img.src = result;
+      linkLink(div, link);
       div.appendChild(img);
       select("#topSites").appendChild(div);
-      return;
     })
     .catch(reject => {
       console.log(reject);
       bruteForce(link, title);
-    });
+    })
 }
 
 async function bruteForce(link, title = null) {
-  let reply = await makeRequest("GET", link);
-  try {
-    reply = reply.match(/<link(.*?)png/gm);
+  let reply = '';
+  await makeRequest("GET", link).then((response)=> {
+    reply = response.match(/<link(.*?)png/gm);
     reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
-
     reply = reply.filter(elm => {
-      return elm.split("").length < 150;
-    });
-  } catch {
+    return elm.split("").length < 150;
+    })
+    etTuBrute(link, title, reply);
+  }
+    ).catch((reject)=> {
     let div = document.createElement("div");
     div.title = title;
     div.classList.add("topsites-box");
@@ -71,15 +80,14 @@ async function bruteForce(link, title = null) {
     let img = document.createElement("img");
     img.src = "icons/domain.png";
     div.appendChild(img);
-    div.addEventListener("click", () => {
-      window.location.href = link;
-    });
+    linkLink(div, link);
     select("#topSites").appendChild(div);
-    return;
-  }
+  })
 
+  function etTuBrute(link, title, reply) {
   let div = document.createElement("div");
   div.title = title;
+  linkLink(div, link);
 
   div.classList.add("topsites-box");
   select("#topSites").appendChild(div);
@@ -102,9 +110,7 @@ async function bruteForce(link, title = null) {
       div.appendChild(img);
     } else {
       img.src = "icons/domain.png";
-      div.addEventListener("click", () => {
-        window.location.href = link;
-      });
+
       div.appendChild(img);
     }
   };
@@ -113,6 +119,7 @@ async function bruteForce(link, title = null) {
     img.src = "icons/domain.png";
     div.appendChild(img);
   };
+}
 }
 
 function makeRequest(method, url) {

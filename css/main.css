@@ -153,6 +153,7 @@ input {
   margin-left: 1.7em;
   padding-left: .5em;
   padding-bottom: 1em;
+  z-index: 1000
 
 }
 

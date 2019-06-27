@@ -43,12 +43,12 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
   .then((response) => response.json()) // Transform the data into json
   .then(function(data) {
       // console.log(data.items[data.items.length-1]);
-      console.log(data.items[data.items.length-1].start.dateTime)
+      // console.log(data.items[data.items.length-1].start.dateTime)
       let calDiv = document.createElement('div');
       calDiv.innerHTML = `Upcoming Event: ${data.items[data.items.length-1].start.dateTime.substring(0, 10)} ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))} - ${data.items[data.items.length-1].summary}`
       calDiv.classList.add('calendar-event');
       select('#calendar').appendChild(calDiv);
-      console.log(data.items[data.items.length-1]);
+     //  console.log(data.items[data.items.length-1]);
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
     })
   })
