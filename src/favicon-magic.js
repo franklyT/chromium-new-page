@@ -15,7 +15,7 @@ function pullRecentSites() {
       attempt++
     ) {
       try {
-      if (!data[attempt].url.includes("google")) {
+      if (!data[attempt].url.includes("google") && !data[attempt].url.includes("gmail") ) {
         returnCount++;
         giveUsApples(data[attempt].url, data[attempt].title);
       }
