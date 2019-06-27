@@ -1,4 +1,3 @@
-//Favicon parser
 onDOMLoad(pullRecentSites());
 
 function linkLink(div, link) {
