@@ -35,10 +35,6 @@
   },
 
   "permissions": [
-    "openid",
-    "email",
-    "profile",
-    "calendar",
     "identity",
     "history",
     "storage",
