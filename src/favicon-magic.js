@@ -13,10 +13,14 @@ function pullRecentSites() {
       attempt < 100 && returnCount < 5;
       attempt++
     ) {
+      try {
       if (!data[attempt].url.includes("google")) {
         returnCount++;
         giveUsApples(data[attempt].url, data[attempt].title);
       }
+    }
+    catch {
+    }
     }
   });
 }
@@ -108,9 +112,6 @@ async function bruteForce(link, title = null) {
   catch {
 
   }
-
-console.log(linkArray)
-
 
     etTuBrute(link, title, linkArray[linkArray.length-1], link);
     //etTuBrute(reply);
