@@ -34,7 +34,7 @@ function appleADay(link, title) {
       }
     };
     img.onerror = function() {
-      reject("Load failed. Trying another method...");
+      reject("Touch icon load failed. Trying another method...");
     };
   });
 }
