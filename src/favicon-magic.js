@@ -140,6 +140,8 @@ function makeRequest(method, url) {
         statusText: xhr.statusText
       });
     };
+
     xhr.send();
+  
   });
 }
