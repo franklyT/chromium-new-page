@@ -75,13 +75,13 @@ async function bruteForce(link, title = null) {
     })
     .catch(() => {
       let div = document.createElement("div");
+      linkLink(div, link);
       div.title = title;
       div.classList.add("topsites-box");
 
       let img = document.createElement("img");
       img.src = "icons/domain.png";
       div.appendChild(img);
-      linkLink(div, link);
       select("#topSites").appendChild(div);
     });
 
