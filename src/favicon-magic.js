@@ -67,7 +67,8 @@ async function giveUsApples(link, title = null) {
 async function bruteForce(link, title = null) {
   await makeRequest("GET", link)
     .then(response => {
-      let reply = response;
+      let meta = response;
+      let linked = response;
       let pushArray = [];
       let linkArray = [];
       //reply = response.match(/<link(.*?)png/gm);
@@ -75,17 +76,44 @@ async function bruteForce(link, title = null) {
      // reply = reply.filter(elm => {
       //  return elm.split("").length < 150;
      //});
-     while (reply.indexOf("<link") !== -1) {
-      reply = reply.slice(reply.indexOf("<link"), reply.length);
-      pushArray.push(reply.slice(0, reply.indexOf(">")));
-      reply = reply.slice(reply.indexOf(">"), reply.length);
+
+     try {
+     while (linked.indexOf("<link") !== -1) {
+      linked = linked.slice(linked.indexOf("<link"), linked.length);
+      pushArray.push(linked.slice(0, linked.indexOf(">")));
+      linked = linked.slice(linked.indexOf(">"), linked.length);
     }
+  
     pushArray.forEach((elm) => {
       if (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) {
-        linkArray.push(elm.match(/href="(.*.png)"/)[1]);
+        linkArray.push(elm.match(/href="(.*.png)/)[1]);
       }
     });
-   
+  }
+  catch {
+  }
+  try {
+  while (meta.indexOf("<meta") !== -1) {
+      meta = meta.slice(meta.indexOf("<meta"), meta.length);
+      pushArray.push(meta.slice(0, meta.indexOf(">")));
+      meta = meta.slice(meta.indexOf(">"), meta.length);
+    }
+
+    pushArray.forEach((elm) => {
+      if ((elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) && elm.indexOf("http") !== -1) {
+          linkArray.push((elm).match(/content="(.*.png)"/)[1]);
+      }
+    });
+  }
+  catch {
+
+  }
+
+console.log(linkArray)
+
+pushArray = [];
+
+
     etTuBrute(link, title, linkArray[linkArray.length-1], link);
     //etTuBrute(reply);
   })
