@@ -1,4 +1,4 @@
-onDOMload(callGreetings());
+onDOMLoad(callGreetings());
 
 let name = '';
 

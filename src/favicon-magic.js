@@ -29,7 +29,6 @@ function appleADay(link, title) {
         // Image was too small
       }
     };
-
     img.onerror = function() {
       reject("Load failed. Trying another method...");
     };
