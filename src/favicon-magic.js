@@ -65,17 +65,33 @@ async function giveUsApples(link, title = null) {
 }
 
 async function bruteForce(link, title = null) {
-  let reply = "";
   await makeRequest("GET", link)
     .then(response => {
-      reply = response.match(/<link(.*?)png/gm);
-      reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
-      reply = reply.filter(elm => {
-        return elm.split("").length < 150;
-      });
-      etTuBrute(link, title, reply);
-    })
-    .catch(() => {
+      let reply = response;
+      let pushArray = [];
+      let linkArray = [];
+      //reply = response.match(/<link(.*?)png/gm);
+      //reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
+     // reply = reply.filter(elm => {
+      //  return elm.split("").length < 150;
+     //});
+     while (reply.indexOf("<link") !== -1) {
+      reply = reply.slice(reply.indexOf("<link"), reply.length);
+      pushArray.push(reply.slice(0, reply.indexOf(">")));
+      reply = reply.slice(reply.indexOf(">"), reply.length);
+    }
+    pushArray.forEach((elm) => {
+      if (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) {
+        linkArray.push(elm.match(/href="(.*png)"/)[1]);
+      }
+    });
+   
+    etTuBrute(link, title, linkArray[linkArray.length-1], link);
+    //etTuBrute(reply);
+  })
+    .catch((error) => {
+      console.log(error)
+
       let div = document.createElement("div");
       linkLink(div, link);
       div.title = title;
@@ -98,10 +114,10 @@ async function bruteForce(link, title = null) {
     let img = document.createElement("img");
 
     if (/^https?:\/\//i.test(reply)) {
-      img.src = reply[reply.length - 1];
-    } else {
-      img.src = link + "/" + reply[reply.length - 1];
-    }
+    img.src = reply;
+  } else {
+    img.src = link + "/" + reply;
+  }
 
     img.onload = function() {
       if (img.width && img.height > 50) {
