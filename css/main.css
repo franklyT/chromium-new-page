@@ -162,7 +162,7 @@ white-space: nowrap;
 position: relative;
 display: inline-flex;
 flex-wrap: nowrap;
-padding: .3em .4em .4em .2em;
+padding: .3em .4em .4em .4em;
 
 margin-left: -2em;
 font-size: 1.2em;
