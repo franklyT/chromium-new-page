@@ -69,7 +69,7 @@ async function giveUsApples(link, title = null) {
     })
     .catch((reject)=> {
       console.log(reject)
-      bruteForce(link, title);
+      bruteForce(link.match(/^(https:\/\/.*?)\//)[1], title);
     });
 }
 
