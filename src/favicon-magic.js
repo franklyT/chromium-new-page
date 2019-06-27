@@ -126,6 +126,7 @@ function makeRequest(method, url) {
         resolve(xhr.response);
       } else {
         reject({
+          
           status: this.status,
           statusText: xhr.statusText
         });
