@@ -69,12 +69,12 @@ async function giveUsApples(link, title = null) {
     })
     .catch((reject)=> {
       console.log(reject)
-      bruteForce(link.match(/^(https:\/\/.*?)\//)[1], title);
+      bruteForce(link, title);
     });
 }
 
 async function bruteForce(link, title = null) {
-  await makeRequest("GET", link)
+  await makeRequest("GET", link.match(/^(https:\/\/.*?)\//)[1])
     .then(response => {
       let meta = response;
       let linked = response;
