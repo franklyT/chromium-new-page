@@ -43,12 +43,13 @@ async function giveUsApples(link, title = null) {
   await appleADay(link, title)
     .then(result => {
       let div = document.createElement("div");
+      linkLink(div, link);
+
       div.title = title;
       div.classList.add("topsites-box");
 
       let img = document.createElement("img");
       img.src = result;
-      linkLink(div, link);
       div.appendChild(img);
       select("#topSites").appendChild(div);
     })
@@ -82,8 +83,9 @@ async function bruteForce(link, title = null) {
 
   function etTuBrute(link, title, reply) {
   let div = document.createElement("div");
-  div.title = title;
   linkLink(div, link);
+
+  div.title = title;
 
   div.classList.add("topsites-box");
   select("#topSites").appendChild(div);
@@ -91,14 +93,8 @@ async function bruteForce(link, title = null) {
 
   if (/^https?:\/\//i.test(reply)) {
     img.src = reply[reply.length - 1];
-    div.addEventListener("click", () => {
-      window.location.href = link;
-    });
   } else {
     img.src = link + "/" + reply[reply.length - 1];
-    div.addEventListener("click", () => {
-      window.location.href = link;
-    });
   }
 
   img.onload = function() {
@@ -106,7 +102,6 @@ async function bruteForce(link, title = null) {
       div.appendChild(img);
     } else {
       img.src = "icons/domain.png";
-
       div.appendChild(img);
     }
   };
