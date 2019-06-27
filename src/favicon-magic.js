@@ -68,7 +68,7 @@ async function bruteForce(link, title = null) {
     });
     etTuBrute(link, title, reply);
   }
-    ).catch((reject)=> {
+    ).catch(()=> {
     let div = document.createElement("div");
     div.title = title;
     div.classList.add("topsites-box");
