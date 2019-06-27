@@ -57,7 +57,7 @@ async function giveUsApples(link, title = null) {
       div.appendChild(img);
       select("#topSites").appendChild(div);
     })
-    .catch(()=> {
+    .catch((reject)=> {
       bruteForce(link, title);
     });
 }
