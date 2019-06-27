@@ -680,6 +680,12 @@ animation-duration: .5s;
   2px 2px 0 #000;
 }
 
+.notes {
+  width: 3em;
+  height: 3em;
+  padding-left: .5em;
+  padding-top: .2em;
+}
 
 .settings-menu {
   background: #696969	;

@@ -15,3 +15,53 @@ hover on history icons, large text box pops up showing url
 allow caching for domain icons
 
 ability to "clip website" to add to bookmark bar, "fast clip" and some kind of forcing or reminder to check it out
+
+Implement anime BG (pokemon?):
+https://images4.alphacoders.com/641/641968.jpg
+https://images5.alphacoders.com/314/thumb-1920-314574.png
+https://images.alphacoders.com/736/thumb-1920-736461.png
+https://images3.alphacoders.com/144/thumb-1920-144565.jpg
+https://images5.alphacoders.com/613/thumb-1920-613927.jpg
+https://images6.alphacoders.com/613/thumb-1920-613924.jpg
+https://images4.alphacoders.com/126/thumb-1920-126438.png
+https://images7.alphacoders.com/737/thumb-1920-737400.jpg
+https://images8.alphacoders.com/632/thumb-1920-632051.png
+https://images.alphacoders.com/112/thumb-1920-112131.jpg
+https://images7.alphacoders.com/502/thumb-1920-502378.jpg
+https://images7.alphacoders.com/381/thumb-1920-381583.jpg
+https://images6.alphacoders.com/613/thumb-1920-613932.png
+https://images.alphacoders.com/692/thumb-1920-692362.png
+https://images.alphacoders.com/577/thumb-1920-57701.jpg
+https://images8.alphacoders.com/677/thumb-1920-677543.jpg
+https://images2.alphacoders.com/577/thumb-1920-57700.jpeg
+https://images8.alphacoders.com/415/thumb-1920-415511.jpg
+https://images3.alphacoders.com/185/thumb-1920-185425.jpg
+https://images7.alphacoders.com/481/thumb-1920-481909.png
+https://images8.alphacoders.com/673/thumb-1920-673189.png
+https://images7.alphacoders.com/670/thumb-1920-670838.jpg
+https://images3.alphacoders.com/569/thumb-1920-569355.png
+https://images5.alphacoders.com/481/thumb-1920-481911.jpg
+https://images4.alphacoders.com/149/thumb-1920-149386.jpg
+https://images5.alphacoders.com/737/thumb-1920-737385.jpg
+https://images4.alphacoders.com/706/thumb-1920-706365.png
+https://images4.alphacoders.com/616/thumb-1920-616945.png
+https://images3.alphacoders.com/206/thumb-1920-206267.png
+https://images2.alphacoders.com/577/thumb-1920-57710.jpg
+https://images7.alphacoders.com/636/thumb-1920-636058.png
+https://images2.alphacoders.com/556/thumb-1920-556062.jpg
+https://images3.alphacoders.com/704/thumb-1920-704387.png
+https://images.alphacoders.com/201/thumb-1920-201591.jpg
+https://images4.alphacoders.com/119/thumb-1920-119638.jpg
+https://images5.alphacoders.com/602/thumb-1920-602575.png
+https://images.alphacoders.com/737/thumb-1920-73773.jpg
+https://images8.alphacoders.com/631/thumb-1920-631739.jpg
+https://images3.alphacoders.com/893/thumb-1920-89317.png
+https://images7.alphacoders.com/333/thumb-1920-333580.jpg
+https://images4.alphacoders.com/973/thumb-1920-973967.jpg
+https://images2.alphacoders.com/713/thumb-1920-713297.png
+https://images2.alphacoders.com/576/thumb-1920-57692.jpg
+https://images8.alphacoders.com/485/thumb-1920-485164.jpg
+https://images4.alphacoders.com/628/thumb-1920-628927.png
+https://images3.alphacoders.com/648/thumb-1920-648618.jpg
+https://images3.alphacoders.com/273/thumb-1920-273289.jpg
+https://images2.alphacoders.com/119/thumb-1920-119152.jpg
