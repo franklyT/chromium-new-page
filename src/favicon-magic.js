@@ -28,7 +28,9 @@ function appleADay(link, title) {
     div.classList.add("topsites-box");
 
     let img = document.createElement("img");
+
     img.src = `${link}apple-touch-icon.png`;
+  
     img.onload = function() {
       if (img.width && img.height > 50) {
         resolve(img.src);
@@ -37,8 +39,7 @@ function appleADay(link, title) {
       }
     };
     img.onerror = function() {
-      //console.log('Touch icon load failed. Trying another method...');
-      reject();
+      reject('Touch icon load failed. Trying another method...');
     };
   });
 }
@@ -58,6 +59,7 @@ async function giveUsApples(link, title = null) {
       select("#topSites").appendChild(div);
     })
     .catch((reject)=> {
+      console.log(reject)
       bruteForce(link, title);
     });
 }
