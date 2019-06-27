@@ -65,7 +65,7 @@ async function bruteForce(link, title = null) {
     reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
     reply = reply.filter(elm => {
     return elm.split("").length < 150;
-    })
+    });
     etTuBrute(link, title, reply);
   }
     ).catch((reject)=> {
