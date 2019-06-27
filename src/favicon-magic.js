@@ -36,8 +36,7 @@ function appleADay(link, title) {
     div.classList.add("topsites-box");
 
     let img = document.createElement("img");
-
-    img.src = `${link}apple-touch-icon.png`;
+    img.src = `${link.match(/^(https:\/\/.*?)\//)[1]}/apple-touch-icon.png`;
   
     img.onload = function() {
       if (img.width && img.height > 50) {
