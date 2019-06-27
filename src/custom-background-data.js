@@ -1,4 +1,4 @@
-let cowBg = {
+const cowBg = {
   bg1: "https://images.pexels.com/photos/422202/pexels-photo-422202.jpeg",
   bg2: "https://images.pexels.com/photos/66400/pexels-photo-66400.jpeg",
   bg3: "https://images.pexels.com/photos/1276237/pexels-photo-1276237.jpeg",
@@ -84,7 +84,7 @@ let cowBg = {
   catchDeadLinks: []
 };
 
-let vanillaBg = {
+const vanillaBg = {
   bg1: "https://images.pexels.com/photos/853199/pexels-photo-853199.jpeg",
   bg2: "https://images.pexels.com/photos/1429567/pexels-photo-1429567.jpeg",
   bg3: "https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg",
@@ -113,7 +113,7 @@ let vanillaBg = {
   catchDeadLinks: []
 };
 
-let tabbyBg = {
+const tabbyBg = {
   bg: "",
   bg1: "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3",
   catchDeadLinks: []
