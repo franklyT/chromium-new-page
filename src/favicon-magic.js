@@ -31,6 +31,8 @@ function appleADay(link, title) {
   return new Promise(function(resolve, reject) {
     let div = document.createElement("div");
     div.setAttribute('data-title', title);
+    div.setAttribute('data-link', link);
+
     div.classList.add("topsites-box");
 
     let img = document.createElement("img");
@@ -57,6 +59,8 @@ async function giveUsApples(link, title = null) {
       linkLink(div, link);
 
       div.setAttribute('data-title', title);
+      div.setAttribute('data-link', link);
+
       div.classList.add("topsites-box");
 
       let img = document.createElement("img");
@@ -124,6 +128,8 @@ async function bruteForce(link, title = null) {
       let div = document.createElement("div");
       linkLink(div, link);
       div.setAttribute('data-title', title);
+      div.setAttribute('data-link', link);
+
       div.classList.add("topsites-box");
 
       let img = document.createElement("img");
@@ -137,6 +143,7 @@ async function bruteForce(link, title = null) {
     linkLink(div, link);
 
     div.setAttribute('data-title', title);
+    div.setAttribute('data-link', link);
 
     div.classList.add("topsites-box");
     select("#topSites").appendChild(div);

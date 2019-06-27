@@ -156,22 +156,25 @@ input {
 }
 
 .topsites-box:hover:before {
-content: attr(data-title);
+content: attr(data-title) '\A\A' attr(data-link);
 
-white-space: nowrap;
 position: relative;
-display: inline-flex;
-flex-wrap: nowrap;
-padding: .3em .4em .4em .4em;
+display: flex;
+flex-wrap: wrap;
+padding: .7em .7em .7em .7em;
+white-space: pre;
 
 margin-left: -2em;
-font-size: 1.2em;
-width: auto;
+font-size: 1.3em;
+width: max-content;
 margin-top: 4.2em;
-height: 1em;
+height: max-content;
 
 background: black;
 color: white;
+border: 2px solid white;
+
+border-radius: 1em;
 
 animation-name: fadeInOpacity;
 animation-iteration-count: 1;
@@ -179,6 +182,28 @@ animation-timing-function: ease-in;
 animation-duration: .5s;
 
 z-index: -1;
+
+}
+
+.topsites-box:hover::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+  border-bottom-color: black;
+
+  border-left: 3px solid white;
+  border-top: 0;
+	margin-left: -10px;
+  margin-top: 4.4em;
+  
+  animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: .5s;
 
 }
 
