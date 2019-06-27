@@ -52,3 +52,11 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
     })
   })
+
+  // Do something with this?
+  chrome.topSites.get(function(info){
+    for(var i=0;i<info.length;i++) {
+      console.log(info[i].url);
+    }
+   });
+  

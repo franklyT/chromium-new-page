@@ -38,9 +38,7 @@
     "identity",
     "history",
     "storage",
-    "activeTab",
     "bookmarks",
-    "topSites",
-    "chrome://favicon/"
+    "topSites"
   ]
 }

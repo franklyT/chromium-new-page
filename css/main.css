@@ -148,12 +148,37 @@ input {
   margin-top: 10em;
   grid-row: 1;
   width: 30rem;
-  overflow: hidden;
   flex-wrap: wrap;
   margin-left: 1.7em;
   padding-left: .5em;
   padding-bottom: 1em;
-  z-index: 1000
+  z-index: 1000;
+}
+
+.topsites-box:hover:before {
+content: attr(data-title);
+
+white-space: nowrap;
+position: relative;
+display: inline-flex;
+flex-wrap: nowrap;
+padding: .3em .4em .4em .2em;
+
+margin-left: -2em;
+font-size: 1.2em;
+width: auto;
+margin-top: 4.2em;
+height: 1em;
+
+background: black;
+color: white;
+
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: .5s;
+
+z-index: -1;
 
 }
 
