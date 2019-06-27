@@ -82,7 +82,7 @@ async function bruteForce(link, title = null) {
     }
     pushArray.forEach((elm) => {
       if (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) {
-        linkArray.push(elm.match(/href="(.*png)"/)[1]);
+        linkArray.push(elm.match(/href="(.*.png)"/)[1]);
       }
     });
    
