@@ -47,7 +47,7 @@ function capitalizeMe(text) {
 }
 
 function timeConverter(time) {
-  console.log(time)
+ // console.log(time)
 time = time.split(':'); // convert to array
 
 // fetch
