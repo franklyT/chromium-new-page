@@ -37,7 +37,8 @@ function appleADay(link, title) {
       }
     };
     img.onerror = function() {
-      reject("Touch icon load failed. Trying another method...");
+      //console.log('Touch icon load failed. Trying another method...');
+      reject();
     };
   });
 }
@@ -57,7 +58,6 @@ async function giveUsApples(link, title = null) {
       select("#topSites").appendChild(div);
     })
     .catch(reject => {
-      console.log(reject);
       bruteForce(link, title);
     });
 }
