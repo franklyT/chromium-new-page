@@ -45,7 +45,7 @@ function appleADay(link, title) {
 
 async function giveUsApples(link, title = null) {
   await appleADay(link, title)
-    .then(result => {
+    .then((result)=> {
       let div = document.createElement("div");
       linkLink(div, link);
 
@@ -57,7 +57,7 @@ async function giveUsApples(link, title = null) {
       div.appendChild(img);
       select("#topSites").appendChild(div);
     })
-    .catch(reject => {
+    .catch(()=> {
       bruteForce(link, title);
     });
 }
