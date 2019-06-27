@@ -2,9 +2,6 @@
 onDOMLoad(pullRecentSites());
 
 function linkLink(div, link) {
-  console.log(div)
-  console.log(link)
-
   div.addEventListener("click", () => {
     window.location.href = link;
   })
@@ -45,7 +42,6 @@ function appleADay(link, title) {
 async function giveUsApples(link, title = null) {
   await appleADay(link, title)
     .then(result => {
-      console.log(result)
       let div = document.createElement("div");
       div.title = title;
       div.classList.add("topsites-box");
