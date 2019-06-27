@@ -111,8 +111,6 @@ async function bruteForce(link, title = null) {
 
 console.log(linkArray)
 
-pushArray = [];
-
 
     etTuBrute(link, title, linkArray[linkArray.length-1], link);
     //etTuBrute(reply);
