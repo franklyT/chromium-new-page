@@ -42,12 +42,23 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
   fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
   .then((response) => response.json()) // Transform the data into json
   .then(function(data) {
-      // console.log(data.items[data.items.length-1]);
+       console.log(data.items[data.items.length-1])
+      
+       // console.log(data.items[data.items.length-1]);
       // console.log(data.items[data.items.length-1].start.dateTime)
       let calDiv = document.createElement('div');
-      calDiv.innerHTML = `Upcoming Event: ${data.items[data.items.length-1].start.dateTime.substring(0, 10)} ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))} - ${data.items[data.items.length-1].summary}`
-      calDiv.classList.add('calendar-event');
-      select('#calendar').appendChild(calDiv);
+      calDiv.classList.add('calendar-event')
+      calDiv.innerHTML = `<span class='event'>${data.items[data.items.length-1].summary}</span><span class='time'>${dateConverter(data.items[data.items.length-1].start.dateTime.substring(0, 10))} • ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))}</span><br>`
+      
+      if (data.items[data.items.length-1].location) {
+        calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].location}</span>`;
+      }
+      if (data.items[data.items.length-1].description) {
+        calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].description}</span><br>`;
+      }
+
+      calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].creator.email}</span>`;
+      select('.cal').appendChild(calDiv);
      //  console.log(data.items[data.items.length-1]);
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
     })
@@ -59,4 +70,3 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
       console.log(info[i].url);
     }
    });
-  

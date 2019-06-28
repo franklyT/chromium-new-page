@@ -813,20 +813,78 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.calendar-event {
-  font-size: 2em;
-  width: auto;
+
+.cal {
+  display: flex;
+  max-width: 45vw;
   height: auto;
-  white-space: none;
-  word-wrap: none;
-  display: inline-flex;
-  margin-top: 15em;
-  color: white;
-  font-weight: 900;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-  2px 2px 0 #000;
+  width: auto;
+  margin-top: 45vh;
+
+  background: rgb(220, 220, 220, .5);
+  border-radius: 1em;
 
 }
+
+.calendar-event {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+
+  padding-left: .6em;
+  padding-top: .6em;
+  padding-bottom: .6em;
+
+  font-size: 3em;
+  color: white;
+  font-weight: 900;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+
+}
+
+.calendar-event .text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-flow: row wrap;
+  padding-bottom: .5em;
+  
+  font-size: .6em;
+
+  -webkit-text-stroke-width: 0;
+
+  color: black;
+
+  }
+  
+.calendar-event .event {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 100%;
+flex-flow: row wrap;
+padding-bottom: .3em;
+
+font-size: 1.5em;
+}
+
+.calendar-event .time {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-flow: row wrap;
+
+  padding-left: 1em;
+  
+  font-size: .8em;
+  }
+
 
 .tray {
   display: flex;

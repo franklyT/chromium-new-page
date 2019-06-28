@@ -71,6 +71,29 @@ timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
 return timeValue;
 }
 
+function dateConverter(date) {
+  // get day algorithm based on https://www.mindstick.com/blog/387/calculating-day-of-the-week-for-any-date-in-javascript
+
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',       
+  'Thursday', 'Friday', 'Saturday'];
+  const year = date.slice(0,4)
+  const day = date.slice(8, 10)
+  const month = date.slice(5,7)
+  const a = Math.floor((14 - month) / 12);
+  const y = year - a;
+  const m = month + 12 * a - 2;
+  const d = (day + y + Math.floor(y / 4) - Math.floor(y / 100) +
+  Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
+
+  const months = ["January","February","March","April","May","June","July",
+  "August","September","October","November","December"];
+
+  return `${days[d]}, ${months[Number(date.slice(5,7))-1]} ${Number(date.slice(8,10))}`;
+
+// return `${date}`;
+}
+
+
 // init UI
 //document.querySelector('#masterContainer').style.display = "";
 //function gSearch() {
