@@ -78,7 +78,7 @@ body {
 
 .absolute-center {
   position: absolute;
-  top: 15vh;
+  top: 18vh;
   left: 50vw;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
@@ -844,6 +844,9 @@ input:checked + .slider:before {
   margin-right: auto;
 }
 
+.tray > img {
+}
+
 
 
 .tray .notes {
@@ -852,6 +855,7 @@ input:checked + .slider:before {
   height: 4em;
   padding-left: 1em;
   padding-top: .5em;
+  
 }
 
 
@@ -871,6 +875,8 @@ input:checked + .slider:before {
   right: 0;
   margin-left: auto;
   z-index: 10;
+
+  
 }
 
 .settings-divider {
