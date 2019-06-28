@@ -6,7 +6,6 @@ function linkLink(div, link) {
   });
 }
 
-
 function pullRecentSites() {
   chrome.history.search({ text: "", maxResults: 100 }, function(data) {
     for (
@@ -15,41 +14,41 @@ function pullRecentSites() {
       attempt++
     ) {
       try {
-      if (!data[attempt].url.includes("google") && !data[attempt].url.includes("gmail") ) {
-        returnCount++;
-        giveUsApples(data[attempt].url, data[attempt].title, 'topsites');
-      }
-    }
-    catch {
-    }
+        if (
+          !data[attempt].url.includes("google") &&
+          !data[attempt].url.includes("gmail")
+        ) {
+          returnCount++;
+          giveUsApples(data[attempt].url, data[attempt].title, "topsites");
+        }
+      } catch {}
     }
   });
 }
 
-
 function appleADay(link, title, domElement) {
   return new Promise(function(resolve, reject) {
     let div = document.createElement("div");
-    div.setAttribute('data-title', title);
-    div.setAttribute('data-link', link);
+    div.setAttribute("data-title", title);
+    div.setAttribute("data-link", link);
     try {
-      div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
-      }
-      catch {
-        div.setAttribute('data-shortlink', link);
-
-      }
+      div.setAttribute(
+        "data-shortlink",
+        link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
+      );
+    } catch {
+      div.setAttribute("data-shortlink", link);
+    }
 
     div.classList.add(`${domElement}-box`);
 
     let img = document.createElement("img");
     try {
       img.src = `${link.match(/^(https:\/\/.*?)\//)[1]}/apple-touch-icon.png`;
-    }
-    catch {
+    } catch {
       img.src = `${link}/apple-touch-icon.png`;
     }
-  
+
     img.onload = function() {
       if (img.width && img.height > 50) {
         resolve(img.src);
@@ -58,27 +57,28 @@ function appleADay(link, title, domElement) {
       }
     };
     img.onerror = function() {
-      reject('Touch icon load failed. Trying another method...');
+      reject("Touch icon load failed. Trying another method...");
     };
   });
 }
 
 async function giveUsApples(link, title = null, domElement) {
   await appleADay(link, title, domElement)
-    .then((result)=> {
+    .then(result => {
       let div = document.createElement("div");
       linkLink(div, link);
 
-      div.setAttribute('data-title', title);
-      div.setAttribute('data-link', link);
+      div.setAttribute("data-title", title);
+      div.setAttribute("data-link", link);
       try {
-        div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
+        div.setAttribute(
+          "data-shortlink",
+          link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
+        );
+      } catch {
+        div.setAttribute("data-shortlink", link);
       }
-        catch {
-          div.setAttribute('data-shortlink', link);
 
-        }
-  
       div.classList.add(`${domElement}-box`);
 
       let img = document.createElement("img");
@@ -86,20 +86,19 @@ async function giveUsApples(link, title = null, domElement) {
       div.appendChild(img);
       select(`#${domElement}`).appendChild(div);
     })
-    .catch((reject)=> {
-      console.log(reject)
+    .catch(reject => {
+      console.log(reject);
       bruteForce(link, title, domElement);
     });
 }
 
 async function bruteForce(link, title = null, domElement) {
   let linked = link;
-try {
-  linked = link.match(/^(https:\/\/.*?)\//)[1];
-}
-catch {
-  linked = link;
-}
+  try {
+    linked = link.match(/^(https:\/\/.*?)\//)[1];
+  } catch {
+    linked = link;
+  }
   await makeRequest("GET", linked)
     .then(response => {
       let meta = response;
@@ -108,58 +107,57 @@ catch {
       let linkArray = [];
       //reply = response.match(/<link(.*?)png/gm);
       //reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
-     // reply = reply.filter(elm => {
+      // reply = reply.filter(elm => {
       //  return elm.split("").length < 150;
-     //});
+      //});
 
-     try {
-     while (linked.indexOf("<link") !== -1) {
-      linked = linked.slice(linked.indexOf("<link"), linked.length);
-      pushArray.push(linked.slice(0, linked.indexOf(">")));
-      linked = linked.slice(linked.indexOf(">"), linked.length);
-    }
-  
-    pushArray.forEach((elm) => {
-      if (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) {
-        linkArray.push(elm.match(/href="(.*.png)/)[1]);
-      }
-    });
-  }
-  catch {
-  }
-  try {
-  while (meta.indexOf("<meta") !== -1) {
-      meta = meta.slice(meta.indexOf("<meta"), meta.length);
-      pushArray.push(meta.slice(0, meta.indexOf(">")));
-      meta = meta.slice(meta.indexOf(">"), meta.length);
-    }
+      try {
+        while (linked.indexOf("<link") !== -1) {
+          linked = linked.slice(linked.indexOf("<link"), linked.length);
+          pushArray.push(linked.slice(0, linked.indexOf(">")));
+          linked = linked.slice(linked.indexOf(">"), linked.length);
+        }
 
-    pushArray.forEach((elm) => {
-      if ((elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) && elm.indexOf("http") !== -1) {
-          linkArray.push((elm).match(/content="(.*.png)"/)[1]);
-      }
-    });
-  }
-  catch {
+        pushArray.forEach(elm => {
+          if (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) {
+            linkArray.push(elm.match(/href="(.*.png)/)[1]);
+          }
+        });
+      } catch {}
+      try {
+        while (meta.indexOf("<meta") !== -1) {
+          meta = meta.slice(meta.indexOf("<meta"), meta.length);
+          pushArray.push(meta.slice(0, meta.indexOf(">")));
+          meta = meta.slice(meta.indexOf(">"), meta.length);
+        }
 
-  }
+        pushArray.forEach(elm => {
+          if (
+            (elm.indexOf("png") !== -1 || elm.indexOf("PNG") !== -1) &&
+            elm.indexOf("http") !== -1
+          ) {
+            linkArray.push(elm.match(/content="(.*.png)"/)[1]);
+          }
+        });
+      } catch {}
 
-    etTuBrute(link, title, linkArray[linkArray.length-1], domElement);
-    //etTuBrute(reply);
-  })
-    .catch((error) => {
-      console.log(error)
+      etTuBrute(link, title, linkArray[linkArray.length - 1], domElement);
+      //etTuBrute(reply);
+    })
+    .catch(error => {
+      console.log(error);
 
       let div = document.createElement("div");
       linkLink(div, link);
-      div.setAttribute('data-title', title);
-      div.setAttribute('data-link', link);
+      div.setAttribute("data-title", title);
+      div.setAttribute("data-link", link);
       try {
-        div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
-      }
-      catch {
-        div.setAttribute('data-shortlink', link);
-
+        div.setAttribute(
+          "data-shortlink",
+          link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
+        );
+      } catch {
+        div.setAttribute("data-shortlink", link);
       }
 
       div.classList.add(`${domElement}-box`);
@@ -174,24 +172,26 @@ catch {
     let div = document.createElement("div");
     linkLink(div, link);
 
-    div.setAttribute('data-title', title);
-    div.setAttribute('data-link', link);
+    div.setAttribute("data-title", title);
+    div.setAttribute("data-link", link);
     try {
-      div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
-      }
-      catch {
-        div.setAttribute('data-shortlink', link);
-      }
+      div.setAttribute(
+        "data-shortlink",
+        link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
+      );
+    } catch {
+      div.setAttribute("data-shortlink", link);
+    }
 
     div.classList.add(`${domElement}-box`);
     select(`#${domElement}`).appendChild(div);
     let img = document.createElement("img");
 
     if (/^https?:\/\//i.test(reply)) {
-    img.src = reply;
-  } else {
-    img.src = link + "/" + reply;
-  }
+      img.src = reply;
+    } else {
+      img.src = link + "/" + reply;
+    }
 
     img.onload = function() {
       if (img.width && img.height > 50) {
@@ -218,7 +218,6 @@ function makeRequest(method, url) {
         resolve(xhr.response);
       } else {
         reject({
-          
           status: this.status,
           statusText: xhr.statusText
         });
@@ -232,6 +231,5 @@ function makeRequest(method, url) {
     };
 
     xhr.send();
-  
   });
 }
