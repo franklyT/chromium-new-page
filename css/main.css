@@ -45,21 +45,33 @@ body {
 }
 .flex-container {
   display: flex;
-  flex-direction: column;
+  flex-basis: 100%;
 
-  
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-container.flex-center-bottom {
-  display: flex;
 
-
-  align-self: flex-end;
-
-
-  top: 20em;
+  top: auto;
   bottom: 0;
   margin-bottom: 0;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -416,43 +428,54 @@ animation-duration: .5s;
 }
 
 #time {
-  display: inline-flex;
-  flex-shrink: 0;
-  flex-grow: 0;
-  width: 11vw;
-  align-content: center;
+  display: block;
+
+  font-size: 2.4vh;
+
+  width: 16vw;
+  height: auto;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+  left: 0;
+  right: 0;
+  margin-left: 37vw;
+  margin-top: auto;
+  margin-bottom: .4em;
+  bottom: 0;
+  
+  padding-right: 6vw;
+
 }
 #time > span {
-  flex-shrink: 0;
-  flex-grow: 0;
-  width: auto;
 }
-.clocktext {
-  display: flex;
-  flex-wrap: nowrap;
-  
-  width: 4em;
-  height: 4em;
-  padding-bottom: .2em;
 
+@media only screen and (max-width: 1500px) {
+  #time {
+    padding-right: 4vw;
+  }
+}
+
+.meridian {
+  display: inline-block;
+  position: absolute;
+}
+
+.seconds {
+  display: inline-block;
+  width: 2.5em;
+}
+
+
+.clocktext {
   
   font-family: 'Audiowide', cursive;
 
   color: white;
-  font-size: 1.7rem;
   font-weight: 900;
   letter-spacing: .15em;
-  height: auto;
-  width: auto;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* #time span {
@@ -476,32 +499,38 @@ animation-duration: .5s;
   margin-right: .3em;
   margin-top: .1em;
 }
-#weather {
-  position: relative;
-  font-size: 2em;
-}
+
 /* Custom icons made with Unicode symbols and CSS */
 #icon {
   opacity: 0;
-  display: flex;
+  display: inline-flex;
+  
 }
-.weathericons {
+.weather {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+
+  margin-top: auto;
+
+  font-size: 1.5rem;
+  margin-bottom: .5em;
+}
+
+.weather-icons {
   font-family: sans-serif;
   font-size: 2.8em;
-  padding-right: .2em;
+  margin-left: .5em;
+  margin-right: auto;
+
 }
-.weathericons > div {
-  display: inline-flex;
-  position: relative;
-  line-height: 1;
+.weather-icons > div {
   padding: 0;
-  white-space: nowrap;
-  text-align: center;
-  vertical-align: middle;
-  right: 0;
-  font-size: 1.5em;
-  height: .7em;
-  width: .7em;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  margin-top: auto;
+  margin-bottom: -.35em;
 }
 
 .i01d {
@@ -874,15 +903,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-.weather-icons-container {
-  position: absolute;
-  display: inline-flex;
-  height: auto;
-  width: auto;
-  top: .5em;
-  right: .7em;
 }
 
 .calendar-event {

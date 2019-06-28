@@ -45,11 +45,12 @@ function getClockStrings() {
     clockhour +
     ":" +
     clockminutes +
-    "<span>:" +
+    "<div class='seconds'>:" +
     clockseconds +
-    " " +
+    "</div>" +
+    "<div class='meridian'>" +
     meridian +
-    "</span>" +
+    "</div>" +
     "</span>";
   return { datehtml: datehtml, timehtml: timehtml };
 }

@@ -33,10 +33,7 @@
       <div id="greeting" class="greeting absolute-center"></div>
       <div id="topSites" class="topsites-container absolute-center"></div>
       <div id="calendar" class="calendar absolute-center"></div>
-      <div class="weather-icons-container">
-      <div id="weather" class="clocktext infotext"></div>
-      <div id="weatherIcons" class="weathericons"><div id="icon" class="i01d"></div></div>
-    </div> 
+
 
     <!--* Settings Menu *-->
     <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
@@ -77,10 +74,16 @@
     </div>
 
     <!--* Tray *-->
-    <div class="flex-container flex-center-bottom">
+    <div class="flex-container flex-center-bottom row">
+    <div class="flex-container flex-center-bottom column">
         <time id="time" class="clocktext"></time>
-    <div class="tray">
+        <div id="weather" class="weather clocktext infotext"></div>
+        <div id="weather-icons" class="weather weather-icons"><div id="icon" class="i01d"></div></div>
+
     </div>
+    <div class="tray">
+  </div>
+
   </div>
 
   <!--* Master Container End *-->
