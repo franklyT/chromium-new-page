@@ -35,6 +35,35 @@ body {
   }
 }
 
+#masterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  height: 100vh;
+  width: 100vw;
+
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+
+  
+}
+
+.flex-container.flex-center-bottom {
+  display: flex;
+
+
+  align-self: flex-end;
+
+
+  top: 20em;
+  bottom: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .absolute-center {
   position: absolute;
   top: 50vh;
@@ -65,24 +94,6 @@ body {
   z-index: 1;
   right: 0.5em;
   top: 0.7em;
-}
-
-.clock {
-  position: absolute;
-  display: inline-flex;
-  top: 40%;
-  left: auto;
-  right: auto;
-  transform: translateX(-50%) translateY(-50%);
-  color: white;
-  font-size: 800%;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  letter-spacing: -5px;
-  height: auto;
-  width: auto;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
 }
 
 button,
@@ -404,35 +415,47 @@ animation-duration: .5s;
   display: inline-flex;
 }
 
+#time {
+  display: inline-flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 11vw;
+  align-content: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#time > span {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: auto;
+}
 .clocktext {
   display: flex;
-  margin: 0;
-  padding: 1px 0 0 0;
+  flex-wrap: nowrap;
+  
   width: 4em;
   height: 4em;
-  text-align: center;
-  line-height: 1;
-  white-space: nowrap;
+  padding-bottom: .2em;
+
+  
+  font-family: 'Audiowide', cursive;
+
   color: white;
-  font-size: 9rem;
-  font-family: 'Orbitron', sans-serif;
+  font-size: 1.7rem;
   font-weight: 900;
   letter-spacing: .15em;
   height: auto;
   width: auto;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-}
 
-#time {
-  display: inline-flex;
-  font-size: 9rem;
-  padding-left: 0.1em;
-  margin-top: 30vh;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
 }
-#time span {
+
+/* #time span {
   display: flex;
   padding: 0;
   width: 2em;
@@ -444,6 +467,7 @@ animation-duration: .5s;
   position: relative;
   margin-left: 0.5em;
 }
+*/
 .infotext {
   display: flex;
   font-size: 1.3rem;
@@ -687,9 +711,13 @@ animation-duration: .5s;
   padding-top: .2em;
 }
 
+.notes:hover {
+
+}
+
 .settings-menu {
   background: #696969	;
-    position: absolute;
+  position: absolute;
   display: flex;
   width: 6em;
   height: 14.5em;
@@ -870,4 +898,20 @@ input:checked + .slider:before {
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
   2px 2px 0 #000;
 
+}
+
+.tray {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30vw;
+  height: 10vh;
+  background: rgb(220, 220, 220, .8);
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }

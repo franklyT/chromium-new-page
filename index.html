@@ -14,6 +14,8 @@
       <link rel="stylesheet" type="text/css" href="css/reset.css" />
       <link rel="stylesheet" type="text/css" href="css/main.css" />
       <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+
 
       <!--* Styles End *-->
   </head>
@@ -24,12 +26,10 @@
   <div id="overlay"></div>
 
   <!--* Master Container *-->
-    <div id="masterContainer" class="container">
+    <div id="masterContainer">
       <div class="bg"></div>
   
       <image src="icons/notes.png" id="notes" class="notes"></image>
-
-      <time id="time" class="clocktext"></time>
       <div id="greeting" class="greeting absolute-center"></div>
       <div id="topSites" class="topsites-container absolute-center"></div>
       <div id="calendar" class="calendar absolute-center"></div>
@@ -75,6 +75,13 @@
 <!--* Settings Menu End *-->
     </div>
     </div>
+
+    <!--* Tray *-->
+    <div class="flex-container flex-center-bottom">
+        <time id="time" class="clocktext"></time>
+    <div class="tray">
+    </div>
+  </div>
 
   <!--* Master Container End *-->
     </div>
