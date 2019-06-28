@@ -4,6 +4,7 @@ function init() {
   wd = document.getElementById("weather");
   gd = document.getElementById("gps");
   icon = document.getElementById("icon");
+  
   weatherminute = randRange(0, 14);
   getLocation();
   updateTime();
@@ -98,6 +99,7 @@ function getWeather() {
     if (this.readyState === 4 && this.status === 200) {
       var data = xhttp.responseText;
       processWeather(JSON.parse(data));
+    
     }
   };
   xhttp.open("GET", weatherurl, true);
@@ -110,11 +112,13 @@ function convertTemperature(kelvin) {
 }
 function processWeather(data) {
   weatherdata = data;
-
   var weather = weatherdata["weather"][0];
   icon.className = "i" + weather.icon;
   icon.style.opacity = 1;
-  icon.title = capitalizeMe(weatherdata.weather[0].description);
   var localtemperature = convertTemperature(data["main"].temp).toFixed(0);
   wd.innerHTML = localtemperature + "°";
 }
+
+
+icon.setAttribute('data-title', capitalizeMe(weatherdata.weather[0].description));
+icon.getAttribute('data-title');

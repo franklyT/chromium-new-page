@@ -4,14 +4,14 @@ chrome.storage.sync.get("weather", function(items) {
     if (items.weather === "show") {
       select("#weatherCheckbox").checked = true;
       select(".weather-setting-icon").classList.add("active");
-      select("#weatherIcons").classList.remove("display-none");
+      select("#weather-icons").classList.remove("display-none");
       select("#weather").classList.remove("display-none");
     } else {
       select("#weatherCheckbox").checked = false;
       document
         .querySelector(".weather-setting-icon")
         .classList.remove("active");
-      select("#weatherIcons").classList.add("display-none");
+      select("#weather-icons").classList.add("display-none");
       select("#weather").classList.add("display-none");
     }
   }
@@ -24,6 +24,6 @@ select(".slider").addEventListener("click", function() {
     chrome.storage.sync.set({ weather: "show" }, function() {});
   }
   select(".weather-setting-icon").classList.toggle("active");
-  select("#weatherIcons").classList.toggle("display-none");
+  select("#weather-icons").classList.toggle("display-none");
   select("#weather").classList.toggle("display-none");
 });

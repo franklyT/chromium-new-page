@@ -28,52 +28,12 @@
   <!--* Master Container *-->
     <div id="masterContainer">
       <div class="bg"></div>
-  
-      <image src="icons/notes.png" id="notes" class="notes"></image>
+      
       <div id="greeting" class="greeting absolute-center"></div>
       <div id="topSites" class="topsites-container absolute-center"></div>
       <div id="calendar" class="calendar absolute-center"></div>
 
 
-    <!--* Settings Menu *-->
-    <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
-      <div id="settingsParentNode">
-        <div id="settings" class="settings-menu hidden">
-          <div class="settings-menu-name"></div> 
-          <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
-          <image title="Cow Backgrounds" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
-          <image title="Tabby Backgrounds" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
-          <image title="Vanilla Backgrounds" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
-      
-  <!--*------------------------------------------------------------------------------------------------------------------------------>
-  <div class="settings-divider"></div>
-  <!--*------------------------------------------------------------------------------------------------------------------------------>
-
-      <!--* Weather Toggler *-->
-        <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
-        <label title="Weather Toggle" class="switch weather">
-          <input id="weatherCheckbox" type="checkbox">
-          <span title="Weather Toggle" class="slider round"></span>
-      <!--* Weather Toggler End *-->
-        </label>
-
-       <!--* Freezer Toggler *-->
-        <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
-        <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
-          <input id="freezeCheckbox" type="checkbox">
-          <span title="Freeze Toggle" class="slider round"></span>
-       <!--* Freezer Toggler End *-->
-        </label>
-
-       <!--* Utility Footer *-->
-        <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
-       <!--* Utility Footer End*-->
-
-<!--* Settings Menu End *-->
-    </div>
-    </div>
-
-    <!--* Tray *-->
     <div class="flex-container flex-center-bottom row">
     <div class="flex-container flex-center-bottom column">
         <time id="time" class="clocktext"></time>
@@ -81,7 +41,50 @@
         <div id="weather-icons" class="weather weather-icons"><div id="icon" class="i01d"></div></div>
 
     </div>
+
+    <!--* Tray *-->
     <div class="tray">
+        <image src="icons/notes.png" id="notes" class="notes"></image>
+
+
+    <!--* Settings Menu *-->
+    <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
+    <div id="settingsParentNode">
+      <div id="settings" class="settings-menu hidden">
+        <div class="settings-menu-name"></div> 
+        <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
+        <image title="Cow Backgrounds" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
+        <image title="Tabby Backgrounds" class="bg-picker tabby" src="icons/favicon128.png" id="tabby" draggable="false"></image>
+        <image title="Vanilla Backgrounds" class="bg-picker vanilla" src="icons/vanilla.png" id="vanilla" draggable="false"></image>
+    
+<!--*------------------------------------------------------------------------------------------------------------------------------>
+<div class="settings-divider"></div>
+<!--*------------------------------------------------------------------------------------------------------------------------------>
+
+    <!--* Weather Toggler *-->
+      <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
+      <label title="Weather Toggle" class="switch weather">
+        <input id="weatherCheckbox" type="checkbox">
+        <span title="Weather Toggle" class="slider round"></span>
+    <!--* Weather Toggler End *-->
+      </label>
+
+     <!--* Freezer Toggler *-->
+      <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
+      <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
+        <input id="freezeCheckbox" type="checkbox">
+        <span title="Freeze Toggle" class="slider round"></span>
+     <!--* Freezer Toggler End *-->
+      </label>
+
+     <!--* Utility Footer *-->
+      <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
+     <!--* Utility Footer End*-->
+
+<!--* Settings Menu End *-->
+  </div>
+  </div>
+
   </div>
 
   </div>
