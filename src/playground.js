@@ -66,7 +66,16 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
 
   // Do something with this?
   chrome.topSites.get(function(info){
-    for(var i=0;i<info.length;i++) {
-      console.log(info[i].url);
+    for(let i = 0; i<5; i++) {
+      //let tSite = document.createElement('div');
+      //tSite.classList.add('tsites-box')
+    //  tSite.addEventListener("click", () => {
+      //  window.location.href = info[i].url;
+     // });
+    
+    //  select('#tsites').appendChild(tSite)
+      giveUsApples(info[i].url, info[i].title, 'tsites');
+      // let tSites = selectAll('.tsites-box');
+      // tSites[tSites.length-1].innerHTML += info[i].url.match(/^(https:\/\/.*?)\//)[1]
     }
    });

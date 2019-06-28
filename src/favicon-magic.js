@@ -17,7 +17,7 @@ function pullRecentSites() {
       try {
       if (!data[attempt].url.includes("google") && !data[attempt].url.includes("gmail") ) {
         returnCount++;
-        giveUsApples(data[attempt].url, data[attempt].title);
+        giveUsApples(data[attempt].url, data[attempt].title, 'topsites');
       }
     }
     catch {
@@ -27,16 +27,28 @@ function pullRecentSites() {
 }
 
 
-function appleADay(link, title) {
+function appleADay(link, title, domElement) {
   return new Promise(function(resolve, reject) {
     let div = document.createElement("div");
     div.setAttribute('data-title', title);
     div.setAttribute('data-link', link);
+    try {
+      div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
+      }
+      catch {
+        div.setAttribute('data-shortlink', link);
 
-    div.classList.add("topsites-box");
+      }
+
+    div.classList.add(`${domElement}-box`);
 
     let img = document.createElement("img");
-    img.src = `${link.match(/^(https:\/\/.*?)\//)[1]}/apple-touch-icon.png`;
+    try {
+      img.src = `${link.match(/^(https:\/\/.*?)\//)[1]}/apple-touch-icon.png`;
+    }
+    catch {
+      img.src = `${link}/apple-touch-icon.png`;
+    }
   
     img.onload = function() {
       if (img.width && img.height > 50) {
@@ -51,30 +63,44 @@ function appleADay(link, title) {
   });
 }
 
-async function giveUsApples(link, title = null) {
-  await appleADay(link, title)
+async function giveUsApples(link, title = null, domElement) {
+  await appleADay(link, title, domElement)
     .then((result)=> {
       let div = document.createElement("div");
       linkLink(div, link);
 
       div.setAttribute('data-title', title);
       div.setAttribute('data-link', link);
+      try {
+        div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
+      }
+        catch {
+          div.setAttribute('data-shortlink', link);
 
-      div.classList.add("topsites-box");
+        }
+  
+      div.classList.add(`${domElement}-box`);
 
       let img = document.createElement("img");
       img.src = result;
       div.appendChild(img);
-      select("#topSites").appendChild(div);
+      select(`#${domElement}`).appendChild(div);
     })
     .catch((reject)=> {
       console.log(reject)
-      bruteForce(link, title);
+      bruteForce(link, title, domElement);
     });
 }
 
-async function bruteForce(link, title = null) {
-  await makeRequest("GET", link.match(/^(https:\/\/.*?)\//)[1])
+async function bruteForce(link, title = null, domElement) {
+  let linked = link;
+try {
+  linked = link.match(/^(https:\/\/.*?)\//)[1];
+}
+catch {
+  linked = link;
+}
+  await makeRequest("GET", linked)
     .then(response => {
       let meta = response;
       let linked = response;
@@ -118,7 +144,7 @@ async function bruteForce(link, title = null) {
 
   }
 
-    etTuBrute(link, title, linkArray[linkArray.length-1], link);
+    etTuBrute(link, title, linkArray[linkArray.length-1], domElement);
     //etTuBrute(reply);
   })
     .catch((error) => {
@@ -128,24 +154,37 @@ async function bruteForce(link, title = null) {
       linkLink(div, link);
       div.setAttribute('data-title', title);
       div.setAttribute('data-link', link);
+      try {
+        div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
+      }
+      catch {
+        div.setAttribute('data-shortlink', link);
 
-      div.classList.add("topsites-box");
+      }
+
+      div.classList.add(`${domElement}-box`);
 
       let img = document.createElement("img");
       img.src = "icons/domain.png";
       div.appendChild(img);
-      select("#topSites").appendChild(div);
+      select(`#${domElement}`).appendChild(div);
     });
 
-  function etTuBrute(link, title, reply) {
+  function etTuBrute(link, title, reply, domElement) {
     let div = document.createElement("div");
     linkLink(div, link);
 
     div.setAttribute('data-title', title);
     div.setAttribute('data-link', link);
+    try {
+      div.setAttribute('data-shortlink', link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, ""));
+      }
+      catch {
+        div.setAttribute('data-shortlink', link);
+      }
 
-    div.classList.add("topsites-box");
-    select("#topSites").appendChild(div);
+    div.classList.add(`${domElement}-box`);
+    select(`#${domElement}`).appendChild(div);
     let img = document.createElement("img");
 
     if (/^https?:\/\//i.test(reply)) {
