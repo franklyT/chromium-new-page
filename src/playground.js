@@ -48,16 +48,14 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
       // console.log(data.items[data.items.length-1].start.dateTime)
       let calDiv = document.createElement('div');
       calDiv.classList.add('calendar-event')
-      calDiv.innerHTML = `<span class='event'>${data.items[data.items.length-1].summary}</span><span class='time'>${dateConverter(data.items[data.items.length-1].start.dateTime.substring(0, 10))} • ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))}</span><br>`
+      calDiv.innerHTML = `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${data.items[data.items.length-1].summary}</span><br><span class='time'>${dateConverter(data.items[data.items.length-1].start.dateTime.substring(0, 10))} • ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))}</span>`
       
       if (data.items[data.items.length-1].location) {
-        calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].location}</span>`;
+        calDiv.innerHTML += `<span class='time'>•&nbsp;&nbsp${data.items[data.items.length-1].location}</span>`;
       }
       if (data.items[data.items.length-1].description) {
-        calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].description}</span><br>`;
+        calDiv.innerHTML += `<br><span class='time'>${data.items[data.items.length-1].description}</span> `;
       }
-
-      calDiv.innerHTML += `<span class='time'>${data.items[data.items.length-1].creator.email}</span>`;
       select('.cal').appendChild(calDiv);
      //  console.log(data.items[data.items.length-1]);
       //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));

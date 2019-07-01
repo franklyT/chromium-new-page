@@ -2,6 +2,26 @@ body {
   overflow: hidden;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .bg {
   background-image: url("");
   background-repeat: no-repeat;
@@ -154,7 +174,7 @@ input {
 
 .topsites-container {
   display: inline-flex;
-  margin-top: 5em;
+  margin-top: 49vh;
   grid-row: 1;
   width: 30rem;
   flex-wrap: wrap;
@@ -166,7 +186,7 @@ input {
 
 .tsites-container {
   display: flex;
-  margin-top: 3em;
+  margin-top: 10vh;
   grid-row: 1;
   width: auto;
 
@@ -229,6 +249,10 @@ input {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.5s;
+}
+
+.tsites-box:hover {
+  opacity: .7;
 }
 
 .topsites-box {
@@ -869,25 +893,36 @@ input:checked + .slider:before {
 }
 
 .cal {
-  display: flex;
-  max-width: 45vw;
-  height: auto;
-  width: auto;
-  margin-top: 45vh;
+  display: absolute;
+  
+  margin-top: 2vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
 
+  width: 100vw;
+  max-height: 25%;
+  left: 0;
+  top: 0;
   background: rgb(220, 220, 220, 0.5);
   border-radius: 1em;
+
+  overflow: auto;
+}
+
+.calendar__icon {
+  position: relative;
+  height: auto;
+  width: auto;
+  display: inline-flex;
+
+  top: .5em;
 }
 
 .calendar-event {
-  display: inline-flex;
+  display: absolute;
   flex-direction: row;
   flex-wrap: wrap;
   flex-flow: row wrap;
-
-  padding-left: 0.6em;
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
 
   font-size: 3em;
   color: white;
@@ -898,12 +933,11 @@ input:checked + .slider:before {
 }
 
 .calendar-event .text {
-  display: flex;
+  display: absolute;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   flex-flow: row wrap;
-  padding-bottom: 0.5em;
 
   font-size: 0.6em;
 
@@ -913,18 +947,17 @@ input:checked + .slider:before {
 }
 
 .calendar-event .event {
-  display: flex;
+  display: absolute;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   flex-flow: row wrap;
-  padding-bottom: 0.3em;
-
+  
   font-size: 1.5em;
 }
 
 .calendar-event .time {
-  display: flex;
+  display: absolute;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
@@ -937,7 +970,6 @@ input:checked + .slider:before {
 
 .tray {
   display: flex;
-  flex-wrap: wrap;
   width: 30vw;
   height: 8vh;
   background: rgb(220, 220, 220, 0.8);
@@ -952,12 +984,12 @@ input:checked + .slider:before {
 }
 
 .tray > img {
-  width: 3em;
-  height: 3em;
+  display: flex;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .tray .notes {
-  display: inline-flex;
   padding-left: 1em;
   padding-top: 0.5em;
 }
@@ -966,8 +998,6 @@ input:checked + .slider:before {
 }
 
 .tray .settings {
-  display: inline-flex;
-
   margin-right: 1em;
   margin-top: 0.5em;
 
