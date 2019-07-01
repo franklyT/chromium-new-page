@@ -316,6 +316,11 @@ input {
   animation-duration: 1s;
 
   transform: translateZ(0);
+
+  overflow: hidden;
+
+  text-align: center;
+  
 }
 
 .tsites-box > img {
@@ -338,22 +343,24 @@ input {
 .tsites-box:after {
   font-size: 0.8em;
   color: black;
-  position: relative;
-  display: flex;
+  position: absolute;
   content: attr(data-shortlink);
   font-weight: 900;
 
-  align-items: flex-end;
-  align-self: flex-end;
 
-  width: 100%;
-  height: 1em;
+  width: auto;
   margin-bottom: 0.5em;
 
-  margin-left: -5em;
-
+  bottom: 0;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-right: 1em;
+  padding-left: 1em;
+
+
 }
 
 @keyframes fadeInOpacity {
