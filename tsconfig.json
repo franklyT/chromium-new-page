@@ -1,7 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es6",
-        "out": "src/all.js",
-        "watch": true
-    }
-}
