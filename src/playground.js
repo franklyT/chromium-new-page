@@ -34,7 +34,7 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
 
   const headers = new Headers({
       'Authorization' : 'Bearer ' + token,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
   })
 
   const queryParams = { headers };
@@ -42,23 +42,27 @@ chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
   fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
   .then((response) => response.json()) // Transform the data into json
   .then(function(data) {
-       console.log(data.items[data.items.length-1])
+
+       const getLast = data.items.reduce((a,b)=> {
+         return a.start.dateTime > b.start.dateTime ? a : b;
+       });
+
       
-       // console.log(data.items[data.items.length-1]);
-      // console.log(data.items[data.items.length-1].start.dateTime)
+       // console.log(getLast);
+      // console.log(getLast.start.dateTime)
       let calDiv = document.createElement('div');
       calDiv.classList.add('calendar-event')
-      calDiv.innerHTML = `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${data.items[data.items.length-1].summary}</span><br><span class='time'>${dateConverter(data.items[data.items.length-1].start.dateTime.substring(0, 10))} • ${timeConverter(data.items[data.items.length-1].start.dateTime.substring(11, 16))}</span>`
+      calDiv.innerHTML = `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${getLast.summary}</span><span class='time'>${dateConverter(getLast.start.dateTime.substring(0, 10))} • ${timeConverter(getLast.start.dateTime.substring(11, 16))}</span>`
       
-      if (data.items[data.items.length-1].location) {
-        calDiv.innerHTML += `<span class='time'>•&nbsp;&nbsp${data.items[data.items.length-1].location}</span>`;
+      if (getLast.location) {
+        calDiv.innerHTML += `<span class='description'>•&nbsp;&nbsp${getLast.location}</span>`;
       }
-      if (data.items[data.items.length-1].description) {
-        calDiv.innerHTML += `<br><span class='time'>${data.items[data.items.length-1].description}</span> `;
+      if (getLast.description) {
+        calDiv.innerHTML += `&nbsp;&nbsp; <span class='description'>${getLast.description}</span> `;
       }
       select('.cal').appendChild(calDiv);
-     //  console.log(data.items[data.items.length-1]);
-      //console.log(data.items[data.items.length-1].start.dateTime.substring(0, 10));
+     //  console.log(getLast);
+      //console.log(getLast.start.dateTime.substring(0, 10));
     })
   })
 
