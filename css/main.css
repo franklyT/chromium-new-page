@@ -175,7 +175,7 @@ input {
 
 .topsites-container {
   display: flex;
-  margin-top: 33vh;
+  margin-top: 38vh;
   grid-row: 2;
   width: 30rem;
   margin-left: 1em;
@@ -186,7 +186,7 @@ input {
 
 .tsites-container {
   display: flex;
-  margin-top: 20vh;
+  margin-top: 25vh;
   grid-row: 1;
   width: auto;
 
