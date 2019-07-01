@@ -75,6 +75,7 @@ async function giveUsApples(link, title = null, domElement) {
           "data-shortlink",
           link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
         );
+        
       } catch {
         div.setAttribute("data-shortlink", link);
       }

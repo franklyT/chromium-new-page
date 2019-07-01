@@ -1,6 +1,6 @@
 // This function filters potential duplicates cropping up in topsites
 function parseTopsites() {
-    chrome.topSites.get(function(info) {
+    chrome.topSites.get(async function(info) {
       let tempGroup = info;
       tempGroup.forEach((elm1, index1) => {
         tempGroup.forEach((elm2, index2) => {
@@ -20,8 +20,20 @@ function parseTopsites() {
       });
     
       for (let i = 0; i < 5; i++) {
-        giveUsApples(tempGroup[i].url, tempGroup[i].title, "tsites");
+       await giveUsApples(tempGroup[i].url, tempGroup[i].title, "tsites");
       }
+      setTimeout(()=> {
+
+        selectAll('.tsites-box').forEach((elm)=> {
+          let appender = document.createElement('div');
+          appender.classList.add('tsites-box__top');
+  
+            console.log(elm)
+            elm.before(appender);
+        });
+
+       }, 3000)
+
     });
     }
     //parseTopsites();

@@ -175,7 +175,7 @@ input {
 
 .topsites-container {
   display: flex;
-  margin-top: 33vh;
+  margin-top: 45vh;
   grid-row: 2;
   width: 30rem;
   margin-left: 1em;
@@ -186,7 +186,7 @@ input {
 
 .tsites-container {
   display: flex;
-  margin-top: 20vh;
+  margin-top: 30vh;
   grid-row: 1;
   width: auto;
 
@@ -252,6 +252,7 @@ input {
 }
 
 .topsites-box {
+  
   background: rgb(255, 255, 255, 0.85);
   margin-right: 1.3em;
   margin-top: 1.3em;
@@ -284,6 +285,20 @@ input {
   transform: translateZ(0);
 }
 
+.tsites-box__top {
+  position: relative;
+  display: block;
+  margin-right: -2em;
+  content: " ";
+  background-image: url("../icons/heart.png");
+  background-size: 36px 36px;
+  border-radius: 1em;
+  height: 36px;
+  width: 36px;
+  z-index: 100;
+  }
+
+
 .topsites-box > img {
   position: absolute;
   width: 72px;
@@ -300,9 +315,10 @@ input {
 }
 
 .tsites-box {
+  
   background: rgb(255, 255, 255, 0.85);
   margin-right: 1.3em;
-  border-radius: 0.5em;
+  border-radius: 3em;
 
   flex-direction: row;
   display: flex;
@@ -318,6 +334,9 @@ input {
   transform: translateZ(0);
 
   overflow: hidden;
+
+
+  box-shadow: -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 3px 3px 0 #000;
 
   text-align: center;
   
@@ -337,6 +356,8 @@ input {
   animation-timing-function: ease-in;
   animation-duration: 1s;
 
+  
+
   transform: translateZ(0);
 }
 
@@ -349,7 +370,7 @@ input {
 
 
   width: auto;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.2em;
 
   bottom: 0;
   left: 0;
@@ -905,7 +926,7 @@ input:checked + .slider:before {
   margin-left: auto;
   
   top: 0;
-  margin-top: -1em;
+  margin-top: 25vh;
 
   overflow: auto;
 
