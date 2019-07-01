@@ -17,6 +17,12 @@ function isNative(fn) {
   console.log(/\{\s*\[native code\]\s*\}/.test("" + fn));
 }
 
+async function callWithPerf(fn) {
+  const start = new Date().getTime();
+  await fn();
+  console.log(`${fn.name} took ${new Date().getTime()-start} ms to execute.`);
+}
+
 // DOM load wrapper
 function onDOMLoad(method) {
 return window.addEventListener("DOMContentLoaded", function() {
