@@ -3,9 +3,9 @@ selectAll(".bg-picker").forEach(elm => {
     select(".bg").display = "none";
 
     selectAll(".bg-picker").forEach(nestedElm => {
-      nestedElm.classList.remove("active");
+      nestedElm.classList.remove("settings__icon--active");
     });
-    event.target.classList.add("active");
+    event.target.classList.add("settings__icon--active");
 
     if (event.target.id === "tabby") {
       chrome.storage.sync.set({ allData: tabbyBg, bgID: "tabby" }, function() {
@@ -33,5 +33,5 @@ selectAll(".bg-picker").forEach(elm => {
 });
 
 chrome.storage.sync.get("bgID", function(items) {
-  select("#" + items.bgID).classList.add("active");
+  select("#" + items.bgID).classList.add("settings__icon--active");
 });

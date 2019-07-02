@@ -22,13 +22,7 @@ body {
   background: #555; 
 }
 
-.bg {
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover; /* <------ */
-
+.background {
   width: auto;
   height: auto;
   min-height: 100%;
@@ -45,6 +39,14 @@ body {
   animation: fadein 2s;
 }
 
+.background__image {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover; /* <------ */
+}
+
 /* Safari, Chrome and Opera > 12.1 */
 @keyframes fadein {
   from {
@@ -55,7 +57,7 @@ body {
   }
 }
 
-#masterContainer {
+.container__master {
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
@@ -131,7 +133,13 @@ input {
   font-size: 2em;
 }
 
-.weather-setting-icon {
+.settings__icon--active {
+  transition: 0.2s;
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
+}
+
+.settings__weather__icon {
   position: absolute;
   width: 2em;
   height: 2em;
@@ -141,13 +149,7 @@ input {
   filter: grayscale(100%);
 }
 
-.weather-setting-icon.active {
-  transition: 0.2s;
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-}
-
-.freeze-setting-icon {
+.settings__freeze__icon {
   position: absolute;
   width: 2em;
   height: 2em;
@@ -157,10 +159,44 @@ input {
   filter: grayscale(100%);
 }
 
-.freeze-setting-icon.active {
-  transition: 0.2s;
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
+.settings__calendar__icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: 0.2em;
+  top: 11.4em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.settings__recent-history__icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: 0.2em;
+  top: 13.6em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.settings__tray__icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: 0.2em;
+  top: 18em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.settings__topsites__icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: 0.2em;
+  top: 15.8em;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .bg-picker {
@@ -857,19 +893,37 @@ padding-left: 1em;
   font-size: 1em;
 }
 
-.switch.weather {
+.switch__weather {
   top: 7.3em;
   left: 2.5em;
 }
 
-.switch.weather:after {
-display: none;
-}
 
-.switch.freeze {
+.switch__freeze {
   top: 9.5em;
   left: 2.5em;
 }
+
+.switch__calendar {
+  top: 11.7em;
+  left: 2.5em;
+}
+
+.switch__recent-history {
+  top: 13.9em;
+  left: 2.5em;
+}
+
+.switch__topsites {
+  top: 16.1em;
+  left: 2.5em;
+}
+
+.switch__tray {
+  top: 18.3em;
+  left: 2.5em;
+}
+
 
 /* Hide default HTML checkbox */
 .switch input {
@@ -917,15 +971,15 @@ input:checked + .slider:before {
 }
 
 /* Rounded sliders */
-.slider.round {
+.slider--round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider--round:before {
   border-radius: 50%;
 }
 
-.cal {
+.calendar {
   display: absolute;
   
   max-height: 20%;
@@ -1040,16 +1094,18 @@ input:checked + .slider:before {
   margin-left: auto;
   margin-right: auto;
 
+  padding-bottom: 1em;
 }
 
 .tray > img {
+  height: 5em;
+  width: 5em;
   display: flex;
   max-height: 100%;
   max-width: 100%;
   padding-right: .3em;
   padding-left: .3em;
   padding-top: .5em;
-  padding-bottom: .5em;
 }
 
 .tray > img:hover {
@@ -1069,7 +1125,7 @@ input:checked + .slider:before {
   content: "";
   top: 7em;
   width: 10em;
-  height: 5em;
+  height: 13.5em;
   display: inline-flex;
   margin-right: -20em;
   position: absolute;
@@ -1081,7 +1137,7 @@ input:checked + .slider:before {
   position: absolute;
   display: flex;
   width: 6em;
-  height: 14.5em;
+  height: 22.5em;
   bottom: 3em;
   right: 0;
   margin-right: -0.5em;
@@ -1094,8 +1150,8 @@ input:checked + .slider:before {
   transform: translatez(0);
 }
 
-.settings-menu.hidden {
-  width: 0em;
+.settings__menu--hidden {
+  width: 0em !important;
   transition: width 0.5s;
 
   -webkit-transform: translatez(0);
@@ -1133,35 +1189,42 @@ input:checked + .slider:before {
   width: 2em;
   height: 2em;
   left: 0.2em;
-  top: 12.2em;
+  top: 20.5em;
   z-index: 10;
 }
 
 .notes__overlay {
-  position: absolute;
+ /* position: absolute;
   width: 50vw;
   height: 50vh;
   background: rgb(0, 0, 0, 1);
+  border-radius: 1em;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto auto auto auto;
+*/
   z-index: 1001;
+  -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+  animation: fadein .5s;
 }
 
 
 
 .notes__overlay__textarea {
   position: absolute;
-  width: 45vw;
-  height: 40vh;
+  width: 40vw;
+  height: 55vh;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto auto auto auto;
-  z-index: 1001;
-
+  background: rgb(255, 255, 136);
   font-size: 1.5em;
+}
+
+.notes__overlay--hidden {
+  display: none;
 }

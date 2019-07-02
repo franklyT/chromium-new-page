@@ -26,20 +26,19 @@
   <div id="overlay"></div>
 
   <!--* Master Container *-->
-    <div id="masterContainer">
-      <div class="bg"></div>
+    <div id="masterContainer" class="container__master">
+      <div class="background background__image"></div>
       
-      <div id="cal" class="cal"></div>
+      <div id="calendar" class="calendar"></div>
 
      <div id="greeting" class="greeting absolute-center"></div>
       <div id="tsites" class="tsites-container absolute-center">
       </div>
       <div id="topsites" class="topsites-container absolute-center"></div>
 
-      <!-- ! <div id="notesTray" class="notes__overlay">
+       <div id="notesTray" class="notes__overlay notes__overlay--hidden">
         <textarea id="notesInput" class="notes__overlay__textarea"></textarea>
         </div> 
-      !-->
 
     <div class="flex-container flex-center-bottom row">
     <div class="flex-container flex-center-bottom column">
@@ -62,7 +61,7 @@
       <!--* Settings Menu *-->
       <image title="Settings" id="settingsIcon" src="icons/settings.png" class="settings"></image>
       <div id="settingsParentNode">
-        <div id="settings" class="settings-menu hidden">
+        <div id="settings" class="settings-menu settings__menu--hidden">
           <div class="settings-menu-name"></div> 
           <image title="Reset Name" class="settings-menu-name-reset" src="icons/reset.png" draggable="false"></image>
           <image title="Cow Backgrounds" class="bg-picker cow" src="icons/cow.png" id="cow" draggable="false"></image>
@@ -74,21 +73,53 @@
   <!--*------------------------------------------------------------------------------------------------------------------------------>
   
       <!--* Weather Toggler *-->
-        <image title="Weather Toggle" class="weather-setting-icon weather-setting" src="icons/weather.png" draggable="false"></image>
-        <label title="Weather Toggle" class="switch weather">
+        <image title="Weather Toggle" class="settings__weather__icon" src="icons/weather.png" draggable="false"></image>
+        <label title="Weather Toggle" class="switch switch__weather">
           <input id="weatherCheckbox" type="checkbox">
-          <span title="Weather Toggle" class="slider round"></span>
+          <span title="Weather Toggle" class="slider slider--round"></span>
       <!--* Weather Toggler End *-->
         </label>
   
        <!--* Freezer Toggler *-->
-        <image title="Freeze Toggle" class="freeze-setting-icon freeze-setting" src="icons/freeze.png" draggable="false"></image>
-        <label title="Freeze Toggle" class="switch freeze" style="pointer-events:none;">
+        <image title="Freeze Toggle" class="settings__freeze__icon" src="icons/freeze.png" draggable="false"></image>
+        <label title="Freeze Toggle" class="switch switch__freeze" style="pointer-events:none;">
           <input id="freezeCheckbox" type="checkbox">
-          <span title="Freeze Toggle" class="slider round"></span>
+          <span title="Freeze Toggle" class="slider slider--round"></span>
        <!--* Freezer Toggler End *-->
         </label>
   
+       <!--* Calendar Toggler *-->
+       <image title="Calendar Toggle" class="settings__calendar__icon" src="icons/calicon.png" draggable="false"></image>
+       <label title="Calendar Toggle" class="switch switch__calendar">
+         <input id="calendarCheckbox" type="checkbox">
+         <span title="Calendar Toggle" class="slider slider--round"></span>
+      <!--* Calendar Toggler End *-->
+       </label>
+ 
+         <!--* Recent History Toggler *-->
+            <image title="Recent History Toggle" class="settings__recent-history__icon" src="icons/historymenu.png" draggable="false"></image>
+            <label title="Recent History Toggle" class="switch switch__recent-history">
+              <input id="recentHistoryCheckbox" type="checkbox">
+              <span title="Recent History Toggle" class="slider slider--round"></span>
+           <!--* Recent History Toggler End *-->
+            </label>
+
+                     <!--* Topsites Toggler *-->
+                     <image title="Topsites Toggle" class="settings__topsites__icon" src="icons/heart.png" draggable="false"></image>
+                     <label title="Topsites Toggle" class="switch switch__topsites">
+                       <input id="topsitesCheckbox" type="checkbox">
+                       <span title="Topsites Toggle" class="slider slider--round"></span>
+                    <!--* Topsites Toggler End *-->
+                     </label>
+
+                     <!--* Tray Toggler *-->
+                     <image title="Tray Toggle" class="settings__tray__icon" src="icons/tray.png" draggable="false"></image>
+                     <label title="Tray Toggle" class="switch switch__tray">
+                       <input id="trayCheckbox" type="checkbox">
+                       <span title="Tray Toggle" class="slider slider--round"></span>
+                    <!--* Tray Toggler End *-->
+                     </label>
+
        <!--* Utility Footer *-->
         <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
        <!--* Utility Footer End*-->
@@ -117,6 +148,7 @@
     <script src="src/calendar-core.js"></script>
     <script src="src/topsites-core.js"></script>
     <script src="src/tray-core.js"></script>
+    <script src="src/notes-core.js"></script>
     <script src="src/playground.js"></script>
     <script src="src/final-init.js"></script>
 

@@ -51,6 +51,6 @@ chrome.identity.getAuthToken({ interactive: true }, function(token) {
             getDate.description
           }</span> `;
         }
-        select(".cal").appendChild(calDiv);
+        select(".calendar").appendChild(calDiv);
       });
   });
