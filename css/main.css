@@ -1009,7 +1009,7 @@ input:checked + .slider:before {
   display: inline-flex;
   position: relative;
 
-  padding-left: 1em;
+  padding-left: .5em;
 
   font-size: 0.8em;
 
