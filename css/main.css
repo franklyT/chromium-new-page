@@ -957,8 +957,8 @@ input:checked + .slider:before {
 
 .calendar__icon {
   position: absolute;
-  height: auto;
-  width: auto;
+  height: 72px;
+  width: 72px;
   display: flex;
 
   top: 1.3em;
@@ -1002,7 +1002,7 @@ input:checked + .slider:before {
   margin-left: 2em;
 
 
-  top: 1.3em;
+  top: 1em;
 }
 
 .calendar-event .time {
@@ -1013,17 +1013,20 @@ input:checked + .slider:before {
 
   font-size: 0.8em;
 
-  top: 2.2em;
+  top: 1.6em;
   margin-left: auto;
 }
 
 .calendar-event .description {
   display: inline-flex;
-  width: auto;
+  position: relative;
 
   padding-top: 1em;
 
   font-size: 0.8em;
+
+  top: 1.6em;
+  
 }
 
 .tray {
