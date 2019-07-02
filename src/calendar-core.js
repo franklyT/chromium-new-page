@@ -23,12 +23,13 @@ chrome.identity.getAuthToken({ interactive: true }, function(token) {
     )
       .then(response => response.json()) // Transform the data into json
       .then(function(data) {
+        console.log(data)
         let getDate = data.items
           .filter(elm => {
             return elm.start.dateTime > new Date().toISOString();
           })
           .reduce((a, b) => {
-            return a.start.dateTime > b ? a : b;
+            return a.start.dateTime < b.start.dateTime ? a : b;
           });
   
         let calDiv = document.createElement("div");

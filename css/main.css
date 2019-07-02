@@ -933,7 +933,10 @@ input:checked + .slider:before {
 
   overflow: auto;
 
-  
+  font-weight: 900;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+
 }
 
 .calendar__icon {
