@@ -298,6 +298,7 @@ input {
   z-index: 100;
 
   -webkit-animation: fadein .5s; /* Safari, Chrome and Opera > 12.1 */
+  animation: fadein .5s;
 
   }
 
@@ -498,8 +499,6 @@ padding-left: 1em;
   bottom: 0;
 
   padding-right: 6vw;
-}
-#time > span {
 }
 
 @media only screen and (max-width: 1500px) {
@@ -952,6 +951,7 @@ input:checked + .slider:before {
   border-radius: 2em;
 
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  animation: fadein 2s;
 
 }
 
@@ -983,9 +983,6 @@ input:checked + .slider:before {
 
 }
 
-.calendar-event > span {
-  
-}
 .calendar-event .text {
   width: 100%;
 
@@ -1055,10 +1052,8 @@ input:checked + .slider:before {
   padding-bottom: .5em;
 }
 
-.tray .notes {
-}
-
-.tray.notes:hover {
+.tray > img:hover {
+  opacity: .6;
 }
 
 .settings {
