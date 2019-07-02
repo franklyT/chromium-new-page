@@ -6,7 +6,7 @@ const greetingsList = {
     `Top o' the mornin' to ya, ${name}.`,
     `Buenos dias, ${name}.`,
     `Ciao, ${name}.`,
-    `Konichiwa, ${name}.`
+    `Konichiwa, ${name}-san.`
   ],
   afternoon: [`Good afternoon, ${name}.`],
   night: [`Good evening, ${name}.`],

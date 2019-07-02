@@ -175,7 +175,7 @@ input {
 
 .topsites-container {
   display: flex;
-  margin-top: 45vh;
+  margin-top: 50vh;
   grid-row: 2;
   width: 30rem;
   margin-left: 1em;
@@ -186,7 +186,7 @@ input {
 
 .tsites-container {
   display: flex;
-  margin-top: 30vh;
+  margin-top: 35vh;
   grid-row: 1;
   width: auto;
 
@@ -772,11 +772,11 @@ padding-left: 1em;
   width: auto;
   height: auto;
   font-size: 4rem;
+  top: 38vh;
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.1em;
   font-weight: 900;
   color: white;
-  margin-top: 3.7em;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
     2px 2px 0 #000;
 }
@@ -822,23 +822,27 @@ padding-left: 1em;
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 10;
+  z-index: 4000;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
   max-height: 100%;
   display: inline-flex;
 }
 
 #overlay > input {
-  z-index: 10;
+  z-index: 4001;
   position: absolute;
-  top: 45vh;
-  right: 43vw;
-  height: 2em;
-  width: 8em;
+  top: 50vh;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 4vh;
+  width: 15vw;
   border-radius: 1em;
-  padding-left: 1em;
 }
 
 #overlay > input:focus {
@@ -851,11 +855,16 @@ padding-left: 1em;
   display: inline-flex;
   width: 3em;
   height: 1.5em;
+  font-size: 1em;
 }
 
 .switch.weather {
   top: 7.3em;
   left: 2.5em;
+}
+
+.switch.weather:after {
+display: none;
 }
 
 .switch.freeze {
@@ -920,80 +929,92 @@ input:checked + .slider:before {
 .cal {
   display: absolute;
   
-
   max-height: 20%;
-  
+  vertical-align: middle;
   left: 0;
   right: 0;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 0;
   
   top: 0;
-  margin-top: 25vh;
+  margin-top: 2vh;
 
   overflow: auto;
 
   font-weight: 900;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+
+  background: rgb(220, 220, 220, 0.5);
+  width: auto;
+  height: 15vh;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 2em;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
 
 }
 
 .calendar__icon {
-  position: relative;
+  position: absolute;
   height: auto;
   width: auto;
-  display: inline-flex;
+  display: flex;
 
-  top: 1em;
+  top: 1.3em;
   
+}
+.calendar__upcoming {
+  position: absolute;
+  padding-top: .3em;
+  padding-left: .2em;
+  text-decoration: underline;
 }
 
 .calendar-event {
-  display: absolute;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
+  position: relative;
 
   font-size: 2em;
   color: white;
   font-weight: 900;
+  
+  width: auto;
+  height: auto;
 
 }
 
+.calendar-event > span {
+  
+}
 .calendar-event .text {
-  display: absolute;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
-  flex-flow: row wrap;
 
   font-size: 0.6em;
 
   color: black;
+
 }
 
 .calendar-event .event {
-  display: absolute;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-flow: row wrap;
-  
+  position: relative;
   font-size: 1.5em;
+
+  margin-left: 2em;
+
+
+  top: 1.3em;
 }
 
 .calendar-event .time {
-  display: absolute;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-flow: row wrap;
+  display: inline-flex;
+  position: relative;
 
   padding-left: 1em;
 
-
   font-size: 0.8em;
+
+  top: 2.2em;
+  margin-left: auto;
 }
 
 .calendar-event .description {
@@ -1007,7 +1028,7 @@ input:checked + .slider:before {
 
 .tray {
   display: flex;
-  width: 30vw;
+  
   height: 8vh;
   background: rgb(220, 220, 220, 0.8);
   border-top-left-radius: 2em;
@@ -1018,29 +1039,32 @@ input:checked + .slider:before {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .tray > img {
   display: flex;
   max-height: 100%;
   max-width: 100%;
+  padding-right: .3em;
+  padding-left: .3em;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 .tray .notes {
-  padding-left: 1em;
-  padding-top: 0.5em;
 }
 
 .tray.notes:hover {
 }
 
-.tray .settings {
-  margin-right: 1em;
-  margin-top: 0.5em;
-
+.settings {
+  bottom: 0;
   right: 0;
-  margin-left: auto;
+  position: absolute;
   z-index: 10;
+  width: 3em;
+  height: 3em;
 }
 
 .settings-divider {

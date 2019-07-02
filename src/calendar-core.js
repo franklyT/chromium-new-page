@@ -34,7 +34,8 @@ chrome.identity.getAuthToken({ interactive: true }, function(token) {
   
         let calDiv = document.createElement("div");
         calDiv.classList.add("calendar-event");
-        calDiv.innerHTML = `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${
+        calDiv.innerHTML = `<span class='calendar__upcoming'>Upcoming Event</span>`
+        calDiv.innerHTML += `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${
           getDate.summary
         }</span><span class='time'>${dateConverter(
           getDate.start.dateTime.substring(0, 10)

@@ -91,9 +91,6 @@ function dateConverter(date) {
   const d = (day + y + Math.floor(y / 4) - Math.floor(y / 100) +
   Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
 
-  const months = ["January","February","March","April","May","June","July",
-  "August","September","October","November","December"];
-
   return `${days[d]}, ${months[Number(date.slice(5,7))-1]} ${Number(date.slice(8,10))}`;
 
 // return `${date}`;
