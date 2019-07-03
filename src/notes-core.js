@@ -104,7 +104,7 @@ function moveInit(dragHandle, dragTarget) {
 
   document
     .querySelector(dragHandle)
-    .addEventListener("mousedown", startDrag, true);
+    .addEventListener("mousedown", startDrag, {passive: true});
   document
     .querySelector(dragHandle)
     .addEventListener("touchstart", startDrag, {passive: true});
