@@ -107,7 +107,7 @@ function moveInit(dragHandle, dragTarget) {
     .addEventListener("mousedown", startDrag, true);
   document
     .querySelector(dragHandle)
-    .addEventListener("touchstart", startDrag, true);
+    .addEventListener("touchstart", startDrag, {passive: true});
 
   /*sets offset parameters and starts listening for mouse-move*/
   function startDrag(e) {
