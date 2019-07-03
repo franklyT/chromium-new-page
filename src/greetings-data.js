@@ -8,18 +8,18 @@ const greetingsList = {
       `Ciao, ${name}.`,
       `Konichiwa, ${name}-san.`
     ];
-    return morningArray[randRange(0, morningArray.length-1)];
+    return morningArray[randRange(0, morningArray.length - 1)];
   },
 
   get Afternoon() {
     // Placeholder, keeping consistency for extensibility
     const afternoonArray = [`Good afternoon, ${name}.`];
-      return afternoonArray[randRange(0, afternoonArray.length-1)];
+    return afternoonArray[randRange(0, afternoonArray.length - 1)];
   },
   get Night() {
     // Placeholder, keeping consistency for extensibility
     const nightArray = [`Good evening, ${name}.`];
-      return nightArray[randRange(0, nightArray.length-1)];
+    return nightArray[randRange(0, nightArray.length - 1)];
   },
 
   get Wildcard() {
