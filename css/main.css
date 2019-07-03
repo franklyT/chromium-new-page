@@ -837,6 +837,10 @@ input:checked + .slider:before {
   animation: fadein 2s;
 }
 
+.calendar:empty {
+  display:none;
+}
+
 .calendar__icon {
   position: absolute;
   height: 72px;

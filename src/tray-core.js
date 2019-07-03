@@ -21,6 +21,10 @@ const defaultTray = {
   }
 };
 
+let modifiedTray = {
+  
+}
+
 Object.keys(defaultTray).forEach(function(key) {
   const appender = document.createElement("img");
   appender.style.borderRadius = "3em";
