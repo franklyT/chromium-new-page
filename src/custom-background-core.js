@@ -16,8 +16,7 @@ function callBackground() {
 }
 
 function getBgUrl(elm) {
-  var bg = "";
-  bg = elm.style.backgroundImage;
+  let bg = elm.style.backgroundImage;
   return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
 
@@ -81,7 +80,7 @@ chrome.storage.sync.get("allData", function(items) {
     });
   } else {
     imageBay = items.allData;
-    var image = document.createElement("img");
+    const image = document.createElement("img");
     image.src = getBgUrl(select(".background__image"));
     image.onload = function() {
       select(".background__image").style.display = "inline-flex";

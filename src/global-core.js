@@ -57,11 +57,11 @@ function timeConverter(time) {
 time = time.split(':'); // convert to array
 
 // fetch
-var hours = Number(time[0]);
-var minutes = Number(time[1]);
+const hours = Number(time[0]);
+const minutes = Number(time[1]);
 
 // calculate
-var timeValue;
+let timeValue;
 
 if (hours > 0 && hours <= 12) {
   timeValue= "" + hours;
@@ -99,7 +99,7 @@ function dateConverter(date) {
 
 // Helper function to get selected text
 function getSelectedText() {
-  var text = "";
+  let text = "";
   if (typeof window.getSelection != "undefined") {
       text = window.getSelection().toString();
   } else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
