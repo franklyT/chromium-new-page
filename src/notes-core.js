@@ -132,7 +132,6 @@ function moveInit(dragHandle, dragTarget) {
     if (e.target === select("#notesInput")) {
       return;
     }
-    console.log(e);
     if (e.target === select("#notesCancel")) {
       return;
     }

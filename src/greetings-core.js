@@ -65,7 +65,6 @@ function callGreetings(reset = false) {
       } else {
         select("#greeting").innerHTML = greetingsList.Wildcard;
       }
-      console.log(getDayState());
     }
   });
 }

@@ -1,6 +1,6 @@
 selectAll(".bg-picker").forEach(elm => {
   elm.addEventListener("click", function() {
-    select(".bg").display = "none";
+    select(".background").display = "none";
 
     selectAll(".bg-picker").forEach(nestedElm => {
       nestedElm.classList.remove("settings__icon--active");
@@ -14,6 +14,7 @@ selectAll(".bg-picker").forEach(elm => {
         callBackground();
         catchFourZeroFour(imageBay.bg);
       });
+      
     } else if (event.target.id === "cow") {
       chrome.storage.sync.set({ allData: cowBg, bgID: "cow" }, function() {
         imageBay = cowBg;

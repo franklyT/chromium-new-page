@@ -1,7 +1,6 @@
 /* TRAY */
 
 chrome.storage.sync.get("tray", function(items) {
-    console.log(items.tray)
     if (items.tray === undefined || items.tray === null) {
     } else {
       if (items.tray === "show") {
@@ -31,7 +30,6 @@ select("#traySlider").addEventListener("click", function() {
   /* CALENDAR */
 
   chrome.storage.sync.get("calendar", function(items) {
-    console.log(items.calendar)
     if (items.calendar === undefined || items.calendar === null) {
     } else {
       if (items.calendar === "show") {
@@ -61,7 +59,6 @@ select("#calendarSlider").addEventListener("click", function() {
     /* TOPSITES */
 
     chrome.storage.sync.get("topsites", function(items) {
-        console.log(items.topsites)
         if (items.topsites === undefined || items.topsites === null) {
         } else {
           if (items.topsites === "show") {
@@ -91,7 +88,6 @@ select("#calendarSlider").addEventListener("click", function() {
     /* HISTORY */
 
     chrome.storage.sync.get("recentHistory", function(items) {
-        console.log(items.recentHistory)
         if (items.recentHistory === undefined || items.recentHistory === null) {
         } else {
           if (items.recentHistory === "show") {
