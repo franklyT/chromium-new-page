@@ -820,6 +820,8 @@ padding-left: 1em;
   display: inline-block;
   width: auto;
   height: auto;
+  white-space: nowrap;
+
   font-size: 4rem;
   top: 80vh;
   font-family: "Times New Roman", Times, serif;
