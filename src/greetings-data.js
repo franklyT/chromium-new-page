@@ -1,23 +1,24 @@
 const greetingsList = {
   get Morning() {
     const morningArray = [
-      `Good morning, ${name}!`,
-      `Good morning, ${name}!`,
+      `Good morning, ${name}.`,
       `Morning, ${name}!`,
       `Rise and shine, ${name}.`,
       `Buenos dias, ${name}.`,
       `Ciao, ${name}.`,
       `Konichiwa, ${name}-san.`
     ];
-    return morningArray[randRange(0, 6)];
+    return morningArray[randRange(0, 5)];
   },
 
   get Afternoon() {
+    // Placeholder, keeping consistency for extensibility
     if (1 === 1) {
       return `Good afternoon, ${name}.`;
     }
   },
   get Night() {
+    // Placeholder, keeping consistency for extensibility
     if (1 === 1) {
       return `Good evening, ${name}.`;
     }
@@ -28,11 +29,11 @@ const greetingsList = {
       `Hi there ${name}.`,
       `Hey, ${name}.`,
       `What's up, ${name}?`,
-      `Greetings, ${name}!`,
+      `Greetings, ${name}.`,
       "GREETINGS!",
       `Salute, ${name}.`,
       `Howdy, ${name}.`,
-      `Yo, ${name}!`,
+      `Yo, ${name}.`,
       `Good day, ${name}.`,
       `Hello, ${name}.`,
       `Hi, ${name}.`,
