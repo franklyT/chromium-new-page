@@ -32,4 +32,5 @@ function parseTopsites() {
   });
 }
 //parseTopsites();
-callWithPerf(parseTopsites);
+//callWithPerf(parseTopsites);
+onDOMLoad(parseTopsites())
