@@ -1,16 +1,8 @@
-AM + PM lower half of clock aftertext
-:seconds upper half of clock aftertext
 ability to set own background set
-
-add thumbnail to history preview
-
-https://www.reddit.com/r/javascript/comments/64y67n/generate_website_thumbnail_image_based_on_a/
 
 white fade on bottom of bg image?
 
 should history sites be sites, not pages
-
-hover on history icons, large text box pops up showing url
 
 allow caching for domain icons
 
@@ -65,5 +57,3 @@ https://images4.alphacoders.com/628/thumb-1920-628927.png
 https://images3.alphacoders.com/648/thumb-1920-648618.jpg
 https://images3.alphacoders.com/273/thumb-1920-273289.jpg
 https://images2.alphacoders.com/119/thumb-1920-119152.jpg
-
-i need to test async functions for performance
