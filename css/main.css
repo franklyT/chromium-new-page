@@ -1199,6 +1199,8 @@ input:checked + .slider:before {
   padding-top: 3vh;
   height: 20vh;
   width: 15rem;
+  min-height: 20vh;
+  min-width: 15rem;
   margin-left: 1em;
   background: rgb(255, 225, 100);
   z-index: 1002;
@@ -1217,6 +1219,8 @@ input:checked + .slider:before {
 
 
 .notes__overlay__textarea {
+  font-size: 1.5em;
+
   position: absolute;
 
   padding: .5em .5em .5em .5em;
@@ -1228,6 +1232,9 @@ input:checked + .slider:before {
   background: rgb(255, 255, 136);
 
   outline: none;
+
+  box-sizing: border-box;
+  resize: none;
 }
 
 .notes__overlay--hidden {
