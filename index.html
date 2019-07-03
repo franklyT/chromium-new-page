@@ -77,7 +77,7 @@
         <image title="Weather Toggle" class="settings__weather__icon" src="icons/weather.png" draggable="false"></image>
         <label title="Weather Toggle" class="switch switch__weather">
           <input id="weatherCheckbox" type="checkbox">
-          <span title="Weather Toggle" class="slider slider--round"></span>
+          <span id="weatherSlider" title="Weather Toggle" class="slider slider--round"></span>
       <!--* Weather Toggler End *-->
         </label>
   
@@ -85,7 +85,7 @@
         <image title="Freeze Toggle" class="settings__freeze__icon" src="icons/freeze.png" draggable="false"></image>
         <label title="Freeze Toggle" class="switch switch__freeze" style="pointer-events:none;">
           <input id="freezeCheckbox" type="checkbox">
-          <span title="Freeze Toggle" class="slider slider--round"></span>
+          <span id="freezeSlider" title="Freeze Toggle" class="slider slider--round"></span>
        <!--* Freezer Toggler End *-->
         </label>
   
@@ -93,31 +93,30 @@
        <image title="Calendar Toggle" class="settings__calendar__icon" src="icons/calicon.png" draggable="false"></image>
        <label title="Calendar Toggle" class="switch switch__calendar">
          <input id="calendarCheckbox" type="checkbox">
-         <span title="Calendar Toggle" class="slider slider--round"></span>
+         <span id="calendarSlider" title="Calendar Toggle" class="slider slider--round"></span>
       <!--* Calendar Toggler End *-->
        </label>
+                      <!--* Topsites Toggler *-->
+                      <image title="Topsites Toggle" class="settings__topsites__icon" src="icons/heart.png" draggable="false"></image>
+                      <label title="Topsites Toggle" class="switch switch__topsites">
+                        <input id="topsitesCheckbox" type="checkbox">
+                        <span id="topsitesSlider" title="Topsites Toggle" class="slider slider--round"></span>
+                     <!--* Topsites Toggler End *-->
+                      </label>
  
          <!--* Recent History Toggler *-->
             <image title="Recent History Toggle" class="settings__recent-history__icon" src="icons/historymenu.png" draggable="false"></image>
             <label title="Recent History Toggle" class="switch switch__recent-history">
               <input id="recentHistoryCheckbox" type="checkbox">
-              <span title="Recent History Toggle" class="slider slider--round"></span>
+              <span id="recentHistorySlider" title="Recent History Toggle" class="slider slider--round"></span>
            <!--* Recent History Toggler End *-->
             </label>
-
-                     <!--* Topsites Toggler *-->
-                     <image title="Topsites Toggle" class="settings__topsites__icon" src="icons/heart.png" draggable="false"></image>
-                     <label title="Topsites Toggle" class="switch switch__topsites">
-                       <input id="topsitesCheckbox" type="checkbox">
-                       <span title="Topsites Toggle" class="slider slider--round"></span>
-                    <!--* Topsites Toggler End *-->
-                     </label>
 
                      <!--* Tray Toggler *-->
                      <image title="Tray Toggle" class="settings__tray__icon" src="icons/tray.png" draggable="false"></image>
                      <label title="Tray Toggle" class="switch switch__tray">
                        <input id="trayCheckbox" type="checkbox">
-                       <span title="Tray Toggle" class="slider slider--round"></span>
+                       <span id="traySlider" title="Tray Toggle" class="slider slider--round"></span>
                     <!--* Tray Toggler End *-->
                      </label>
 
@@ -144,8 +143,8 @@
     <script src="src/weather-core.js"></script>
     <script src="src/menu-core.js"></script>
     <script src="src/menu-icons.js"></script>
-    <script src="src/menu-weather.js"></script>
     <script src="src/menu-history.js"></script>
+    <script src="src/menu-extensions.js"></script>
     <script src="src/calendar-core.js"></script>
     <script src="src/topsites-core.js"></script>
     <script src="src/tray-core.js"></script>
