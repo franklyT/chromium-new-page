@@ -13,15 +13,13 @@ const greetingsList = {
 
   get Afternoon() {
     // Placeholder, keeping consistency for extensibility
-    if (1 === 1) {
-      return `Good afternoon, ${name}.`;
-    }
+    const afternoonArray = [`Good afternoon, ${name}.`];
+      return afternoonArray[randRange(0, 0)];
   },
   get Night() {
     // Placeholder, keeping consistency for extensibility
-    if (1 === 1) {
-      return `Good evening, ${name}.`;
-    }
+    const nightArray = [`Good evening, ${name}.`];
+      return nightArray[randRange(0, 0)];
   },
 
   get Wildcard() {
