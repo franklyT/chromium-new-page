@@ -26,6 +26,27 @@ onDOMLoad(
 );
 
 onDOMLoad(
+  select("#notesCancel").addEventListener("click", () => {
+    select("#notesTray").classList.toggle("notes__overlay--hidden");
+    if (!select("#notesTray").classList.contains("notes__overlay--hidden")) {
+      chrome.storage.sync.set(
+        {
+          notesOn: true
+        },
+        function() {}
+      );
+    } else {
+      chrome.storage.sync.set(
+        {
+          notesOn: false
+        },
+        function() {}
+      );
+    }
+  })
+);
+
+onDOMLoad(
   chrome.storage.sync.get("notesXY", function(items) {
     select("#notesTray").style.left = items.notesXY[0];
     select("#notesTray").style.top = items.notesXY[1];
@@ -102,7 +123,11 @@ function moveInit(dragHandle, dragTarget) {
 
   /*sets offset parameters and starts listening for mouse-move*/
   function startDrag(e) {
-    if (event.target === select("#notesInput")) {
+    if (e.target === select("#notesInput")) {
+      return;
+    }
+    console.log(e);
+    if (e.target === select("#notesCancel")) {
       return;
     }
 
