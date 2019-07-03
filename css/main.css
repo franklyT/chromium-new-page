@@ -51,11 +51,6 @@ table {
 
 /* CSS RESET END */
 
-
-body {
-  overflow: hidden;
-}
-
 /* REDESIGN SCROLLBAR */
 
 /* width */
@@ -95,6 +90,10 @@ label {
 }
 
 /* GENERAL HACKS END */
+
+body {
+  overflow: hidden;
+}
 
 .background {
   width: auto;
