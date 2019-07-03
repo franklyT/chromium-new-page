@@ -1262,3 +1262,11 @@ input:checked + .slider:before {
   background-size: 20px 20px;
   background-repeat: no-repeat;
 }
+
+.notes__overlay__cancel:hover {
+  opacity: .6
+}
+.notes__overlay__cancel:active {
+  filter: brightness(0) invert(1);
+  transition: .05s;
+}
