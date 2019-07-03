@@ -121,16 +121,6 @@ label {
   background-size: cover; /* <------ */
 }
 
-/* Safari, Chrome and Opera > 12.1 */
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .container__master {
   display: flex;
   flex-wrap: wrap;
@@ -498,15 +488,6 @@ padding-right: 1em;
 padding-left: 1em;
 }
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .topsites-box > img:hover {
   opacity: 0.8;
   transform: translateZ(0);
@@ -557,24 +538,6 @@ padding-left: 1em;
   animation-name: rSpin;
   animation-duration: 1000ms;
   animation-fill-mode: forwards;
-}
-
-@keyframes fSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
 }
 
 .display-none {
@@ -917,16 +880,6 @@ padding-left: 1em;
 .blink {
   font-weight: bold;
   animation: blink-caret 1s step-end infinite;
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    color: transparent;
-  }
-  25% {
-    color: black;
-  }
 }
 
 .name-overlay {
@@ -1353,3 +1306,52 @@ input:checked + .slider:before {
   filter: brightness(0) invert(1);
   transition: .05s;
 }
+
+/* ANIMATIONS */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    color: transparent;
+  }
+  25% {
+    color: black;
+  }
+}
+
+@keyframes fSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ANIMATIONS END */
