@@ -1,15 +1,15 @@
 const greetingsList = {
   get Morning() {
-    if (1 === 1) {
-      return `Good morning, ${name}!`;
-    }
-    `Good morning, ${name}!`,
+    const morningArray = [
+      `Good morning, ${name}!`,
+      `Good morning, ${name}!`,
       `Morning, ${name}!`,
       `Rise and shine, ${name}.`,
-      `Top o' the mornin' to ya, ${name}.`,
       `Buenos dias, ${name}.`,
       `Ciao, ${name}.`,
-      `Konichiwa, ${name}-san.`;
+      `Konichiwa, ${name}-san.`
+    ];
+    return morningArray[randRange(0, 6)];
   },
 
   get Afternoon() {
@@ -24,13 +24,12 @@ const greetingsList = {
   },
 
   get Wildcard() {
-    if (1 === 1) {
-      return `Hi there ${name}.`;
-    }
-    `Hi there ${name}.`,
+    const wildcardArray = [
+      `Hi there ${name}.`,
       `Hey, ${name}.`,
       `What's up, ${name}?`,
       `Greetings, ${name}!`,
+      "GREETINGS!",
       `Salute, ${name}.`,
       `Howdy, ${name}.`,
       `Yo, ${name}!`,
@@ -45,7 +44,9 @@ const greetingsList = {
       `Hey, what's up, ${name}?`,
       `Hiya, ${name}.`,
       `How's everything, ${name}?`,
-      `Long time no see, ${name}.`;
+      `Long time no see, ${name}.`
+    ];
+    return wildcardArray[randRange(0, 20)];
   },
   Holiday: []
 };
