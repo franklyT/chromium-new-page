@@ -211,7 +211,7 @@ input {
 
 .topsites-container {
   display: flex;
-  margin-top: 40vh;
+  margin-top: 45vh;
   grid-row: 2;
   width: 30rem;
   margin-left: 1em;
@@ -222,7 +222,7 @@ input {
 
 .tsites-container {
   display: flex;
-  margin-top: 25vh;
+  margin-top: 30vh;
   grid-row: 1;
   width: auto;
 
@@ -807,7 +807,7 @@ padding-left: 1em;
   width: auto;
   height: auto;
   font-size: 4rem;
-  top: 28vh;
+  top: 33vh;
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.1em;
   font-weight: 900;
@@ -991,7 +991,7 @@ input:checked + .slider:before {
   margin-bottom: 0;
   
   top: 0;
-  margin-top: 65vh;
+  margin-top: 3vh;
 
   overflow: auto;
 
