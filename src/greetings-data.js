@@ -47,5 +47,5 @@ const greetingsList = {
     ];
     return wildcardArray[randRange(0, wildcardArray.length - 1)];
   },
-  Holiday: []
+  get Holiday() {}
 };
