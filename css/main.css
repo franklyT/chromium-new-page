@@ -843,8 +843,8 @@ input:checked + .slider:before {
 
 .calendar__icon {
   position: absolute;
-  height: 72px;
-  width: 72px;
+  height: 62px;
+  width: 62px;
   display: flex;
 
   top: 1.3em;
