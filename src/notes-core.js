@@ -1,3 +1,5 @@
+onDOMLoad(moveInit("#notesTray", "#notesTray"));
+
 onDOMLoad(
   chrome.storage.sync.get("notes", function(items) {
     select("#notesInput").value = items.notes;
@@ -65,8 +67,6 @@ onDOMLoad(
     }
   })
 );
-
-onDOMLoad(moveInit("#notesTray", "#notesTray"));
 
 onDOMLoad(
   select("#notes").addEventListener(
