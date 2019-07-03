@@ -95,6 +95,11 @@ body {
   overflow: hidden;
 }
 
+button,
+input {
+  font-size: 2em;
+}
+
 .background {
   width: auto;
   height: auto;
@@ -189,11 +194,6 @@ body {
   z-index: 1;
   right: 0.5em;
   top: 0.7em;
-}
-
-button,
-input {
-  font-size: 2em;
 }
 
 .settings__icon--active {
@@ -573,12 +573,6 @@ padding-left: 1em;
   bottom: 0;
 
   padding-right: 6vw;
-}
-
-@media only screen and (max-width: 1500px) {
-  #time {
-    padding-right: 4vw;
-  }
 }
 
 .meridian {
@@ -1355,3 +1349,13 @@ input:checked + .slider:before {
 }
 
 /* ANIMATIONS END */
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1500px) {
+  #time {
+    padding-right: 4vw;
+  }
+}
+
+/* MEDIA QUERIES END */
