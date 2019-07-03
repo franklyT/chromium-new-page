@@ -50,7 +50,7 @@ onDOMLoad(
   chrome.storage.sync.get("notesXY", function(items) {
     select("#notesTray").style.left = items.notesXY[0];
     select("#notesTray").style.top = items.notesXY[1];
-    // Resets a lost notes tray
+    // Resets lost notes tray
     if (!isInViewport(select("#notesTray"))) {
       select("#notesTray").style.left = 0;
       select("#notesTray").style.top = 0;
