@@ -1,4 +1,4 @@
-// Abuse it and it breaks, that simple. I'm not inclined to obfuscate. Get your own if it's been broken.
+// Abuse it and it breaks :(
 var YOUR_API_KEY_HERE = "90593d5093dd6b724ed5aec9eeb5c930";
 //NOTE: ES5 chosen instead of ES6 for compatibility with older mobile devices
 var now, dd, td;
