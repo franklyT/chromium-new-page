@@ -692,155 +692,6 @@ padding-left: 1em;
   margin-bottom: -0.35em;
 }
 
-.i01d {
-  background: radial-gradient(ellipse at center, #f1e767 0%, #feb645 100%);
-  border-radius: 100%;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i01n {
-  background: radial-gradient(ellipse at center, #99b 0%, #335 100%);
-  border-radius: 100%;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i02d:before {
-  font-size: 70%;
-  content: "\2600";
-  color: #ff0;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i02d:after {
-  content: "\2601";
-  color: #ffe;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i02n:before {
-  font-size: 150%;
-  content: "•";
-  color: #335;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i02n:after {
-  content: "\2601";
-  color: #ccc;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i03d:before {
-  content: "\2601";
-  color: #ffe;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i03n:before {
-  content: "\2601";
-  color: #ccc;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i04d:before {
-  content: "\2601";
-  color: #333;
-  position: absolute;
-  margin-left: 5px;
-  z-index: -1;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i04d:after {
-  content: "\2601";
-  color: #ffe;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i04n:before {
-  content: "\2601";
-  color: #666;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i04n:after {
-  content: "\2601";
-  color: #ccd;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i09d:before,
-.i09n:before {
-  content: "\1F327";
-  color: #ffe;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i10d:before {
-  content: "\1F326";
-  color: #ffe;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  display: inline-flex;
-}
-
-.i10n:before {
-  font-size: 150%;
-  content: "•";
-  color: #533;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i10n:after {
-  content: "\1F327";
-  color: #ccc;
-  opacity: 0.9;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-
-.i11d:before,
-.i11n:before {
-  content: "\26c8";
-  color: #333;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.i11n {
-  opacity: 0.8;
-}
-
-.i13d:before,
-.i13n:before {
-  content: "\1F328";
-  color: #ffe;
-}
-.i13d:after,
-.i13n:after {
-  content: "\26C4";
-  font-size: 60%;
-}
-.i13n {
-  opacity: 0.8;
-}
-
-.i50d:before,
-.i50n:before {
-  content: "\FE4C";
-  color: #678;
-}
-.i50d:after,
-.i50n:after {
-  content: "\FE4C";
-  color: #456;
-}
-
 .greeting {
   display: inline-block;
   width: auto;
@@ -1306,6 +1157,158 @@ input:checked + .slider:before {
   filter: brightness(0) invert(1);
   transition: .05s;
 }
+
+/* ICONS */
+.i01d {
+  background: radial-gradient(ellipse at center, #f1e767 0%, #feb645 100%);
+  border-radius: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i01n {
+  background: radial-gradient(ellipse at center, #99b 0%, #335 100%);
+  border-radius: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i02d:before {
+  font-size: 70%;
+  content: "\2600";
+  color: #ff0;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i02d:after {
+  content: "\2601";
+  color: #ffe;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i02n:before {
+  font-size: 150%;
+  content: "•";
+  color: #335;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i02n:after {
+  content: "\2601";
+  color: #ccc;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i03d:before {
+  content: "\2601";
+  color: #ffe;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i03n:before {
+  content: "\2601";
+  color: #ccc;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i04d:before {
+  content: "\2601";
+  color: #333;
+  position: absolute;
+  margin-left: 5px;
+  z-index: -1;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i04d:after {
+  content: "\2601";
+  color: #ffe;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i04n:before {
+  content: "\2601";
+  color: #666;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i04n:after {
+  content: "\2601";
+  color: #ccd;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i09d:before,
+.i09n:before {
+  content: "\1F327";
+  color: #ffe;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i10d:before {
+  content: "\1F326";
+  color: #ffe;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  display: inline-flex;
+}
+
+.i10n:before {
+  font-size: 150%;
+  content: "•";
+  color: #533;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i10n:after {
+  content: "\1F327";
+  color: #ccc;
+  opacity: 0.9;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.i11d:before,
+.i11n:before {
+  content: "\26c8";
+  color: #333;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.i11n {
+  opacity: 0.8;
+}
+
+.i13d:before,
+.i13n:before {
+  content: "\1F328";
+  color: #ffe;
+}
+.i13d:after,
+.i13n:after {
+  content: "\26C4";
+  font-size: 60%;
+}
+.i13n {
+  opacity: 0.8;
+}
+
+.i50d:before,
+.i50n:before {
+  content: "\FE4C";
+  color: #678;
+}
+.i50d:after,
+.i50n:after {
+  content: "\FE4C";
+  color: #456;
+}
+
+/* ICONS END */
 
 /* ANIMATIONS */
 @keyframes fadein {
