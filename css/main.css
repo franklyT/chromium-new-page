@@ -1200,13 +1200,17 @@ input:checked + .slider:before {
   height: 20vh;
   width: 15rem;
   margin-left: 1em;
-  background: rgb(255, 255, 70);
+  background: rgb(225, 225, 120);
   z-index: 1002;
 
   opacity: 1;
   visibility: visible;
 
   border:1px solid grey;
+
+  transition: opacity .5s;
+
+  overflow: hidden;
 
 }
 
@@ -1215,7 +1219,7 @@ input:checked + .slider:before {
 .notes__overlay__textarea {
   position: absolute;
 
-  padding: 0em 0em 0em 0em;
+  padding: .5em .5em .5em .5em;
 
   border: none;
 
@@ -1223,6 +1227,7 @@ input:checked + .slider:before {
   height: 20vh;
   background: rgb(255, 255, 136);
 
+  outline: none;
 }
 
 .notes__overlay--hidden {
