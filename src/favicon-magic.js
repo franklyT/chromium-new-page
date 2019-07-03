@@ -146,7 +146,6 @@ async function bruteForce(link, title = null, domElement) {
       //etTuBrute(reply);
     })
     .catch(error => {
-      console.log(error);
 
       let div = document.createElement("div");
       linkLink(div, link);

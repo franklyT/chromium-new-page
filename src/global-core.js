@@ -119,6 +119,17 @@ function isInViewport(elm) {
   );
 };
 
+// Helper function for time of day
+function getDayState() {
+  const dateDayTime = new Date().getHours();
+  if (dateDayTime < 12) {
+    return 'Morning';
+  } else if (dateDayTime >= 12 && dateDayTime < 17) {
+    return 'Afternoon';
+  } else if (dateDayTime >= 17) {
+    return 'Night';
+  }
+}
 
 // init UI
 //document.querySelector('#masterContainer').style.display = "";

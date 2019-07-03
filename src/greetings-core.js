@@ -69,7 +69,8 @@ chrome.storage.sync.get("name", function(items) {
   } else {
       name = items.name;
       select('.settings-menu-name').innerHTML = name;
-      select('#greeting').innerHTML = `Hi, ${items.name}.`;
+      select('#greeting').innerHTML = greetingsList[getDayState()]
+      console.log(getDayState())
   }
 });
 
