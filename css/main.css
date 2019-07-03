@@ -56,6 +56,8 @@ body {
   overflow: hidden;
 }
 
+/* REDESIGN SCROLLBAR */
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -76,6 +78,10 @@ body {
   background: #555; 
 }
 
+/* REDESIGN SCROLLBAR END */
+
+/* GENERAL HACKS */
+
 input {
   /* Use GPU */
   -webkit-transform: translatez(0);
@@ -87,6 +93,8 @@ label {
   -webkit-transform: translatez(0);
   transform: translatez(0);
 }
+
+/* GENERAL HACKS END */
 
 .background {
   width: auto;
