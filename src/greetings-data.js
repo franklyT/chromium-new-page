@@ -45,7 +45,7 @@ const greetingsList = {
       `How's everything, ${name}?`,
       `Long time no see, ${name}.`
     ];
-    return wildcardArray[randRange(0, 20)];
+    return wildcardArray[randRange(0, wildcardArray.length - 1)];
   },
   Holiday: []
 };
