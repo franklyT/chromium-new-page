@@ -99,7 +99,6 @@ input {
   z-index: -1;
   display: none;
 
-  -webkit-animation: fadein 2s;
   animation: fadein 2s;
 }
 
