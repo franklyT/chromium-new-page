@@ -97,6 +97,7 @@ function dateConverter(date) {
 }
 
 
+// Helper function to get selected text
 function getSelectedText() {
   var text = "";
   if (typeof window.getSelection != "undefined") {
@@ -106,6 +107,17 @@ function getSelectedText() {
   }
   return text;
 }
+
+// Helper function to test whether or not an element is outside of the viewport bounds
+function isInViewport(elm) {
+  const bounding = elm.getBoundingClientRect();
+  return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
 
 
 // init UI
