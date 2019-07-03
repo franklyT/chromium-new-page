@@ -34,7 +34,6 @@ function toggleSpin() {
   }
 }
 
-
-select('.settings-menu-name-reset').addEventListener('click', function() {
+select(".settings-menu-name-reset").addEventListener("click", function() {
   callGreetings(true);
 });

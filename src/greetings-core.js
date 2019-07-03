@@ -5,18 +5,18 @@ let name = "";
 function callGreetings(reset = false) {
   chrome.storage.sync.get("name", function(items) {
     if (items.name === undefined || items.name === null || reset === true) {
-      var overlay = document.createElement("div");
+      let overlay = document.createElement("div");
       overlay.classList.add("name-overlay");
       select("#overlay").appendChild(overlay);
 
       setTimeout(function() {
-        var overlayType = document.createElement("div");
+        let overlayType = document.createElement("div");
         overlayType.classList.add("typewriter");
 
-        var overlayText = document.createElement("div");
+        let overlayText = document.createElement("div");
         overlayText.classList.add("typedText");
 
-        var overlayBlink = document.createElement("span");
+        let overlayBlink = document.createElement("span");
         overlayBlink.classList.add("blink");
         overlayBlink.innerText = "|";
 
@@ -35,7 +35,7 @@ function callGreetings(reset = false) {
             text = "What's your name?";
             typeWrite(text, 0);
             setTimeout(function() {
-              var overlayInput = document.createElement("input");
+              const overlayInput = document.createElement("input");
               overlayInput.innerHtml = "";
               overlayInput.id = "overlayInput";
               select("#overlay").appendChild(overlayInput);
