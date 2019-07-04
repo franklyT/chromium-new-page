@@ -2,6 +2,24 @@
    via several sources: Pexels, Unsplash, premium licensing from icon providers, custom work, etc.
    Other attribution is noted where applicable.
 */
+/* Global vars */
+
+/* eslint-disable no-unused-vars */
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // querySelector helper rewrites
 function select(sel) {

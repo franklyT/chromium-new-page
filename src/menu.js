@@ -1,5 +1,86 @@
-/* eslint-disable no-empty */
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
+document.body.addEventListener('click', () => {
+  if (
+    event.target !== select('#settingsIcon')
+    && !select('#settingsParentNode').contains(event.target)
+    && !select('#settings').classList.contains('settings__menu--hidden')
+  ) {
+    toggleSpin();
+    select('.settings').style.pointerEvents = 'none';
+    setTimeout(() => {
+      select('.settings').style.pointerEvents = '';
+    }, 1000);
+
+    select('#settings').classList.add('settings__menu--hidden');
+  }
+});
+
+select('#settingsIcon').addEventListener('click', () => {
+  event.target.style.pointerEvents = 'none';
+  toggleSpin();
+
+  select('.settings-menu').classList.toggle('settings__menu--hidden');
+  setTimeout(() => {
+    select('.settings').style.pointerEvents = '';
+  }, 1000);
+});
+
+function toggleSpin() {
+  if (select('#settings').classList.contains('settings__menu--hidden')) {
+    select('.settings').classList.remove('fSpin');
+    select('.settings').classList.add('rSpin');
+  } else {
+    select('.settings').classList.add('fSpin');
+    select('.settings').classList.remove('rSpin');
+  }
+}
+
+select('.settings-menu-name-reset').addEventListener('click', () => {
+  callGreetings(true);
+});
+
+/* ICONS */
+selectAll('.bg-picker').forEach((elm) => {
+  elm.addEventListener('click', () => {
+    select('.background').display = 'none';
+
+    selectAll('.bg-picker').forEach((nestedElm) => {
+      nestedElm.classList.remove('settings__icon--active');
+    });
+    event.target.classList.add('settings__icon--active');
+
+    if (event.target.id === 'tabby') {
+      chrome.storage.sync.set({ allData: tabbyBg, bgID: 'tabby' }, () => {
+        imageBay = tabbyBg;
+        imageBay.bg = myBg();
+        callBackground();
+        catchFourZeroFour(imageBay.bg);
+      });
+    } else if (event.target.id === 'cow') {
+      chrome.storage.sync.set({ allData: cowBg, bgID: 'cow' }, () => {
+        imageBay = cowBg;
+        imageBay.bg = myBg();
+        callBackground();
+        catchFourZeroFour(imageBay.bg);
+      });
+    } else if (event.target.id === 'vanilla') {
+      chrome.storage.sync.set({ allData: vanillaBg, bgID: 'vanilla' }, () => {
+        imageBay = vanillaBg;
+        imageBay.bg = myBg();
+        callBackground();
+        catchFourZeroFour(imageBay.bg);
+      });
+    }
+  });
+});
+
+chrome.storage.sync.get('bgID', (items) => {
+  select(`#${items.bgID}`).classList.add('settings__icon--active');
+});
+
+/* ICONS END */
+
 /* TRAY */
 
 chrome.storage.sync.get('tray', (items) => {
@@ -132,3 +213,25 @@ select('.slider').addEventListener('click', () => {
   select('#weather-icons').classList.toggle('display-none');
   select('#weather').classList.toggle('display-none');
 });
+
+/* HISTORY ERASER */
+select('#historyEraser').addEventListener('click', () => {
+  let cQuery = confirm(
+    "Are you sure you want to erase your history?\nNote: This will erase your browser's entire history permanently.",
+  );
+  if (cQuery) {
+    chrome.history.deleteAll(() => {
+      console.log(
+        'Tabby Tab: WARNING: Your web history has been erased. If this is not expected behavior, discontinue Tabby Tab extension use.',
+      );
+    });
+    select('#historyEraser').classList.add('rSpin');
+    setTimeout(() => {
+      select('#historyEraser').classList.remove('rSpin');
+    }, 1000);
+    selectAll('.topsites-box').forEach(elm => {
+      elm.parentNode.removeChild(elm);
+    });
+  }
+});
+/* HISTORY ERASER END */
