@@ -6,7 +6,25 @@
     "extends": "airbnb",
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "angular": true,
+
+        "select": "writable",
+        "selectAll": "writable",
+        "onDOMLoad": "writable",
+        "randRange": "writable",
+        "giveUsApples": "writable",
+        "imageBay": "writable",
+        "myBg": "writable",
+        "vanillaBg": "writable",
+        "cowBg": "writable",
+        "tabbyBg": "writable",
+        "callBackground": "writable",
+        "catchFourZeroFour": "writable",
+        "isInViewport": "writable",
+        "getDayState": "writable",
+        "dateConverter": "writable",
+        "timeConverter": "writable"
     },
     "parserOptions": {
         "ecmaVersion": 2018,

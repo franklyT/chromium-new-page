@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 /* Disclaimer: In addition to project licensing, it should be noted that images used are royalty-free
    via several sources: Pexels, Unsplash, premium licensing from icon providers, custom work, etc.
    Other attribution is noted where applicable.
 */
 /* Global vars */
-/* global months, days, select, selectAll, isNative, callWithPerf, onDOMLoad, randRange */
 
 const months = [
   'January',
@@ -19,6 +20,7 @@ const months = [
   'November',
   'December',
 ];
+
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // querySelector helper rewrites
@@ -102,7 +104,6 @@ function timeConverter(time) {
 function dateConverter(date) {
   // get day algorithm based on https://www.mindstick.com/blog/387/calculating-day-of-the-week-for-any-date-in-javascript
 
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const year = date.slice(0, 4);
   const day = date.slice(8, 10);
   const month = date.slice(5, 7);
@@ -156,6 +157,7 @@ function getDayState() {
   if (dayTime >= 17) {
     return 'Night';
   }
+  return null;
 }
 
 // init UI
