@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const greetingsList = {
   get Morning() {
     const morningArray = [
@@ -6,7 +8,7 @@ const greetingsList = {
       `Rise and shine, ${name}.`,
       `Buenos dias, ${name}.`,
       `Ciao, ${name}.`,
-      `Konichiwa, ${name}-san.`
+      `Konichiwa, ${name}-san.`,
     ];
     return morningArray[randRange(0, morningArray.length - 1)];
   },
@@ -28,7 +30,7 @@ const greetingsList = {
       `Hey, ${name}.`,
       `What's up, ${name}?`,
       `Greetings, ${name}.`,
-      "GREETINGS!",
+      'GREETINGS!',
       `Salute, ${name}.`,
       `Howdy, ${name}.`,
       `Yo, ${name}.`,
@@ -43,9 +45,9 @@ const greetingsList = {
       `Hey, what's up, ${name}?`,
       `Hiya, ${name}.`,
       `How's everything, ${name}?`,
-      `Long time no see, ${name}.`
+      `Long time no see, ${name}.`,
     ];
     return wildcardArray[randRange(0, wildcardArray.length - 1)];
   },
- // get Holiday() {}
+  // get Holiday() {}
 };

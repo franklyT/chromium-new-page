@@ -11,10 +11,10 @@ select(".freeze").addEventListener("click", () => {
 
 // History - do i need to build this to replace chrome.topSites?
 // What if I just do recents instead?!
-//chrome.history.search({text: '', maxResults: 10}, function(data) {
+// chrome.history.search({text: '', maxResults: 10}, function(data) {
 // data.forEach(function(page) {
 //          console.log(page.url);
 //  });
-//});
+// });
 
 // ICON FOR NOT FOUND SHOULD BE FIRST LETTER OF URL
