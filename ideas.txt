@@ -1,16 +1,8 @@
-AM + PM lower half of clock aftertext
-:seconds upper half of clock aftertext
 ability to set own background set
-
-add thumbnail to history preview
-
-https://www.reddit.com/r/javascript/comments/64y67n/generate_website_thumbnail_image_based_on_a/
 
 white fade on bottom of bg image?
 
 should history sites be sites, not pages
-
-hover on history icons, large text box pops up showing url
 
 allow caching for domain icons
 
