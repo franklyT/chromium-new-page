@@ -75,7 +75,6 @@ async function giveUsApples(link, title = null, domElement) {
           "data-shortlink",
           link.match(/[https:|http:]\/\/(.*?)\//)[1].replace(/www./, "")
         );
-        
       } catch {
         div.setAttribute("data-shortlink", link);
       }
@@ -146,6 +145,7 @@ async function bruteForce(link, title = null, domElement) {
       //etTuBrute(reply);
     })
     .catch(error => {
+      console.log(error);
 
       let div = document.createElement("div");
       linkLink(div, link);

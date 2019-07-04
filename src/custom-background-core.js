@@ -11,12 +11,13 @@ function bgLength() {
 }
 
 function callBackground() {
-  select(".background__image").style.backgroundImage = "url('" + imageBay.bg;
+  select(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
 }
 
 function getBgUrl(elm) {
-  let bg = elm.style.backgroundImage;
+  var bg = "";
+  bg = elm.style.backgroundImage;
   return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
 
@@ -28,7 +29,7 @@ function catchFourZeroFour(url) {
 }
 
 function imageFound() {
-  select(".background__image").style.display = "inline-flex";
+  select(".bg").style.display = "inline-flex";
 }
 
 function imageNotFound() {
@@ -37,9 +38,9 @@ function imageNotFound() {
     console.log(
       `Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`
     );
-    select(".background__image").style.backgroundImage =
+    select(".bg").style.backgroundImage =
       "url('../images/bgfallback.jpg')";
-    select(".background__image").style.display = "inline-flex";
+    select(".bg").style.display = "inline-flex";
     return;
   }
   if (imageBay.catchDeadLinks.length - 1 === 0) {
@@ -63,7 +64,7 @@ function imageNotFound() {
   while (imageBay.catchDeadLinks.indexOf(myBg) !== -1) {
     myBg;
   }
-  select(".background__image").style.backgroundImage = "url('" + imageBay.bg;
+  select(".bg").style.backgroundImage = "url('" + imageBay.bg;
   +"')";
   catchFourZeroFour(imageBay.bg);
 }
@@ -80,10 +81,10 @@ chrome.storage.sync.get("allData", function(items) {
     });
   } else {
     imageBay = items.allData;
-    const image = document.createElement("img");
-    image.src = getBgUrl(select(".background__image"));
+    var image = document.createElement("img");
+    image.src = getBgUrl(select(".bg"));
     image.onload = function() {
-      select(".background__image").style.display = "inline-flex";
+      select(".bg").style.display = "inline-flex";
     };
 
     imageBay.bg = myBg();

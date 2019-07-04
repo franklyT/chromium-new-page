@@ -1,3 +1,0 @@
-fix performance issues - test reflows and short circuit async calls should do
-
-remove favimagic from proj make own proj

@@ -120,6 +120,5 @@ function processWeather(data) {
 }
 
 
-// To be addressed
-//icon.setAttribute('data-title', capitalizeMe(weatherdata.weather[0].description));
-//icon.getAttribute('data-title');
+icon.setAttribute('data-title', capitalizeMe(weatherdata.weather[0].description));
+icon.getAttribute('data-title');

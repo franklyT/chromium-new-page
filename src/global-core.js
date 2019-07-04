@@ -17,12 +17,6 @@ function isNative(fn) {
   console.log(/\{\s*\[native code\]\s*\}/.test("" + fn));
 }
 
-async function callWithPerf(fn) {
-  const start = new Date().getTime();
-  await fn();
-  console.log(`${fn.name} took ${new Date().getTime()-start} ms to execute.`);
-}
-
 // DOM load wrapper
 function onDOMLoad(method) {
 return window.addEventListener("DOMContentLoaded", function() {
@@ -57,11 +51,11 @@ function timeConverter(time) {
 time = time.split(':'); // convert to array
 
 // fetch
-const hours = Number(time[0]);
-const minutes = Number(time[1]);
+var hours = Number(time[0]);
+var minutes = Number(time[1]);
 
 // calculate
-let timeValue;
+var timeValue;
 
 if (hours > 0 && hours <= 12) {
   timeValue= "" + hours;
@@ -91,45 +85,14 @@ function dateConverter(date) {
   const d = (day + y + Math.floor(y / 4) - Math.floor(y / 100) +
   Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
 
+  const months = ["January","February","March","April","May","June","July",
+  "August","September","October","November","December"];
+
   return `${days[d]}, ${months[Number(date.slice(5,7))-1]} ${Number(date.slice(8,10))}`;
 
 // return `${date}`;
 }
 
-
-// Helper function to get selected text
-function getSelectedText() {
-  let text = "";
-  if (typeof window.getSelection != "undefined") {
-      text = window.getSelection().toString();
-  } else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
-      text = document.selection.createRange().text;
-  }
-  return text;
-}
-
-// Helper function to test whether or not an element is outside of the viewport bounds
-function isInViewport(elm) {
-  const bounding = elm.getBoundingClientRect();
-  return (
-      bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
-
-// Helper function for time of day
-function getDayState() {
-  const dayTime = new Date().getHours();
-  if (dayTime < 12) {
-    return 'Morning';
-  } else if (dayTime >= 12 && dayTime < 17) {
-    return 'Afternoon';
-  } else if (dayTime >= 17) {
-    return 'Night';
-  }
-}
 
 // init UI
 //document.querySelector('#masterContainer').style.display = "";

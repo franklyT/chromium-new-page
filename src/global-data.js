@@ -1,4 +1,4 @@
-const months = [
+var months = [
     "January",
     "February",
     "March",
@@ -12,7 +12,7 @@ const months = [
     "November",
     "December"
   ];
-  const days = [
+  var days = [
     "Sunday",
     "Monday",
     "Tuesday",
