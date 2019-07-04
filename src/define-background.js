@@ -61,9 +61,7 @@ function imageFound() {
 function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
   if (bgLength().length - 1 === imageBay.catchDeadLinks.length - 1) {
-    console.log(
-      `Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`,
-    );
+    console.log(`Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`);
     select('.background__image').style.backgroundImage = "url('../images/bgfallback.jpg')";
     select('.background__image').style.display = 'inline-flex';
     return;
