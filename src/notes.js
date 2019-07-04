@@ -118,7 +118,8 @@ function moveInit(dragHandle, dragTarget) {
     const rect = dragObj.getBoundingClientRect();
 
     if (e.type == 'mousedown') {
-      xOffset = e.clientX - rect.left; // clientX and getBoundingClientRect() both use viewable area adjusted when scrolling aka 'viewport'
+      xOffset = e.clientX - rect.left; 
+      // clientX+getBoundingClientRect() use viewable area adjusted when scrolling aka 'viewport'
       yOffset = e.clientY - rect.top;
       window.addEventListener('mousemove', dragObject, true);
     } else if (e.type == 'touchstart') {
@@ -144,7 +145,7 @@ function moveInit(dragHandle, dragTarget) {
   }
 
   /* End dragging */
-  document.onmouseup = function (e) {
+  document.onmouseup = function () {
     if (dragObj) {
       chrome.storage.sync.set(
         {

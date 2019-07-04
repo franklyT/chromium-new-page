@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "webextensions": true
     },
     "extends": "airbnb",
     "globals": {
@@ -24,17 +25,16 @@
         "isInViewport": "writable",
         "getDayState": "writable",
         "dateConverter": "writable",
-        "timeConverter": "writable"
+        "timeConverter": "writable",
+        "callGreetings": "writable"
     },
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "rules": {
-    },
-
-    "env": {
-        "browser": true,
-        "webextensions": true
-    }
+        "no-use-before-define": "off",
+        "no-console": "off",
+        "no-empty": "off"
+    }   
 }

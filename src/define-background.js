@@ -34,8 +34,7 @@ function bgLength() {
 }
 
 function callBackground() {
-  select('.background__image').style.backgroundImage = `url('${imageBay.bg}`;
-  +"')";
+  select('.background__image').style.backgroundImage = `url('${imageBay.bg}')`;
 }
 
 function getBgUrl(elm) {
@@ -83,8 +82,7 @@ function imageNotFound() {
   while (imageBay.catchDeadLinks.indexOf(myBg) !== -1) {
     myBg;
   }
-  select('.background__image').style.backgroundImage = `url('${imageBay.bg}`;
-  +"')";
+  select('.background__image').style.backgroundImage = `url('${imageBay.bg}')`;
   catchFourZeroFour(imageBay.bg);
 }
 

@@ -1,5 +1,5 @@
 chrome.identity.getAuthToken({ interactive: true }, (token) => {
-  const init = {
+ /* const init = {
     method: 'GET',
     async: true,
     headers: {
@@ -8,7 +8,7 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
     },
     contentType: 'json',
   };
-
+*/
   const headers = new Headers({
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
