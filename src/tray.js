@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const defaultTray = {
   news: {
     link: 'https://news.google.com',

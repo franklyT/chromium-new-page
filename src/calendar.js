@@ -1,16 +1,16 @@
-chrome.identity.getAuthToken({ interactive: true }, function(token) {
+chrome.identity.getAuthToken({ interactive: true }, (token) => {
   const init = {
     method: 'GET',
     async: true,
     headers: {
-      Authorization: 'Bearer ' + token,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     contentType: 'json',
   };
 
   const headers = new Headers({
-    Authorization: 'Bearer ' + token,
+    Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
   });
 
@@ -18,18 +18,14 @@ chrome.identity.getAuthToken({ interactive: true }, function(token) {
 
   fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
     .then(response => response.json()) // Transform the data into json
-    .then(function(data) {
-      let getDate = data.items
-        .filter(elm => {
-          return elm.start.dateTime > new Date().toISOString();
-        })
-        .reduce((a, b) => {
-          return a.start.dateTime < b.start.dateTime ? a : b;
-        });
+    .then((data) => {
+      const getDate = data.items
+        .filter(elm => elm.start.dateTime > new Date().toISOString())
+        .reduce((a, b) => (a.start.dateTime < b.start.dateTime ? a : b));
 
-      let calDiv = document.createElement('div');
+      const calDiv = document.createElement('div');
       calDiv.classList.add('calendar-event');
-      calDiv.innerHTML = `<span class='calendar__upcoming'>Upcoming Event</span>`;
+      calDiv.innerHTML = '<span class=\'calendar__upcoming\'>Upcoming Event</span>';
       calDiv.innerHTML += `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${
         getDate.summary
       }</span><span class='time'>${dateConverter(

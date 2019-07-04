@@ -13,5 +13,10 @@
         "sourceType": "module"
     },
     "rules": {
+    },
+
+    "env": {
+        "browser": true,
+        "webextensions": true
     }
 }

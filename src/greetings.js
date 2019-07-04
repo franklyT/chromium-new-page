@@ -1,7 +1,3 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 const greetingsList = {
   get Morning() {
     const morningArray = [

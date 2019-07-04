@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const cowBg = {
   bg: '',
 
@@ -24,7 +23,6 @@ const tabbyBg = {
   bg1: 'https://images.unsplash.com/photo-1532386236358-a33d8a9434e3',
 };
 
-
 onDOMLoad(getBg());
 
 function myBg() {
@@ -32,23 +30,21 @@ function myBg() {
 }
 
 function bgLength() {
-  return Object.keys(imageBay).filter(elm => {
-    return /[bg][0-9]/g.test(elm);
-  });
+  return Object.keys(imageBay).filter(elm => /[bg][0-9]/g.test(elm));
 }
 
 function callBackground() {
-  select('.background__image').style.backgroundImage = "url('" + imageBay.bg;
+  select('.background__image').style.backgroundImage = `url('${imageBay.bg}`;
   +"')";
 }
 
 function getBgUrl(elm) {
-  let bg = elm.style.backgroundImage;
+  const bg = elm.style.backgroundImage;
   return bg.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
 }
 
 function catchFourZeroFour(url) {
-  let tester = new Image();
+  const tester = new Image();
   tester.addEventListener('load', imageFound);
   tester.addEventListener('error', imageNotFound);
   tester.src = url;
@@ -61,7 +57,9 @@ function imageFound() {
 function imageNotFound() {
   imageBay.catchDeadLinks.push(imageBay.bg);
   if (bgLength().length - 1 === imageBay.catchDeadLinks.length - 1) {
-    console.log(`Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.`);
+    console.log(
+      'Tabby Tab: ERROR: Recovery failed. No valid background image can be found. Reverting to fallback.',
+    );
     select('.background__image').style.backgroundImage = "url('../images/bgfallback.jpg')";
     select('.background__image').style.display = 'inline-flex';
     return;
@@ -85,16 +83,16 @@ function imageNotFound() {
   while (imageBay.catchDeadLinks.indexOf(myBg) !== -1) {
     myBg;
   }
-  select('.background__image').style.backgroundImage = "url('" + imageBay.bg;
+  select('.background__image').style.backgroundImage = `url('${imageBay.bg}`;
   +"')";
   catchFourZeroFour(imageBay.bg);
 }
 
 function getBg() {
-  chrome.storage.sync.get('allData', function(items) {
+  chrome.storage.sync.get('allData', (items) => {
     // Sets a default BG status
     if (items.allData === null || items.allData === undefined || !items.allData) {
-      chrome.storage.sync.set({ allData: vanillaBg, bgID: 'vanilla' }, function() {
+      chrome.storage.sync.set({ allData: vanillaBg, bgID: 'vanilla' }, () => {
         imageBay = vanillaBg;
         imageBay.bg = myBg();
         callBackground();
@@ -104,7 +102,7 @@ function getBg() {
       imageBay = items.allData;
       const image = document.createElement('img');
       image.src = getBgUrl(select('.background__image'));
-      image.onload = function() {
+      image.onload = function () {
         select('.background__image').style.display = 'inline-flex';
       };
 

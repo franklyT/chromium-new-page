@@ -1,10 +1,8 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
 document.body.addEventListener('click', () => {
   if (
-    event.target !== select('#settingsIcon') &&
-    !select('#settingsParentNode').contains(event.target) &&
-    !select('#settings').classList.contains('settings__menu--hidden')
+    event.target !== select('#settingsIcon')
+    && !select('#settingsParentNode').contains(event.target)
+    && !select('#settings').classList.contains('settings__menu--hidden')
   ) {
     toggleSpin();
     select('.settings').style.pointerEvents = 'none';
@@ -41,11 +39,11 @@ select('.settings-menu-name-reset').addEventListener('click', () => {
 });
 
 /* ICONS */
-selectAll('.bg-picker').forEach(elm => {
+selectAll('.bg-picker').forEach((elm) => {
   elm.addEventListener('click', () => {
     select('.background').display = 'none';
 
-    selectAll('.bg-picker').forEach(nestedElm => {
+    selectAll('.bg-picker').forEach((nestedElm) => {
       nestedElm.classList.remove('settings__icon--active');
     });
     event.target.classList.add('settings__icon--active');
@@ -75,7 +73,7 @@ selectAll('.bg-picker').forEach(elm => {
   });
 });
 
-chrome.storage.sync.get('bgID', items => {
+chrome.storage.sync.get('bgID', (items) => {
   select(`#${items.bgID}`).classList.add('settings__icon--active');
 });
 
@@ -83,7 +81,7 @@ chrome.storage.sync.get('bgID', items => {
 
 /* TRAY */
 
-chrome.storage.sync.get('tray', items => {
+chrome.storage.sync.get('tray', (items) => {
   if (items.tray === undefined || items.tray === null) {
   } else if (items.tray === 'show') {
     select('#trayCheckbox').checked = true;
@@ -108,7 +106,7 @@ select('#traySlider').addEventListener('click', () => {
 
 /* CALENDAR */
 
-chrome.storage.sync.get('calendar', items => {
+chrome.storage.sync.get('calendar', (items) => {
   if (items.calendar === undefined || items.calendar === null) {
   } else if (items.calendar === 'show') {
     select('#calendarCheckbox').checked = true;
@@ -133,7 +131,7 @@ select('#calendarSlider').addEventListener('click', () => {
 
 /* TOPSITES */
 
-chrome.storage.sync.get('topsites', items => {
+chrome.storage.sync.get('topsites', (items) => {
   if (items.topsites === undefined || items.topsites === null) {
   } else if (items.topsites === 'show') {
     select('#topsitesCheckbox').checked = true;
@@ -158,7 +156,7 @@ select('#topsitesSlider').addEventListener('click', () => {
 
 /* HISTORY */
 
-chrome.storage.sync.get('recentHistory', items => {
+chrome.storage.sync.get('recentHistory', (items) => {
   if (items.recentHistory === undefined || items.recentHistory === null) {
   } else if (items.recentHistory === 'show') {
     select('#recentHistoryCheckbox').checked = true;
@@ -184,7 +182,7 @@ select('#recentHistorySlider').addEventListener('click', () => {
 });
 
 /* WEATHER */
-chrome.storage.sync.get('weather', items => {
+chrome.storage.sync.get('weather', (items) => {
   if (items.weather === undefined || items.weather === null) {
   } else if (items.weather === 'show') {
     select('#weatherCheckbox').checked = true;
@@ -212,7 +210,7 @@ select('.slider').addEventListener('click', () => {
 
 /* HISTORY ERASER */
 select('#historyEraser').addEventListener('click', () => {
-  let cQuery = confirm(
+  const cQuery = confirm(
     "Are you sure you want to erase your history?\nNote: This will erase your browser's entire history permanently.",
   );
   if (cQuery) {
@@ -225,7 +223,7 @@ select('#historyEraser').addEventListener('click', () => {
     setTimeout(() => {
       select('#historyEraser').classList.remove('rSpin');
     }, 1000);
-    selectAll('.topsites-box').forEach(elm => {
+    selectAll('.topsites-box').forEach((elm) => {
       elm.parentNode.removeChild(elm);
     });
   }

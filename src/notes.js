@@ -1,9 +1,7 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
 onDOMLoad(moveInit('#notesTray', '#notesTray'));
 
 onDOMLoad(
-  chrome.storage.sync.get('notes', function(items) {
+  chrome.storage.sync.get('notes', (items) => {
     select('#notesInput').value = items.notes;
   }),
 );
@@ -16,14 +14,14 @@ onDOMLoad(
         {
           notesOn: true,
         },
-        function() {},
+        () => {},
       );
     } else {
       chrome.storage.sync.set(
         {
           notesOn: false,
         },
-        function() {},
+        () => {},
       );
     }
   }),
@@ -37,21 +35,21 @@ onDOMLoad(
         {
           notesOn: true,
         },
-        function() {},
+        () => {},
       );
     } else {
       chrome.storage.sync.set(
         {
           notesOn: false,
         },
-        function() {},
+        () => {},
       );
     }
   }),
 );
 
 onDOMLoad(
-  chrome.storage.sync.get('notesXY', function(items) {
+  chrome.storage.sync.get('notesXY', (items) => {
     select('#notesTray').style.left = items.notesXY[0];
     select('#notesTray').style.top = items.notesXY[1];
     // Reset lost notes tray
@@ -63,7 +61,7 @@ onDOMLoad(
 );
 
 onDOMLoad(
-  chrome.storage.sync.get('notesOn', function(items) {
+  chrome.storage.sync.get('notesOn', (items) => {
     if (items.notesOn) {
       select('#notesTray').classList.toggle('notes__overlay--hidden');
     }
@@ -73,7 +71,7 @@ onDOMLoad(
 onDOMLoad(
   select('#notes').addEventListener(
     'contextmenu',
-    ev => {
+    (ev) => {
       ev.preventDefault();
       const resetNotes = confirm('Reset notes position?');
       if (resetNotes) {
@@ -91,20 +89,20 @@ onDOMLoad(
 
 onDOMLoad(
   select('#notesTray').addEventListener('keyup', () => {
-    chrome.storage.sync.set({ notes: select('#notesInput').value }, function() {});
+    chrome.storage.sync.set({ notes: select('#notesInput').value }, () => {});
   }),
 );
 
 // Make the DIV element draggable:
 function moveInit(dragHandle, dragTarget) {
-  let dragObj = null; //object to be moved
-  let xOffset = 0; //used to prevent dragged object jumping to mouse location
+  let dragObj = null; // object to be moved
+  let xOffset = 0; // used to prevent dragged object jumping to mouse location
   let yOffset = 0;
 
   document.querySelector(dragHandle).addEventListener('mousedown', startDrag, true);
   document.querySelector(dragHandle).addEventListener('touchstart', startDrag, { passive: true });
 
-  /*sets offset parameters and starts listening for mouse-move*/
+  /* sets offset parameters and starts listening for mouse-move */
   function startDrag(e) {
     if (e.target === select('#notesInput')) {
       return;
@@ -117,10 +115,10 @@ function moveInit(dragHandle, dragTarget) {
     e.stopPropagation();
     dragObj = document.querySelector(dragTarget);
     dragObj.style.position = 'absolute';
-    let rect = dragObj.getBoundingClientRect();
+    const rect = dragObj.getBoundingClientRect();
 
     if (e.type == 'mousedown') {
-      xOffset = e.clientX - rect.left; //clientX and getBoundingClientRect() both use viewable area adjusted when scrolling aka 'viewport'
+      xOffset = e.clientX - rect.left; // clientX and getBoundingClientRect() both use viewable area adjusted when scrolling aka 'viewport'
       yOffset = e.clientY - rect.top;
       window.addEventListener('mousemove', dragObject, true);
     } else if (e.type == 'touchstart') {
@@ -130,29 +128,29 @@ function moveInit(dragHandle, dragTarget) {
     }
   }
 
-  /*Drag object*/
+  /* Drag object */
   function dragObject(e) {
     e.preventDefault();
     e.stopPropagation();
     if (dragObj == null) {
-      return; // if there is no object being dragged then do nothing
+      // if there is no object being dragged then do nothing
     } else if (e.type == 'mousemove') {
-      dragObj.style.left = e.clientX - xOffset + 'px'; // adjust location of dragged object so doesn't jump to mouse position
-      dragObj.style.top = e.clientY - yOffset + 'px';
+      dragObj.style.left = `${e.clientX - xOffset}px`; // adjust location of dragged object so doesn't jump to mouse position
+      dragObj.style.top = `${e.clientY - yOffset}px`;
     } else if (e.type == 'touchmove') {
-      dragObj.style.left = e.targetTouches[0].clientX - xOffset + 'px'; // adjust location of dragged object so doesn't jump to mouse position
-      dragObj.style.top = e.targetTouches[0].clientY - yOffset + 'px';
+      dragObj.style.left = `${e.targetTouches[0].clientX - xOffset}px`; // adjust location of dragged object so doesn't jump to mouse position
+      dragObj.style.top = `${e.targetTouches[0].clientY - yOffset}px`;
     }
   }
 
-  /*End dragging*/
-  document.onmouseup = function(e) {
+  /* End dragging */
+  document.onmouseup = function (e) {
     if (dragObj) {
       chrome.storage.sync.set(
         {
           notesXY: [`${select('#notesTray').style.left}`, `${select('#notesTray').style.top}`],
         },
-        function() {},
+        () => {},
       );
       dragObj = null;
       window.removeEventListener('mousemove', dragObject, true);
