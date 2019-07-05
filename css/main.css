@@ -1298,14 +1298,12 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 1500px) {
   #time {
+    font-size: 1.5em;
     padding-right: 4vw;
   }
-}
-
-@media only screen and (max-width: 1500px) {
   .greeting {
     font-size: 300%;
   }
-}
 
+}
 /* MEDIA QUERIES END */
