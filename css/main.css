@@ -1302,10 +1302,14 @@ input:checked + .slider:before {
     padding-right: 4vw;
   }
   .greeting {
-    font-size: 300%;
+    font-size: 250%;
   }
 .weather {
   font-size: 1.8em;
+}
+
+.topsites-container {
+  padding-top: 1.8em;
 }
 }
 /* MEDIA QUERIES END */
