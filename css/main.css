@@ -623,7 +623,7 @@ input {
 
   margin-top: auto;
 
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5em;
 }
 
@@ -1304,6 +1304,8 @@ input:checked + .slider:before {
   .greeting {
     font-size: 300%;
   }
-
+.weather {
+  font-size: 1.8em;
+}
 }
 /* MEDIA QUERIES END */
