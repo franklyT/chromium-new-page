@@ -184,28 +184,28 @@ function etTuBrute(link, title, reply, domElement) {
   } else {
     img.src = `${link}/${reply}`;
   }
-
   img.onload = () => {
     if (img.width && img.height > 50) {
       div.appendChild(img);
     } else {
-      img.src = 'icons/domain.png';
-      div.appendChild(img);
+      const imgRebound = document.createElement('img');
+      imgRebound.src = 'icons/domain.png';
+      div.appendChild(imgRebound);
     }
   };
 
   img.onerror = () => {
-    img.src = 'icons/domain.png';
-    div.appendChild(img);
+    const imgRebound = document.createElement('img');
+    imgRebound.src = 'icons/domain.png';
+    div.appendChild(imgRebound);
   };
 }
-
-// This is the CPU hog
 
 function makeRequest(method, url) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url);
+    xhr.timeout = 3000;
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         resolve(xhr.response);
