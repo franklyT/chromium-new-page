@@ -19,10 +19,18 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
   fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
     .then(response => response.json()) // Transform the data into json
     .then((data) => {
+      // test function
+      // data.items.forEach((elm)=> {
+      // console.log(String(elm.start.dateTime).slice(0, -6));
+      // })
+
       try {
         const getDate = data.items
-          .filter(elm => elm.start.dateTime > new Date().toISOString())
-          .reduce((a, b) => (a.start.dateTime < b.start.dateTime ? a : b));
+          .filter(
+            elm => String(elm.start.dateTime).slice(0, -6)
+              > String(new Date().toISOString()).slice(0, -5),
+          )
+          .reduce((a, b) => (String(a.start.dateTime).slice(0, -6) < String(b.start.dateTime).slice(0, -6) ? a : b));
 
         const calDiv = document.createElement('div');
         calDiv.classList.add('calendar-event');
