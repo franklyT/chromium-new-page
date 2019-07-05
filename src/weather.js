@@ -1,7 +1,7 @@
 // Abuse it and it breaks :(
 const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
-let iconurl = 'https://openweathermap.org/img/w/';
+const iconurl = 'https://openweathermap.org/img/w/';
 
 let now;
 let dd;
@@ -80,7 +80,7 @@ function getLocation() {
       }
     }
   };
-  
+
   xhttp.open('GET', 'https://extreme-ip-lookup.com/json/', true);
   xhttp.send();
 }
@@ -112,10 +112,9 @@ function getWeather() {
       processWeather(JSON.parse(data));
     }
   };
-  
+
   xhttp.open('GET', weatherurl, true);
   xhttp.send();
-  
 }
 function convertTemperature(kelvin) {
   // converts temps in kelvin to celsius or fahrenheit
@@ -134,4 +133,3 @@ function processWeather(data) {
 // To be addressed
 // icon.setAttribute('data-title', capitalizeMe(weatherdata.weather[0].description));
 // icon.getAttribute('data-title');
-
