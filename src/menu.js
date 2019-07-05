@@ -84,6 +84,8 @@ chrome.storage.sync.get('bgID', (items) => {
 chrome.storage.sync.get('tray', (items) => {
   if (items.tray === undefined || items.tray === null) {
     chrome.storage.sync.set({ tray: 'show' }, () => {});
+    select('#trayCheckbox').checked = true;
+    select('.settings__tray__icon').classList.add('settings__icon--active');
   } else if (items.tray === 'show') {
     select('#trayCheckbox').checked = true;
     select('.settings__tray__icon').classList.add('settings__icon--active');
@@ -110,6 +112,8 @@ select('#traySlider').addEventListener('click', () => {
 chrome.storage.sync.get('calendar', (items) => {
   if (items.calendar === undefined || items.calendar === null) {
     chrome.storage.sync.set({ calendar: 'show' }, () => {});
+    select('#calendarCheckbox').checked = true;
+    select('.settings__calendar__icon').classList.add('settings__icon--active');
   } else if (items.calendar === 'show') {
     select('#calendarCheckbox').checked = true;
     select('.settings__calendar__icon').classList.add('settings__icon--active');
@@ -136,6 +140,8 @@ select('#calendarSlider').addEventListener('click', () => {
 chrome.storage.sync.get('topsites', (items) => {
   if (items.topsites === undefined || items.topsites === null) {
     chrome.storage.sync.set({ topsites: 'show' }, () => {});
+    select('#topsitesCheckbox').checked = true;
+    select('.settings__topsites__icon').classList.add('settings__icon--active');
   } else if (items.topsites === 'show') {
     select('#topsitesCheckbox').checked = true;
     select('.settings__topsites__icon').classList.add('settings__icon--active');
@@ -162,6 +168,8 @@ select('#topsitesSlider').addEventListener('click', () => {
 chrome.storage.sync.get('recentHistory', (items) => {
   if (items.recentHistory === undefined || items.recentHistory === null) {
     chrome.storage.sync.set({ recentHistory: 'show' }, () => {});
+    select('#recentHistoryCheckbox').checked = true;
+    select('.settings__recentHistory__icon').classList.add('settings__icon--active');
   } else if (items.recentHistory === 'show') {
     select('#recentHistoryCheckbox').checked = true;
     select('.settings__recent-history__icon').classList.add('settings__icon--active');
@@ -189,6 +197,8 @@ select('#recentHistorySlider').addEventListener('click', () => {
 chrome.storage.sync.get('weather', (items) => {
   if (items.weather === undefined || items.weather === null) {
     chrome.storage.sync.set({ weather: 'show' }, () => {});
+    select('#weatherCheckbox').checked = true;
+    select('.settings__weather__icon').classList.add('settings__icon--active');
   } else if (items.weather === 'show') {
     select('#weatherCheckbox').checked = true;
     select('.settings__weather__icon').classList.add('settings__icon--active');

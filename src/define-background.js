@@ -91,6 +91,7 @@ function getBg() {
     // Sets a default BG status
     if (items.allData === null || items.allData === undefined || !items.allData) {
       chrome.storage.sync.set({ allData: vanillaBg, bgID: 'vanilla' }, () => {
+        select('.vanilla').classList.add('settings__icon--active');
         imageBay = vanillaBg;
         imageBay.bg = myBg();
         callBackground();
