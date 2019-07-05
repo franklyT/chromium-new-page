@@ -1304,12 +1304,11 @@ input:checked + .slider:before {
   .greeting {
     font-size: 250%;
   }
-.weather {
+  .weather {
   font-size: 1.8em;
-}
-
-.topsites-container {
+  }
+  .topsites-container {
   padding-top: 1.8em;
-}
+  }
 }
 /* MEDIA QUERIES END */
