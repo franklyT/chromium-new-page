@@ -17,7 +17,7 @@ function parseTopsites() {
 
     for (let i = 0; i < 5; i += 1) {
       // https://eslint.org/docs/rules/no-await-in-loop
-      await giveUsApples(tempGroup[i].url, tempGroup[i].title, 'tsites');
+      giveUsApples(tempGroup[i].url, tempGroup[i].title, 'tsites');
     }
     setTimeout(() => {
       selectAll('.tsites-box').forEach((elm) => {

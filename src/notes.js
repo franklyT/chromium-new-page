@@ -117,12 +117,12 @@ function moveInit(dragHandle, dragTarget) {
     dragObj.style.position = 'absolute';
     const rect = dragObj.getBoundingClientRect();
 
-    if (e.type == 'mousedown') {
-      xOffset = e.clientX - rect.left; 
+    if (e.type === 'mousedown') {
+      xOffset = e.clientX - rect.left;
       // clientX+getBoundingClientRect() use viewable area adjusted when scrolling aka 'viewport'
       yOffset = e.clientY - rect.top;
       window.addEventListener('mousemove', dragObject, true);
-    } else if (e.type == 'touchstart') {
+    } else if (e.type === 'touchstart') {
       xOffset = e.targetTouches[0].clientX - rect.left;
       yOffset = e.targetTouches[0].clientY - rect.top;
       window.addEventListener('touchmove', dragObject, true);
@@ -135,10 +135,10 @@ function moveInit(dragHandle, dragTarget) {
     e.stopPropagation();
     if (dragObj == null) {
       // if there is no object being dragged then do nothing
-    } else if (e.type == 'mousemove') {
+    } else if (e.type === 'mousemove') {
       dragObj.style.left = `${e.clientX - xOffset}px`; // adjust location of dragged object so doesn't jump to mouse position
       dragObj.style.top = `${e.clientY - yOffset}px`;
-    } else if (e.type == 'touchmove') {
+    } else if (e.type === 'touchmove') {
       dragObj.style.left = `${e.targetTouches[0].clientX - xOffset}px`; // adjust location of dragged object so doesn't jump to mouse position
       dragObj.style.top = `${e.targetTouches[0].clientY - yOffset}px`;
     }
