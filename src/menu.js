@@ -197,7 +197,7 @@ chrome.storage.sync.get('weather', (items) => {
   }
 });
 
-select('.slider').addEventListener('click', () => {
+select('#weatherSlider').addEventListener('click', () => {
   if (select('#weatherCheckbox').checked) {
     chrome.storage.sync.set({ weather: 'hide' }, () => {});
   } else {
@@ -207,6 +207,37 @@ select('.slider').addEventListener('click', () => {
   select('#weather-icons').classList.toggle('display-none');
   select('#weather').classList.toggle('display-none');
 });
+
+/* Freeze */
+chrome.storage.sync.get(['freeze', 'fBg'], (items) => {
+  if (items.freeze === undefined || items.freeze === null) {
+  } else if (items.freeze === 'on') {
+    const image = document.createElement('img');
+    image.src = items.fBg;
+    image.onload = () => {
+      select('.background__image').style.display = 'inline-flex';
+    };
+    select('.background__image').style.backgroundImage = `url('${items.fBg}')`;
+
+    select('#freezeCheckbox').checked = true;
+    select('.settings__freeze__icon').classList.add('settings__icon--active');
+  } else {
+    select('#freezeCheckbox').checked = false;
+    document.querySelector('.settings__freeze__icon').classList.remove('settings__icon--active');
+  }
+});
+
+select('#freezeSlider').addEventListener('click', () => {
+  if (select('#freezeCheckbox').checked) {
+    chrome.storage.sync.set({ freeze: 'off' }, () => {});
+  } else {
+    new Audio('audio/freeze-sound.wav').play();
+    chrome.storage.sync.set({ freeze: 'on', fBg: imageBay.bg }, () => {});
+  }
+  select('.settings__freeze__icon').classList.toggle('settings__icon--active');
+});
+
+/* Freeze End */
 
 /* HISTORY ERASER */
 select('#historyEraser').addEventListener('click', () => {

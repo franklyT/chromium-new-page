@@ -1,10 +1,5 @@
 // Freeze BG sound effect
 // https://freesound.org/people/JustInvoke/sounds/446112/
-/*
-select(".freeze").addEventListener("click", () => {
-  new Audio("audio/freeze-sound.wav").play();
-});
-*/
 // Playing around with this for now
 // setTimeout(function() {
 //  console.log(greetingsList.morning[randRange(0, greetingsList.morning.length-1)]); }, 1000);

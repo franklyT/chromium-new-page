@@ -23,7 +23,7 @@ onDOMLoad(init());
 function init() {
   td = document.getElementById('time');
   wd = document.getElementById('weather');
-  // gd = document.getElementById('gps');
+  gd = document.getElementById('gps');
   icon = document.getElementById('icon');
 
   weatherminute = randRange(0, 14);
@@ -95,7 +95,6 @@ function showPosition(position) {
   weatherurl = 'https://api.openweathermap.org/data/2.5/weather?';
   weatherurl += `lat=${lat}&lon=${lon}&APPID=`;
   weatherurl += YOUR_API_KEY_HERE;
-  // for the APPID, please substitute your own API Key you can get for free from openweathermap.org
 
   if (!locationRequested) {
     getWeather();
