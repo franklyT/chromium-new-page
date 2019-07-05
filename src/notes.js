@@ -2,7 +2,11 @@ onDOMLoad(moveInit('#notesTray', '#notesTray'));
 
 onDOMLoad(
   chrome.storage.sync.get('notes', (items) => {
-    select('#notesInput').value = items.notes;
+    if (items.notes) {
+      select('#notesInput').value = items.notes;
+    } else {
+      select('#notesInput').value = '';
+    }
   }),
 );
 

@@ -1021,7 +1021,7 @@ input:checked + .slider:before {
 .notes__overlay {
   position: absolute;
 
-  padding-top: 3vh;
+  padding-top: 1.7em;
   height: 20vh;
   width: 15rem;
   min-height: 20vh;
@@ -1069,16 +1069,16 @@ input:checked + .slider:before {
   position: absolute;
   top: 0;
   right: 0;
-  width: 20px;
-  height: 20px;
+  width: 1.5em;
+  height: 1.5em;
   font-size: 1em;
   z-index: 5000;
   visibility: visible;
   opacity: 1;
   cursor: pointer;
 
-  padding-right: 3px;
-  margin-top: 3px;
+  padding-right: .2em;
+  margin-top: .2em;
 
   background-image: url("../icons/cancel.png");
   background-size: 20px 20px;
