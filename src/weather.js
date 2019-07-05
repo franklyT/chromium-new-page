@@ -1,7 +1,7 @@
 // Abuse it and it breaks :(
 const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
-const iconurl = 'https://openweathermap.org/img/w/';
+let iconurl = 'https://openweathermap.org/img/w/';
 
 let now;
 let dd;
@@ -71,8 +71,8 @@ function getClockStrings() {
 function getLocation() {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = () => {
-    if (this.readyState === 4) {
-      if (this.status === 200) {
+    if (xhttp.readyState === 4) {
+      if (xhttp.status === 200) {
         const data = xhttp.responseText;
         showPosition(JSON.parse(data));
       } else {
@@ -107,7 +107,7 @@ function getWeather() {
   const xhttp = new XMLHttpRequest();
   xhttp.responseType = 'text';
   xhttp.onreadystatechange = () => {
-    if (this.readyState === 4 && this.status === 200) {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
       const data = xhttp.responseText;
       processWeather(JSON.parse(data));
     }
