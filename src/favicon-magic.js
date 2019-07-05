@@ -98,12 +98,6 @@ async function bruteForce(link, title = null, domElement) {
       linked = response;
       const pushArray = [];
       const linkArray = [];
-      // reply = response.match(/<link(.*?)png/gm);
-      // reply = reply.join("").match(/(?<=href=")(.*?)png/gm);
-      // reply = reply.filter(elm => {
-      //  return elm.split("").length < 150;
-      // });
-
       try {
         while (linked.indexOf('<link') !== -1) {
           linked = linked.slice(linked.indexOf('<link'), linked.length);
