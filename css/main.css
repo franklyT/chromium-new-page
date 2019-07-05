@@ -652,7 +652,7 @@ input {
   height: auto;
   white-space: nowrap;
 
-  font-size: 4rem;
+  font-size: 400%;
   top: 80vh;
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.1em;
@@ -1299,6 +1299,12 @@ input:checked + .slider:before {
 @media only screen and (max-width: 1500px) {
   #time {
     padding-right: 4vw;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .greeting {
+    font-size: 300%;
   }
 }
 

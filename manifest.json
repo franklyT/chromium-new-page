@@ -2,7 +2,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["src/global-core.js"]
+      "js": ["src/global.js"]
     }
   ],
 

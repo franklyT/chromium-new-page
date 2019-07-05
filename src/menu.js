@@ -1,7 +1,7 @@
-document.body.addEventListener('click', () => {
+document.body.addEventListener('click', (evt) => {
   if (
-    event.target !== select('#settingsIcon')
-    && !select('#settingsParentNode').contains(event.target)
+    evt.target !== select('#settingsIcon')
+    && !select('#settingsParentNode').contains(evt.target)
     && !select('#settings').classList.contains('settings__menu--hidden')
   ) {
     toggleSpin();
@@ -15,7 +15,7 @@ document.body.addEventListener('click', () => {
 });
 
 select('#settingsIcon').addEventListener('click', () => {
-  event.target.style.pointerEvents = 'none';
+  select('#settingsIcon').style.pointerEvents = 'none';
   toggleSpin();
 
   select('.settings-menu').classList.toggle('settings__menu--hidden');
@@ -40,29 +40,29 @@ select('.settings-menu-name-reset').addEventListener('click', () => {
 
 /* ICONS */
 selectAll('.bg-picker').forEach((elm) => {
-  elm.addEventListener('click', () => {
+  elm.addEventListener('click', (evt) => {
     select('.background').display = 'none';
 
     selectAll('.bg-picker').forEach((nestedElm) => {
       nestedElm.classList.remove('settings__icon--active');
     });
-    event.target.classList.add('settings__icon--active');
+    evt.target.classList.add('settings__icon--active');
 
-    if (event.target.id === 'tabby') {
+    if (evt.target.id === 'tabby') {
       chrome.storage.sync.set({ allData: tabbyBg, bgID: 'tabby' }, () => {
         imageBay = tabbyBg;
         imageBay.bg = myBg();
         callBackground();
         catchFourZeroFour(imageBay.bg);
       });
-    } else if (event.target.id === 'cow') {
+    } else if (evt.target.id === 'cow') {
       chrome.storage.sync.set({ allData: cowBg, bgID: 'cow' }, () => {
         imageBay = cowBg;
         imageBay.bg = myBg();
         callBackground();
         catchFourZeroFour(imageBay.bg);
       });
-    } else if (event.target.id === 'vanilla') {
+    } else if (evt.target.id === 'vanilla') {
       chrome.storage.sync.set({ allData: vanillaBg, bgID: 'vanilla' }, () => {
         imageBay = vanillaBg;
         imageBay.bg = myBg();
