@@ -206,15 +206,15 @@ function makeRequest(method, url) {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url);
     xhr.timeout = 3000;
-    xhr.onload = function () {
-      if (this.status >= 200 && this.status < 300) {
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
         resolve(xhr.response);
       } else {
-        reject(new Error(`${this.status}${xhr.statusText}`));
+        reject(new Error(`${xhr.status}${xhr.statusText}`));
       }
     };
     xhr.onerror = () => {
-      reject(new Error(`${this.status}${xhr.statusText}`));
+      reject(new Error(`${xhr.status}${xhr.statusText}`));
     };
 
     xhr.send();
