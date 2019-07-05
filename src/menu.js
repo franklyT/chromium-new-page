@@ -83,6 +83,7 @@ chrome.storage.sync.get('bgID', (items) => {
 
 chrome.storage.sync.get('tray', (items) => {
   if (items.tray === undefined || items.tray === null) {
+    chrome.storage.sync.set({ tray: 'show' }, () => {});
   } else if (items.tray === 'show') {
     select('#trayCheckbox').checked = true;
     select('.settings__tray__icon').classList.add('settings__icon--active');
@@ -108,6 +109,7 @@ select('#traySlider').addEventListener('click', () => {
 
 chrome.storage.sync.get('calendar', (items) => {
   if (items.calendar === undefined || items.calendar === null) {
+    chrome.storage.sync.set({ calendar: 'show' }, () => {});
   } else if (items.calendar === 'show') {
     select('#calendarCheckbox').checked = true;
     select('.settings__calendar__icon').classList.add('settings__icon--active');
@@ -133,6 +135,7 @@ select('#calendarSlider').addEventListener('click', () => {
 
 chrome.storage.sync.get('topsites', (items) => {
   if (items.topsites === undefined || items.topsites === null) {
+    chrome.storage.sync.set({ topsites: 'show' }, () => {});
   } else if (items.topsites === 'show') {
     select('#topsitesCheckbox').checked = true;
     select('.settings__topsites__icon').classList.add('settings__icon--active');
@@ -158,6 +161,7 @@ select('#topsitesSlider').addEventListener('click', () => {
 
 chrome.storage.sync.get('recentHistory', (items) => {
   if (items.recentHistory === undefined || items.recentHistory === null) {
+    chrome.storage.sync.set({ recentHistory: 'show' }, () => {});
   } else if (items.recentHistory === 'show') {
     select('#recentHistoryCheckbox').checked = true;
     select('.settings__recent-history__icon').classList.add('settings__icon--active');
@@ -184,6 +188,7 @@ select('#recentHistorySlider').addEventListener('click', () => {
 /* WEATHER */
 chrome.storage.sync.get('weather', (items) => {
   if (items.weather === undefined || items.weather === null) {
+    chrome.storage.sync.set({ weather: 'show' }, () => {});
   } else if (items.weather === 'show') {
     select('#weatherCheckbox').checked = true;
     select('.settings__weather__icon').classList.add('settings__icon--active');
@@ -211,12 +216,10 @@ select('#weatherSlider').addEventListener('click', () => {
 /* Freeze */
 chrome.storage.sync.get(['freeze', 'fBg'], (items) => {
   if (items.freeze === undefined || items.freeze === null) {
+    chrome.storage.sync.set({ freeze: 'off' }, () => {});
   } else if (items.freeze === 'on') {
     const image = document.createElement('img');
     image.src = items.fBg;
-    image.onload = () => {
-      select('.background__image').style.display = 'inline-flex';
-    };
     select('.background__image').style.backgroundImage = `url('${items.fBg}')`;
 
     select('#freezeCheckbox').checked = true;
