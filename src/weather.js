@@ -80,6 +80,7 @@ function getLocation() {
       }
     }
   };
+  
   xhttp.open('GET', 'https://extreme-ip-lookup.com/json/', true);
   xhttp.send();
 }
@@ -111,8 +112,10 @@ function getWeather() {
       processWeather(JSON.parse(data));
     }
   };
+  
   xhttp.open('GET', weatherurl, true);
   xhttp.send();
+  
 }
 function convertTemperature(kelvin) {
   // converts temps in kelvin to celsius or fahrenheit
@@ -131,3 +134,4 @@ function processWeather(data) {
 // To be addressed
 // icon.setAttribute('data-title', capitalizeMe(weatherdata.weather[0].description));
 // icon.getAttribute('data-title');
+
