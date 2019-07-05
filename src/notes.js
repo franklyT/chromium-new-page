@@ -145,7 +145,7 @@ function moveInit(dragHandle, dragTarget) {
   }
 
   /* End dragging */
-  document.onmouseup = function () {
+  document.onmouseup = () => {
     if (dragObj) {
       chrome.storage.sync.set(
         {

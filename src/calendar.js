@@ -1,5 +1,5 @@
 chrome.identity.getAuthToken({ interactive: true }, (token) => {
- /* const init = {
+  /* const init = {
     method: 'GET',
     async: true,
     headers: {
@@ -25,7 +25,7 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
 
       const calDiv = document.createElement('div');
       calDiv.classList.add('calendar-event');
-      calDiv.innerHTML = '<span class=\'calendar__upcoming\'>Upcoming Event</span>';
+      calDiv.innerHTML = "<span class='calendar__upcoming'>Upcoming Event</span>";
       calDiv.innerHTML += `<img class="calendar__icon" src="icons/calicon.png"></img><span class='event'>${
         getDate.summary
       }</span><span class='time'>${dateConverter(

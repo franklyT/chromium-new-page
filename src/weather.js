@@ -1,14 +1,14 @@
 // Abuse it and it breaks :(
 const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
-const iconurl = 'https://openweathermap.org/img/w/';
+// const iconurl = 'https://openweathermap.org/img/w/';
 
 let now;
-let dd;
+// let dd;
 let td;
 let lat;
 let lon;
-let gd;
+// let gd;
 let weatherurl;
 let wd;
 let icon;
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', init, false);
 function init() {
   td = document.getElementById('time');
   wd = document.getElementById('weather');
-  gd = document.getElementById('gps');
+  // gd = document.getElementById('gps');
   icon = document.getElementById('icon');
 
   weatherminute = randRange(0, 14);
@@ -70,7 +70,7 @@ function getClockStrings() {
 }
 function getLocation() {
   const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
+  xhttp.onreadystatechange = () => {
     if (this.readyState === 4) {
       if (this.status === 200) {
         const data = xhttp.responseText;
@@ -106,7 +106,7 @@ function getWeather() {
   wd.innerHTML = ' ... ';
   const xhttp = new XMLHttpRequest();
   xhttp.responseType = 'text';
-  xhttp.onreadystatechange = function () {
+  xhttp.onreadystatechange = () => {
     if (this.readyState === 4 && this.status === 200) {
       const data = xhttp.responseText;
       processWeather(JSON.parse(data));

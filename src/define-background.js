@@ -79,8 +79,8 @@ function imageNotFound() {
     console.log('Tabby Tab: NOTIFICATION: Suppressing further warnings from this chain.');
   }
 
-  while (imageBay.catchDeadLinks.indexOf(myBg) !== -1) {
-    myBg;
+  while (imageBay.catchDeadLinks.indexOf(imageBay.bg) !== -1) {
+    myBg();
   }
   select('.background__image').style.backgroundImage = `url('${imageBay.bg}')`;
   catchFourZeroFour(imageBay.bg);
@@ -100,7 +100,7 @@ function getBg() {
       imageBay = items.allData;
       const image = document.createElement('img');
       image.src = getBgUrl(select('.background__image'));
-      image.onload = function () {
+      image.onload = () => {
         select('.background__image').style.display = 'inline-flex';
       };
 

@@ -26,7 +26,9 @@
         "getDayState": "writable",
         "dateConverter": "writable",
         "timeConverter": "writable",
-        "callGreetings": "writable"
+        "callGreetings": "writable",
+        "months": "writable",
+        "days": "writable"
     },
     "parserOptions": {
         "ecmaVersion": 2018,

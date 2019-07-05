@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* 
+/*
 Disclaimer: In addition to project licensing, it should be noted that images used are royalty-free
 via several sources: Pexels, Unsplash, premium licensing from icon providers, custom work, etc.
 Other attribution is noted where applicable.
@@ -48,6 +48,7 @@ function onDOMLoad(method) {
   return window.addEventListener(
     'DOMContentLoaded',
     () => {
+      // eslint-disable-next-line no-unused-expressions
       method;
     },
     false,
@@ -77,12 +78,11 @@ function capitalizeMe(text) {
 }
 
 function timeConverter(time) {
-  // console.log(time)
-  time = time.split(':'); // convert to array
+  const timeR = time.split(':'); // convert to array
 
   // fetch
-  const hours = Number(time[0]);
-  const minutes = Number(time[1]);
+  const hours = Number(timeR[0]);
+  const minutes = Number(timeR[1]);
 
   // calculate
   let timeValue;
@@ -91,7 +91,7 @@ function timeConverter(time) {
     timeValue = `${hours}`;
   } else if (hours > 12) {
     timeValue = `${hours - 12}`;
-  } else if (hours == 0) {
+  } else if (hours === 0) {
     timeValue = '12';
   }
 
@@ -128,7 +128,7 @@ function getSelectedText() {
   let text = '';
   if (typeof window.getSelection !== 'undefined') {
     text = window.getSelection().toString();
-  } else if (typeof document.selection !== 'undefined' && document.selection.type == 'Text') {
+  } else if (typeof document.selection !== 'undefined' && document.selection.type === 'Text') {
     text = document.selection.createRange().text;
   }
   return text;
