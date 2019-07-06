@@ -55,7 +55,7 @@ function randRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Console clear utility function
+// console clear utility function, should largely not be used
 function cClear(timeoutinms) {
   setTimeout(() => {
     console.clear();
