@@ -136,7 +136,6 @@ async function bruteForce(link, title = null, domElement) {
       }
 
       etTuBrute(link, title, linkArray[linkArray.length - 1], domElement);
-      // etTuBrute(reply);
     })
     .catch((error) => {
       console.log(error);
