@@ -52,12 +52,12 @@ function appleADay(link, title, domElement) {
       if (img.width && img.height > 50) {
         resolve(img.src);
       } else {
-        // This will be used to give some more data about icon pull attempts in error logging
+        // Can give more data about icon pull attempts in error logging
         reject(new Error(`TabbyTab: Warning: ${img.src} too small. Trying another method...`));
       }
     };
     img.onerror = () => {
-      // This will be used to give some more data about icon pull attempts in error logging
+      // Can give more data about icon pull attempts in error logging
       reject(new Error('TabbyTab: Warning: Touch icon load failed. Trying another method...'));
     };
   });
