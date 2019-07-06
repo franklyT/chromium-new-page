@@ -33,5 +33,17 @@ Object.keys(defaultTray).forEach((key) => {
     window.location.href = defaultTray[key].link;
   });
 
+  /* appender.addEventListener(
+    'contextmenu',
+    (ev) => {
+      ev.preventDefault();
+      console.log('x')
+      return false;
+    },
+    false,
+  );
+*/
+
   select('.tray').firstChild.before(appender);
 });
+

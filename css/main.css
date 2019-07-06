@@ -1000,10 +1000,10 @@ input:checked + .slider:before {
   transition: 0.05s;
 }
 
-/*
+/* WIP */
 .popup {
   position: absolute;
-  background: rgba(200, 200, 200, 1);
+  background: rgba(0, 0, 0, 1);
   border-radius: 1em;
   left: 0;
   right: 0;
@@ -1013,6 +1013,24 @@ input:checked + .slider:before {
   width: 40vw;
   height: 50vh;
   z-index: 5000;
+  border: 2px solid white;
+
+}
+
+.popup > input {
+  position: relative;
+  display: block;
+  padding: .3em .3em .3em .3em;
+  outline: none;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .5em;
+  font-size: 1.5em;
+
+  width: 10em;
+  height: .5em;
 }
 
 .popup__blur {
@@ -1023,7 +1041,9 @@ input:checked + .slider:before {
   height: 100vh;
   z-index: 4000;
  }
-*/
+
+/* WIP END */
+
 /* ICONS */
 .i01d {
   background: radial-gradient(ellipse at center, #f1e767 0%, #feb645 100%);
