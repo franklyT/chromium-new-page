@@ -1,3 +1,5 @@
+// https://css-tricks.com/how-i-built-a-gps-powered-weather-clock-with-my-old-iphone-4/
+
 // Abuse it and it breaks :(
 const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
@@ -39,7 +41,8 @@ function updateTime() {
   const minutes = now.getMinutes();
   if (locationRequested && sec === 0) {
     if (minutes % 15 === weatherminute) {
-      getWeather(); // get weather every 15 minutes
+      getWeather(); 
+      // get weather every 15 minutes
       // weatherminute is a random number between
       // 0 and 14 to ensure that users don't all hit
       // the API at the same minute
