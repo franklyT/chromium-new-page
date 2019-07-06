@@ -119,8 +119,6 @@ function dateConverter(date) {
     % 7;
 
   return `${days[d]}, ${months[Number(date.slice(5, 7)) - 1]} ${Number(date.slice(8, 10))}`;
-
-  // return `${date}`;
 }
 
 // Helper function to get selected text
