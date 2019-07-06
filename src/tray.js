@@ -43,8 +43,7 @@ Object.keys(defaultTray).forEach((key) => {
       const traypopper = document.createElement('div');
       traypopper.classList.add('traypop');
       traypopper.innerHTML = 'Remove<br>Edit';
-
-      traypopper.style.top = `${event.clientY-65}px`;
+      traypopper.style.top = `${event.clientY - 65}px`;
       traypopper.style.left = `${event.clientX}px`;
       document.body.appendChild(traypopper);
       return false;
