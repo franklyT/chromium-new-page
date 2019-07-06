@@ -647,12 +647,10 @@ input {
 
   font-size: 400%;
   top: 80vh;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Comfortaa', cursive;
   letter-spacing: 0.1em;
   font-weight: 900;
   color: white;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-    2px 2px 0 #000;
 }
 
 .typewriter {
