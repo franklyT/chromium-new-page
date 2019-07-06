@@ -4,12 +4,6 @@ const weatherParser = {
   get weatherurl() {
     return `https://api.openweathermap.org/data/2.5/weather?lat=${weatherParser.lat}&lon=${weatherParser.lon}&APPID=${weatherParser.APIKey}`;
   },
-  get weatherminute() {
-    return randRange(0, 14);
-  },
-  get now() {
-    return new Date();
-  },
 
   APIKey: '90593d5093dd6b724ed5aec9eeb5c930',
   temperaturescale: 'F',
@@ -33,24 +27,26 @@ function init() {
 }
 function updateTime() {
   const clockdata = getClockStrings();
+  const callDate = new Date();
   weatherParser.td.innerHTML = clockdata.timehtml;
-  weatherParser.td.dateTime = weatherParser.now.toISOString();
-  const sec = weatherParser.now.getSeconds();
-  const minutes = weatherParser.now.getMinutes();
+  weatherParser.td.dateTime = callDate.toISOString();
+  const sec = callDate.getSeconds();
+  const minutes = callDate.getMinutes();
   if (weatherParser.locationRequested && sec === 0) {
-    if (minutes % 15 === weatherParser.weatherminute) {
+    if (minutes % 15 === randRange(0, 14)) {
       getWeather();
     }
   }
 }
 function getClockStrings() {
-  const year = weatherParser.now.getFullYear();
-  const month = months[weatherParser.now.getMonth()];
-  const date = weatherParser.now.getDate();
-  const day = days[weatherParser.now.getDay()];
-  const hour = weatherParser.now.getHours();
-  const minutes = weatherParser.now.getMinutes();
-  const seconds = weatherParser.now.getSeconds();
+  const callDate = new Date();
+  const year = callDate.getFullYear();
+  const month = months[callDate.getMonth()];
+  const date = callDate.getDate();
+  const day = days[callDate.getDay()];
+  const hour = callDate.getHours();
+  const minutes = callDate.getMinutes();
+  const seconds = callDate.getSeconds();
   const meridian = hour < 12 ? ' AM' : ' PM';
   let clockhour = hour > 12 ? hour - 12 : hour;
   if (hour === 0) {
