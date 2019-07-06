@@ -1,40 +1,41 @@
 // https://css-tricks.com/how-i-built-a-gps-powered-weather-clock-with-my-old-iphone-4/
 
-// Abuse it and it breaks :(
-const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
-const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
-
-let now;
-let td;
-let lat;
-let lon;
-let weatherurl;
-let wd;
-let icon;
-let weatherdata;
-let weatherminute;
-let locationRequested = false;
+const weatherParser = {
+  APIKey: '90593d5093dd6b724ed5aec9eeb5c930',
+  temperaturescale: 'F',
+  get now() {
+    return new Date();
+  },
+  td: document.getElementById('time'),
+  lat: 0,
+  lon: 0,
+  get weatherurl() {
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${weatherParser.lat}&lon=${weatherParser.lon}&APPID=${weatherParser.APIKey}`;
+  },
+  wd: document.getElementById('weather'),
+  icon: document.getElementById('icon'),
+  weatherdata: '',
+  get weatherminute() {
+    return randRange(0, 14);
+  },
+  locationRequested: false,
+};
 
 onDOMLoad(init());
 
 function init() {
-  td = document.getElementById('time');
-  wd = document.getElementById('weather');
-  icon = document.getElementById('icon');
-
-  weatherminute = randRange(0, 14);
   getLocation();
   updateTime();
   setInterval(updateTime, 1000);
 }
 function updateTime() {
   const clockdata = getClockStrings();
-  td.innerHTML = clockdata.timehtml;
-  td.dateTime = now.toISOString();
-  const sec = now.getSeconds();
-  const minutes = now.getMinutes();
-  if (locationRequested && sec === 0) {
-    if (minutes % 15 === weatherminute) {
+  weatherParser.td.innerHTML = clockdata.timehtml;
+  weatherParser.td.dateTime = weatherParser.now.toISOString();
+  const sec = weatherParser.now.getSeconds();
+  const minutes = weatherParser.now.getMinutes();
+  if (weatherParser.locationRequested && sec === 0) {
+    if (minutes % 15 === weatherParser.weatherminute) {
       getWeather();
       // get weather every 15 minutes
       // weatherminute is a random number between
@@ -44,14 +45,13 @@ function updateTime() {
   }
 }
 function getClockStrings() {
-  now = new Date();
-  const year = now.getFullYear();
-  const month = months[now.getMonth()];
-  const date = now.getDate();
-  const day = days[now.getDay()];
-  const hour = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+  const year = weatherParser.now.getFullYear();
+  const month = months[weatherParser.now.getMonth()];
+  const date = weatherParser.now.getDate();
+  const day = days[weatherParser.now.getDay()];
+  const hour = weatherParser.now.getHours();
+  const minutes = weatherParser.now.getMinutes();
+  const seconds = weatherParser.now.getSeconds();
   const meridian = hour < 12 ? ' AM' : ' PM';
   let clockhour = hour > 12 ? hour - 12 : hour;
   if (hour === 0) {
@@ -86,19 +86,15 @@ function showPosition(position) {
   if (!position) {
     return;
   }
-  lat = Number(position.lat);
-  lon = Number(position.lon);
-  weatherurl = 'https://api.openweathermap.org/data/2.5/weather?';
-  weatherurl += `lat=${lat}&lon=${lon}&APPID=`;
-  weatherurl += YOUR_API_KEY_HERE;
-
-  if (!locationRequested) {
+  weatherParser.lat = position.lat;
+  weatherParser.lon = position.lon;
+  if (!weatherParser.locationRequested) {
     getWeather();
-    locationRequested = true;
+    weatherParser.locationRequested = true;
   }
 }
 function getWeather() {
-  wd.innerHTML = ' ... ';
+  weatherParser.wd.innerHTML = ' ... ';
   const xhttp = new XMLHttpRequest();
   xhttp.responseType = 'text';
   xhttp.onreadystatechange = () => {
@@ -108,21 +104,21 @@ function getWeather() {
     }
   };
 
-  xhttp.open('GET', weatherurl, true);
+  xhttp.open('GET', weatherParser.weatherurl, true);
   xhttp.send();
 }
 function convertTemperature(kelvin) {
   // converts temps in kelvin to celsius or fahrenheit
   const celsius = kelvin - 273.15;
-  return temperaturescale === 'F' ? celsius * 1.8 + 32 : celsius;
+  return weatherParser.temperaturescale === 'F' ? celsius * 1.8 + 32 : celsius;
 }
 function processWeather(data) {
-  weatherdata = data;
-  const weather = weatherdata.weather[0];
-  icon.className = `i${weather.icon}`;
-  icon.style.opacity = 1;
+  weatherParser.weatherdata = data;
+  const weather = weatherParser.weatherdata.weather[0];
+  weatherParser.icon.className = `i${weather.icon}`;
+  weatherParser.icon.style.opacity = 1;
   const localtemperature = convertTemperature(data.main.temp).toFixed(0);
-  wd.innerHTML = `${localtemperature}°`;
+  weatherParser.wd.innerHTML = `${localtemperature}°`;
 }
 
 // To be addressed
