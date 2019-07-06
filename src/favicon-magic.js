@@ -49,11 +49,11 @@ function appleADay(link, title, domElement) {
       if (img.width && img.height > 50) {
         resolve(img.src);
       } else {
-        reject(new Error(`${img.src} too small. Trying another method...`));
+        reject(new Error(`TabbyTab: Warning: ${img.src} too small. Trying another method...`));
       }
     };
     img.onerror = () => {
-      reject(new Error('Touch icon load failed. Trying another method...'));
+      reject(new Error('TabbyTab: Warning: Touch icon load failed. Trying another method...'));
     };
   });
 }
