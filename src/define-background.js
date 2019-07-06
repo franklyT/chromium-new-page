@@ -1,6 +1,5 @@
 const cowBg = {
   bg: '',
-
   catchDeadLinks: [],
 };
 
@@ -20,6 +19,7 @@ for (let i = 1; i < 45; i += 1) {
 // eslint-disable-next-line no-unused-vars
 const tabbyBg = {
   bg: '',
+  catchDeadLinks: [],
   bg1: 'https://images.unsplash.com/photo-1532386236358-a33d8a9434e3',
 };
 
