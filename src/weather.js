@@ -1,23 +1,26 @@
 // https://css-tricks.com/how-i-built-a-gps-powered-weather-clock-with-my-old-iphone-4/
 
 const weatherParser = {
-  APIKey: '90593d5093dd6b724ed5aec9eeb5c930',
-  temperaturescale: 'F',
-  get now() {
-    return new Date();
-  },
-  td: document.getElementById('time'),
-  lat: 0,
-  lon: 0,
   get weatherurl() {
     return `https://api.openweathermap.org/data/2.5/weather?lat=${weatherParser.lat}&lon=${weatherParser.lon}&APPID=${weatherParser.APIKey}`;
   },
-  wd: document.getElementById('weather'),
-  icon: document.getElementById('icon'),
-  weatherdata: '',
   get weatherminute() {
     return randRange(0, 14);
   },
+  get now() {
+    return new Date();
+  },
+
+  APIKey: '90593d5093dd6b724ed5aec9eeb5c930',
+  temperaturescale: 'F',
+
+  td: document.getElementById('time'),
+  wd: document.getElementById('weather'),
+  icon: document.getElementById('icon'),
+
+  lat: 0,
+  lon: 0,
+  weatherdata: '',
   locationRequested: false,
 };
 
