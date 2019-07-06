@@ -7,7 +7,7 @@ function linkLink(div, link) {
 }
 
 function pullRecentSites() {
-  console.log('TabbyTab: Favicon engine is spinning up. Errors here are expected.')
+  console.log('TabbyTab: Favicon engine is spinning up. Errors from icon pull attempts are expected.')
   chrome.history.search({ text: '', maxResults: 100 }, (data) => {
     for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt += 1) {
       try {
