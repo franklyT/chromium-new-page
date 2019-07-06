@@ -32,6 +32,7 @@ function selectAll(sel) {
   return typeof sel === 'string' ? document.querySelectorAll(sel) : sel;
 }
 
+// load to the DOM with a performance metric
 async function callWithPerf(fn) {
   const start = new Date().getTime();
   await fn();
