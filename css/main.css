@@ -541,11 +541,11 @@ input {
 }
 
 .clocktext {
-  font-family: "Audiowide", cursive;
+	font-family: Consolas,monaco,monospace; 
 
   color: white;
   font-weight: 900;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
@@ -568,7 +568,6 @@ input {
   font-size: 1.3rem;
   line-height: 1.4;
   letter-spacing: 0.05em;
-  margin-right: 0.3em;
   margin-top: 0.1em;
 }
 
@@ -617,7 +616,11 @@ input {
   margin-top: auto;
 
   font-size: 2rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
+
+  margin-left: -1em;
+
+
 }
 
 .weather-icons {
@@ -627,6 +630,9 @@ input {
   font-size: 2.8em;
   margin-left: 0.5em;
   margin-right: auto;
+  
+  margin-bottom: 0.4em;
+
 }
 .weather-icons > div {
   display: inline-flex;
@@ -637,6 +643,7 @@ input {
 
   margin-top: auto;
   margin-bottom: -0.35em;
+
 }
 
 .greeting {
@@ -647,10 +654,14 @@ input {
 
   font-size: 400%;
   top: 80vh;
-  font-family: 'Comfortaa', cursive;
+	font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
   letter-spacing: 0.1em;
   font-weight: 900;
   color: white;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+
 }
 
 .typewriter {
@@ -1234,6 +1245,7 @@ input:checked + .slider:before {
   }
   .weather {
   font-size: 1.8em;
+  margin-right: 0.3em;
   }
   .topsites-container {
   padding-top: 1.8em;
