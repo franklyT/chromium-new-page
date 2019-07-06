@@ -1103,6 +1103,8 @@ input:checked + .slider:before {
 
 .i09d:before,
 .i09n:before {
+  position: absolute;
+  margin-top: -.15em;
   content: "\1F327";
   color: #ffe;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
