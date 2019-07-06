@@ -1042,6 +1042,21 @@ input:checked + .slider:before {
   z-index: 4000;
  }
 
+ .traypop {
+  position: absolute;
+
+  display: flex;
+
+  font-size: 2em;
+  width: auto;
+  height: auto;
+
+  background: black;
+  color: white;
+  border: 2px solid white;
+
+ }
+
 /* WIP END */
 
 /* ICONS */

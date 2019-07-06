@@ -33,17 +33,34 @@ Object.keys(defaultTray).forEach((key) => {
     window.location.href = defaultTray[key].link;
   });
 
-  /* appender.addEventListener(
+  appender.addEventListener(
     'contextmenu',
     (ev) => {
       ev.preventDefault();
-      console.log('x')
+      if (select('.traypop')) {
+        select('.traypop').parentNode.removeChild(select('.traypop'));
+      }
+      const traypopper = document.createElement('div');
+      traypopper.classList.add('traypop');
+      traypopper.innerHTML = 'Remove<br>Edit';
+
+      traypopper.style.top = `${event.clientY-65}px`;
+      traypopper.style.left = `${event.clientX}px`;
+      document.body.appendChild(traypopper);
       return false;
     },
     false,
   );
-*/
 
   select('.tray').firstChild.before(appender);
 });
 
+document.body.addEventListener('click', (elm) => {
+  try {
+    if (!elm.target.classList.contains('traypop')) {
+      select('.traypop').parentNode.removeChild(select('.traypop'));
+    }
+  } catch {
+    // suppress error
+  }
+});
