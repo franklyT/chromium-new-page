@@ -847,8 +847,8 @@ input:checked + .slider:before {
 }
 
 .settings {
-  bottom: 0;
-  right: 0;
+  bottom: 0.2em;
+  right: 0.15em;
   position: absolute;
   z-index: 10;
   width: 3em;
@@ -872,7 +872,7 @@ input:checked + .slider:before {
   display: flex;
   width: 6em;
   height: 20.3em;
-  bottom: 3em;
+  bottom: 3.3em;
   right: 0;
   margin-right: -0.5em;
   border-radius: 0.5em;
