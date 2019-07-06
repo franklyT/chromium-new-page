@@ -1,37 +1,62 @@
 chrome.identity.getAuthToken({ interactive: true }, (token) => {
-  /* const init = {
-    method: 'GET',
-    async: true,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    contentType: 'json',
-  };
-*/
   const headers = new Headers({
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
   });
 
   const queryParams = { headers };
+  const aArr = [];
+  let gDate;
 
   fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
     .then(response => response.json()) // Transform the data into json
     .then((data) => {
-      // test function
-      // data.items.forEach((elm)=> {
-      // console.log(String(elm.start.dateTime).slice(0, -6));
-      // })
-
+      const ISODate = String(new Date().toISOString().slice(0, -14))
+        .split('-')
+        .join('');
       try {
-        const getDate = data.items
-          .filter(
-            elm => String(elm.start.dateTime).slice(0, -6)
-              > String(new Date().toISOString()).slice(0, -5),
-          )
-          .reduce((a, b) => (String(a.start.dateTime).slice(0, -6) < String(b.start.dateTime).slice(0, -6) ? a : b));
+        data.items.forEach((elm) => {
+          if (
+            elm.start.dateTime !== undefined
+            && elm.start.dateTime !== ''
+            && elm.start.dateTime !== 'udf'
+          ) {
+            gDate = String(elm.start.dateTime)
+              .slice(0, -15)
+              .split('-')
+              .join('');
+          } else if (
+            elm.start.date !== undefined
+            && elm.start.date !== ''
+            && elm.start.date !== 'udf'
+          ) {
+            gDate = String(elm.start.date)
+              .split('-')
+              .join('');
+          }
 
+         // console.log(gDate);
+         // console.log(Number(ISODate));
+
+          if (Number(gDate) > Number(ISODate)) {
+            aArr.push(elm);
+          }
+        });
+
+        aArr.sort();
+        // console.log(aArr);
+
+        // const getDate = data.items
+        //  .filter(elm => elm.start.dateTime !== 'und' && elm.start.dateTime !== undefined)
+        //  .filter(
+        //   elm => String(elm.start.dateTime).slice(0, -6)
+        //     > String(new Date().toISOString()).slice(0, -5),
+        //  );
+        // .reduce((a, b) => (String(a.start.dateTime).slice(0, -6) < String(b.start.dateTime).slice(0, -6) ? a : b));
+
+       // console.log(aArr);
+        const getDate = aArr[0];
+        //console.log(getDate);
         const calDiv = document.createElement('div');
         calDiv.classList.add('calendar-event');
         calDiv.innerHTML = "<span class='calendar__upcoming'>Upcoming Event</span>";
@@ -48,7 +73,7 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
           calDiv.innerHTML += `&nbsp;&nbsp; <span class='description'>${getDate.description}</span> `;
         }
         select('.calendar').appendChild(calDiv);
-      } catch (e) {}
+      } catch (e) {console.log(e)}
     })
     .finally({});
 });
