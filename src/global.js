@@ -32,11 +32,6 @@ function selectAll(sel) {
   return typeof sel === 'string' ? document.querySelectorAll(sel) : sel;
 }
 
-// Safety check utility function
-function isNative(fn) {
-  console.log(/\{\s*\[native code\]\s*\}/.test(`${fn}`));
-}
-
 async function callWithPerf(fn) {
   const start = new Date().getTime();
   await fn();
