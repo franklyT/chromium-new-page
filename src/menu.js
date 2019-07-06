@@ -107,34 +107,6 @@ select('#traySlider').addEventListener('click', () => {
   select('.tray').classList.toggle('display-none');
 });
 
-/* CALENDAR */
-
-chrome.storage.sync.get('calendar', (items) => {
-  if (items.calendar === undefined || items.calendar === null) {
-    chrome.storage.sync.set({ calendar: 'show' }, () => {});
-    select('#calendarCheckbox').checked = true;
-    select('.settings__calendar__icon').classList.add('settings__icon--active');
-  } else if (items.calendar === 'show') {
-    select('#calendarCheckbox').checked = true;
-    select('.settings__calendar__icon').classList.add('settings__icon--active');
-    select('.calendar').classList.remove('display-none');
-  } else {
-    select('#calendarCheckbox').checked = false;
-    document.querySelector('.settings__calendar__icon').classList.remove('settings__icon--active');
-    select('.calendar').classList.add('display-none');
-  }
-});
-
-select('#calendarSlider').addEventListener('click', () => {
-  if (select('#calendarCheckbox').checked) {
-    chrome.storage.sync.set({ calendar: 'hide' }, () => {});
-  } else {
-    chrome.storage.sync.set({ calendar: 'show' }, () => {});
-  }
-  select('.settings__calendar__icon').classList.toggle('settings__icon--active');
-  select('.calendar').classList.toggle('display-none');
-});
-
 /* TOPSITES */
 
 chrome.storage.sync.get('topsites', (items) => {

@@ -17,13 +17,6 @@
   },
 
   "description": "Lightweight tab modifier.",
-  "oauth2": {
-    "client_id": "261472421153-kupgm10l9p78lc51nceliq9iftql3t21.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/calendar",
-      "https://www.googleapis.com/auth/calendar.events"
-    ]
-  },
 
   "icons": {
     "16": "favicon16.png",

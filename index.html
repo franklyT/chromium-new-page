@@ -28,8 +28,6 @@
   <div id="masterContainer" class="container__master">
        <div class="background background__image"></div>
       
-       <div id="calendar" class="calendar"></div>
-
        <div id="greeting" class="greeting absolute-center"></div>
        <div id="tsites" class="tsites-container absolute-center"></div>
        <div id="topsites" class="topsites-container absolute-center"></div>
@@ -85,14 +83,6 @@
       <!--* Freezer Toggler End *-->
         </label>
   
-      <!--* Calendar Toggler *-->
-        <image title="Calendar Toggle" class="settings__calendar__icon" src="icons/calicon.png" draggable="false"></image>
-        <label title="Calendar Toggle" class="switch switch__calendar">
-         <input id="calendarCheckbox" type="checkbox">
-         <span id="calendarSlider" title="Calendar Toggle" class="slider slider--round"></span>
-      <!--* Calendar Toggler End *-->
-        </label>
-
       <!--* Topsites Toggler *-->
         <image title="Topsites Toggle" class="settings__topsites__icon" src="icons/heart.png" draggable="false"></image>
         <label title="Topsites Toggle" class="switch switch__topsites">
@@ -118,7 +108,7 @@
         </label>
 
       <!--* Utility Footer *-->
-        <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/historymenu.png" draggable="false"></image>
+        <image id="historyEraser" title="History Eraser" class="menu-nuke-history" src="icons/eraser.png" draggable="false"></image>
       <!--* Utility Footer End*-->
   
   <!--* Settings Menu End *-->
@@ -134,7 +124,6 @@
     <script src="src/greetings.js"></script>
     <script src="src/define-background.js"></script>
     <script src="src/menu.js"></script>
-    <script src="src/calendar.js"></script>
     <script src="src/topsites.js"></script>
     <script src="src/tray.js"></script>
     <script src="src/notes.js"></script>
