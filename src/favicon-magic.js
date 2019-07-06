@@ -88,7 +88,7 @@ async function giveUsApples(link, title = null, domElement) {
       select(`#${domElement}`).appendChild(div);
     })
     .catch((reject) => {
-      // Uncomment this to get more data about pull attempts
+      // Use to get more data about pull attempts
       // console.log(reject);
       bruteForce(link, title, domElement);
     });
