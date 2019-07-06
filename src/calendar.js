@@ -8,12 +8,13 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
   const aArr = [];
   let gDate;
 
-  fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', queryParams)
+  fetch(`https://www.googleapis.com/calendar/v3/colors?access_token=${token}`, queryParams)
     .then(response => response.json()) // Transform the data into json
     .then((data) => {
       const ISODate = String(new Date().toISOString().slice(0, -14))
         .split('-')
         .join('');
+        console.log(data.items)
       try {
         data.items.forEach((elm) => {
           if (
@@ -35,8 +36,8 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
               .join('');
           }
 
-         // console.log(gDate);
-         // console.log(Number(ISODate));
+          // console.log(gDate);
+          // console.log(Number(ISODate));
 
           if (Number(gDate) > Number(ISODate)) {
             aArr.push(elm);
@@ -54,9 +55,9 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
         //  );
         // .reduce((a, b) => (String(a.start.dateTime).slice(0, -6) < String(b.start.dateTime).slice(0, -6) ? a : b));
 
-       // console.log(aArr);
+        // console.log(aArr);
         const getDate = aArr[0];
-        //console.log(getDate);
+        // console.log(getDate);
         const calDiv = document.createElement('div');
         calDiv.classList.add('calendar-event');
         calDiv.innerHTML = "<span class='calendar__upcoming'>Upcoming Event</span>";
@@ -73,7 +74,9 @@ chrome.identity.getAuthToken({ interactive: true }, (token) => {
           calDiv.innerHTML += `&nbsp;&nbsp; <span class='description'>${getDate.description}</span> `;
         }
         select('.calendar').appendChild(calDiv);
-      } catch (e) {console.log(e)}
+      } catch (e) {
+        console.log(e);
+      }
     })
     .finally({});
 });
