@@ -5,7 +5,7 @@ onDOMLoad(
     if (items.notes) {
       select('#notesInput').value = items.notes;
     } else {
-      select('#notesInput').value = '';
+      select('#notesInput').value = 'My first note!';
     }
   }),
 );

@@ -991,6 +991,30 @@ input:checked + .slider:before {
   transition: 0.05s;
 }
 
+/*
+.popup {
+  position: absolute;
+  background: rgba(200, 200, 200, 1);
+  border-radius: 1em;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto auto auto;
+  width: 40vw;
+  height: 50vh;
+  z-index: 5000;
+}
+
+.popup__blur {
+  position: absolute;
+  filter: blur(1px);
+  background: rgb(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 4000;
+ }
+*/
 /* ICONS */
 .i01d {
   background: radial-gradient(ellipse at center, #f1e767 0%, #feb645 100%);
