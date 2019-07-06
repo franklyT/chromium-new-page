@@ -1162,12 +1162,15 @@ input:checked + .slider:before {
 }
 
 .i04n:before {
+  
   content: "\2601";
   color: #666;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 .i04n:after {
+  position: absolute;
+  margin-left: 5px;
   content: "\2601";
   color: #ccd;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
