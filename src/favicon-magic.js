@@ -7,7 +7,9 @@ function linkLink(div, link) {
 }
 
 function pullRecentSites() {
-  console.log('TabbyTab: Favicon engine is spinning up. Errors from icon pull attempts are expected.')
+  console.log(
+    'TabbyTab: Favicon engine is spinning up. Errors from icon pull attempts are expected.',
+  );
   chrome.history.search({ text: '', maxResults: 100 }, (data) => {
     for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt += 1) {
       try {
@@ -50,10 +52,12 @@ function appleADay(link, title, domElement) {
       if (img.width && img.height > 50) {
         resolve(img.src);
       } else {
+        // This will be used to give some more data about icon pull attempts in error logging
         reject(new Error(`TabbyTab: Warning: ${img.src} too small. Trying another method...`));
       }
     };
     img.onerror = () => {
+      // This will be used to give some more data about icon pull attempts in error logging
       reject(new Error('TabbyTab: Warning: Touch icon load failed. Trying another method...'));
     };
   });
@@ -84,7 +88,8 @@ async function giveUsApples(link, title = null, domElement) {
       select(`#${domElement}`).appendChild(div);
     })
     .catch((reject) => {
-      console.log(reject);
+      // Uncomment this to get more data about pull attempts
+      // console.log(reject);
       bruteForce(link, title, domElement);
     });
 }
