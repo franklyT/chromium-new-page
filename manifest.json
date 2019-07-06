@@ -23,11 +23,5 @@
     "128": "favicon128.png"
   },
 
-  "permissions": [
-    "identity",
-    "history",
-    "storage",
-    "bookmarks",
-    "topSites"
-  ]
+  "permissions": ["identity", "history", "storage", "bookmarks", "topSites"]
 }
