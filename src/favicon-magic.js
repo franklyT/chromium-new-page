@@ -110,7 +110,7 @@ async function bruteForce(link, title = null, domElement) {
 
         pushArray.forEach((elm) => {
           if (elm.indexOf('png') !== -1 || elm.indexOf('PNG') !== -1) {
-            linkArray.push(elm.match(/href="(.*.png)/)[1]);
+            linkArray.push(elm.match(/href="(.*?.png)/)[1]);
           }
         });
       } catch (e) {
@@ -128,7 +128,7 @@ async function bruteForce(link, title = null, domElement) {
             (elm.indexOf('png') !== -1 || elm.indexOf('PNG') !== -1)
             && elm.indexOf('http') !== -1
           ) {
-            linkArray.push(elm.match(/content="(.*.png)"/)[1]);
+            linkArray.push(elm.match(/content="(.*?.png)"/)[1]);
           }
         });
       } catch (e) {
