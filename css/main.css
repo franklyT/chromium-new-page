@@ -698,6 +698,7 @@ input {
 #overlay > input {
   z-index: 4001;
   position: absolute;
+  padding: .5em .5em .5em .5em;
   top: 50vh;
   right: 0;
   left: 0;
