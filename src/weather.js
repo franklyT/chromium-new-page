@@ -3,19 +3,14 @@
 // Abuse it and it breaks :(
 const YOUR_API_KEY_HERE = '90593d5093dd6b724ed5aec9eeb5c930';
 const temperaturescale = 'F'; // set to F or C (fahrenheit or celsius)
-const iconurl = 'https://openweathermap.org/img/w/';
 
 let now;
-let dd;
 let td;
 let lat;
 let lon;
-let gd;
 let weatherurl;
 let wd;
 let icon;
-let city;
-let region;
 let weatherdata;
 let weatherminute;
 let locationRequested = false;
@@ -25,7 +20,6 @@ onDOMLoad(init());
 function init() {
   td = document.getElementById('time');
   wd = document.getElementById('weather');
-  gd = document.getElementById('gps');
   icon = document.getElementById('icon');
 
   weatherminute = randRange(0, 14);
@@ -41,7 +35,7 @@ function updateTime() {
   const minutes = now.getMinutes();
   if (locationRequested && sec === 0) {
     if (minutes % 15 === weatherminute) {
-      getWeather(); 
+      getWeather();
       // get weather every 15 minutes
       // weatherminute is a random number between
       // 0 and 14 to ensure that users don't all hit
@@ -94,8 +88,6 @@ function showPosition(position) {
   }
   lat = Number(position.lat);
   lon = Number(position.lon);
-  city = position.city;
-  region = position.region;
   weatherurl = 'https://api.openweathermap.org/data/2.5/weather?';
   weatherurl += `lat=${lat}&lon=${lon}&APPID=`;
   weatherurl += YOUR_API_KEY_HERE;
