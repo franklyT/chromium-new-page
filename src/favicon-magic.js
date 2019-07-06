@@ -10,7 +10,7 @@ function pullRecentSites() {
   chrome.history.search({ text: '', maxResults: 100 }, (data) => {
     for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt += 1) {
       try {
-        // I'm not inclined to over-ping google which will hand out captchas pretty quickly
+        // suppress google which will hand out captchas too quickly
         if (!data[attempt].url.includes('google') && !data[attempt].url.includes('gmail')) {
           returnCount += 1;
           giveUsApples(data[attempt].url, data[attempt].title, 'topsites');
