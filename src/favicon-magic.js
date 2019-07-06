@@ -10,11 +10,14 @@ function pullRecentSites() {
   chrome.history.search({ text: '', maxResults: 100 }, (data) => {
     for (let attempt = 0, returnCount = 0; attempt < 100 && returnCount < 5; attempt += 1) {
       try {
+        // I'm not inclined to over-ping google which will hand out captchas pretty quickly
         if (!data[attempt].url.includes('google') && !data[attempt].url.includes('gmail')) {
           returnCount += 1;
           giveUsApples(data[attempt].url, data[attempt].title, 'topsites');
         }
-      } catch (e) {}
+      } catch (e) {
+        // suppressing this error
+      }
     }
   });
 }
@@ -110,7 +113,9 @@ async function bruteForce(link, title = null, domElement) {
             linkArray.push(elm.match(/href="(.*.png)/)[1]);
           }
         });
-      } catch (e) {}
+      } catch (e) {
+        // suppressing this error
+      }
       try {
         while (meta.indexOf('<meta') !== -1) {
           meta = meta.slice(meta.indexOf('<meta'), meta.length);
@@ -126,7 +131,9 @@ async function bruteForce(link, title = null, domElement) {
             linkArray.push(elm.match(/content="(.*.png)"/)[1]);
           }
         });
-      } catch (e) {}
+      } catch (e) {
+        // suppressing this error
+      }
 
       etTuBrute(link, title, linkArray[linkArray.length - 1], domElement);
       // etTuBrute(reply);

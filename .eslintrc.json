@@ -37,6 +37,6 @@
   "rules": {
     "no-use-before-define": "off",
     "no-console": "off",
-    "no-empty": "off"
+    "prefer-destructuring": "off"
   }
 }
