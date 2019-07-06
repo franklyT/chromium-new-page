@@ -63,7 +63,7 @@ function cClear(timeoutinms) {
   }, timeoutinms);
 }
 
-// Capitalization utility function
+// capitalization utility function
 function capitalizeMe(text) {
   const capitalText = text
     .toLowerCase()
