@@ -661,7 +661,10 @@ input {
   font-size: 3em;
   position: absolute;
   top: 40vh;
-  left: 40vw;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 500px;
   height: 500px;
 
@@ -672,6 +675,10 @@ input {
   display: inline;
   white-space: no-wrap;
   overflow: auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blink {
@@ -697,15 +704,16 @@ input {
 
 #overlay > input {
   z-index: 4001;
-  position: absolute;
+  position: relative;
+  display: flex;
   padding: .5em .5em .5em .5em;
   top: 50vh;
   right: 0;
   left: 0;
   margin-left: auto;
-  margin-right: auto;
-  height: 4vh;
-  width: 15vw;
+  margin-right: 45vw;
+  height: auto;
+  width: 7em;
   border-radius: 1em;
 }
 
@@ -1127,11 +1135,14 @@ input:checked + .slider:before {
 
 .i50d:before,
 .i50n:before {
+  position: relative;
   content: "\FE4C";
   color: #678;
 }
 .i50d:after,
 .i50n:after {
+  position: absolute;
+  margin-top: 10px;
   content: "\FE4C";
   color: #456;
 }
