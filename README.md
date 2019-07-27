@@ -12,8 +12,8 @@ Using a variety of techniques for scraping HTML, the extension will request and 
 Features
 --------
 
-- Be awesome
-- Make things faster
+- Be small
+- Be fun
 
 Support
 -------
