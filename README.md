@@ -7,7 +7,7 @@ Its primary goal as a project was to action an idea I had; a serverless high-res
 
 Using a variety of techniques for scraping HTML, the extension will request and parse your topsites and recently visited sites in real time, plucking out the most promising candidates for a high resolution icon using a minimal amount of trial-and-error attempts.
 
-![Example in action](https://media.giphy.com/media/j3sRA7JoDTTvYZSCKs/giphy.gif)
+![Example in action](https://github.com/franklyT/tabby-tab/blob/master/TabbyTab2.gif)
 
 Features
 --------
