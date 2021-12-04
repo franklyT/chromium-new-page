@@ -74,6 +74,8 @@ selectAll('.bg-picker').forEach((elm) => {
 });
 
 chrome.storage.sync.get('bgID', (items) => {
+  if (!items) return;
+  
   select(`#${items.bgID}`).classList.add('settings__icon--active');
 });
 

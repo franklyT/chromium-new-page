@@ -16,6 +16,8 @@ function parseTopsites() {
     });
 
     for (let i = 0; i < 5; i += 1) {
+      if (!tempGroup[i]) continue;
+      
       giveUsApples(tempGroup[i].url, tempGroup[i].title, 'tsites');
     }
     setTimeout(() => {

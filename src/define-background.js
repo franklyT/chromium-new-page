@@ -3,8 +3,10 @@ const cowBg = {
   catchDeadLinks: [],
 };
 
+
 for (let i = 1; i < 54; i += 1) {
-  cowBg[`bg${i}`] = `https://traina.me/images/cowBg/bg${i}.jpg`;
+  // cowBg[`bg${i}`] = `https://traina.me/images/cowBg/bg${i}.jpg`;
+  cowBg[`bg${i}`] = `fdfdfdfdsfs`;
 }
 
 const vanillaBg = {
@@ -13,14 +15,15 @@ const vanillaBg = {
 };
 
 for (let i = 1; i < 45; i += 1) {
-  vanillaBg[`bg${i}`] = `https://traina.me/images/vanillaBg/bg${i}.jpg`;
+  // vanillaBg[`bg${i}`] = `https://traina.me/images/vanillaBg/bg${i}.jpg`;
+  vanillaBg[`bg${i}`] = `fdfds  `;
 }
 
 // eslint-disable-next-line no-unused-vars
 const tabbyBg = {
   bg: '',
   catchDeadLinks: [],
-  bg1: 'https://images.unsplash.com/photo-1532386236358-a33d8a9434e3',
+  bg1: '',
 };
 
 onDOMLoad(getBg());
@@ -46,7 +49,7 @@ function catchFourZeroFour(url) {
   const tester = new Image();
   tester.addEventListener('load', imageFound);
   tester.addEventListener('error', imageNotFound);
-  tester.src = url;
+  //tester.src = url;
 }
 
 function imageFound() {
